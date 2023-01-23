@@ -1,5 +1,5 @@
 <?php
-require "Session_Start.php";
+require "config.php";
 $sql = "INSERT INTO user(name,email,age,password,num,adresse) VALUES(:name,:email,:age,:password,:num,:adresse)";
 $dataBinded=array(
     ':name'   => $_POST['name'],

@@ -1,5 +1,5 @@
 <?php 
-require_once "Session_Start.php";
+require_once "config.php";
 
 if(empty($_POST['name'])){
     header('Location:index.php');
