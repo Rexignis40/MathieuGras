@@ -17,7 +17,7 @@
     
 }
 .navWrapper img{
-    width: 10%;
+    width: 150px;
     margin-right:10vw ;
 }
 .navWrapper a{
@@ -34,6 +34,8 @@
 .navBar{
     display: flex;
     justify-content: center;
+    padding-top: 2vh;
+
 }
 
 /* carrousel */
