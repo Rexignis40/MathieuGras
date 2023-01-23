@@ -7,16 +7,34 @@
 
 
 /* header */
-.navWrapper {
-    background-color: var(--salmon);
+.navWrapper, .navWrap {
+    background-color: var(--white);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+.navWrapper img{
+    width: 10%;
+    margin-right:10vw ;
+}
+.navWrapper a{
+    color: var(--black);
+    margin-right: 7vw;
+    font-size: large;
+    font-family: ;
+}
+.navWrap a{
+    color: #000;
+}
+.navWrap {
+    width: 20vh;
+}
+.navBar{
     display: flex;
     justify-content: center;
 }
 
-.navWrapper a, .navWrapper .brandLogo {
-    color: var(--black);
-    margin-right: 7vw;
-}
 /* footer */
 
 .pageFooter {
