@@ -3,3 +3,35 @@
     --white: #fff;
     --salmon: #E89676;
 }
+
+
+
+
+/* footer */
+
+.pageFooter {
+    background-color: var(--salmon);
+    color: var(--white);
+    padding-top: 100px;
+    margin-top: 100px;
+    font-size: 30px;
+}
+
+.pageFooter .mention {
+    display: flex;
+    justify-content: center;
+}
+
+.pageFooter .copyAndContact {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pageFooter .copyAndContact .copyright {
+    font-size: 18px;
+}
+
+.pageFooter .copyAndContact .contact a {
+    color: var(--white);
+    margin-left: 10px;
+}
