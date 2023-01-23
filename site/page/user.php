@@ -10,6 +10,9 @@ if(isset($_SESSION["user"])){
     <h1>VOUS ETES GROS</h1>
     <a href="../php/logout.php">Disconnect</a>
     <?php
+    if($_SESSION["user"]["admin"]){
+        include "../php/admin.php";
+    }
 }
 else{
     ?>
@@ -42,8 +45,9 @@ else{
 <?php
 }
 ?>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="../js/Jquery.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/script.js">
 <?php if (isset($_SESSION['error'])){
         echo "M.toast({html: '".$_SESSION['error']."'})";
         unset($_SESSION['error']); 
