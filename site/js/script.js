@@ -12,3 +12,8 @@ function GetListUser(){
         IsSend = false;
     });
 }
+
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: true
+  });

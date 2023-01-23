@@ -10,34 +10,54 @@
     <title>Mathieu Gras Photography</title>
 </head>
 <body>
+    <?php include('./components/header.html')?>
 
-    <!--footer-->
-    <footer class="pageFooter">
-        <div class="container">
-            <div class="row mention">
-                <div class="col l8 offset-l2">
-                    <p>mention légales & conditions d’utilisation</p>
-                </div>
+    <!-- carousel -->
+    <div class="carousel carousel-slider center row">
+        <div class="carousel-item white-text carouselOne" href="">
+            <div class="col l6 offset-l2 ">
+                <p>
+                    Photographe, guitariste et pianiste, j’ai grandi dans le sud de la France, en Provence.<br>-<br>
+                    J’ai commencé à me plonger dans la photographie dès mon plus jeune âge. Artiste dans l’âme, j’aime déambuler dans les villes de Provence afin de capturer un instant, une époque et d’en retranscrire un témoignage à travers mes photos. Extrêmement curieux, je suis constamment à la recherche de nouveaux projets.<br>-<br>
+                    Mes domaines de prédilection sont le portrait, le nu artistique et la street photography.
+                </p>
             </div>
         </div>
-        <div class="copyAndContact">
-            <div class="copyright">
-                <p>© 2014 Copyright Text</p>
-            </div>
-            <div class="contact">
-                <div>
-                    <i class="fa-brands fa-instagram"></i>
-                    <a href="https://www.instagram.com/matt.pty/">@matt.pty</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-square-twitter"></i>
-                    <a href="https://twitter.com/mattptyy">@mattptyy</a>
-                </div>
+
+        <div class="carousel-item white-text carouselTwo" href="">
+            <div class="col l6 offset-l2 ">
+                <p>
+                    Photographe, guitariste et pianiste, j’ai grandi dans le sud de la France, en Provence.<br>-<br>
+                    J’ai commencé à me plonger dans la photographie dès mon plus jeune âge. Artiste dans l’âme, j’aime déambuler dans les villes de Provence afin de capturer un instant, une époque et d’en retranscrire un témoignage à travers mes photos. Extrêmement curieux, je suis constamment à la recherche de nouveaux projets.<br>-<br>
+                    Mes domaines de prédilection sont le portrait, le nu artistique et la street photography.
+                </p>
             </div>
         </div>
-        
-    </footer>
-    <!--end footer-->
+
+        <div class="carousel-item white-text carouselThree" href="">
+            <div class="col l6 offset-l2 ">
+                <p>
+                    Photographe, guitariste et pianiste, j’ai grandi dans le sud de la France, en Provence.<br>-<br>
+                    J’ai commencé à me plonger dans la photographie dès mon plus jeune âge. Artiste dans l’âme, j’aime déambuler dans les villes de Provence afin de capturer un instant, une époque et d’en retranscrire un témoignage à travers mes photos. Extrêmement curieux, je suis constamment à la recherche de nouveaux projets.<br>-<br>
+                    Mes domaines de prédilection sont le portrait, le nu artistique et la street photography.
+                </p>
+            </div>
+        </div>
+
+        <div class="carousel-item white-text carouselFour" href="">
+            <div class="col l6 offset-l2 ">
+                <p>
+                    Photographe, guitariste et pianiste, j’ai grandi dans le sud de la France, en Provence.<br>-<br>
+                    J’ai commencé à me plonger dans la photographie dès mon plus jeune âge. Artiste dans l’âme, j’aime déambuler dans les villes de Provence afin de capturer un instant, une époque et d’en retranscrire un témoignage à travers mes photos. Extrêmement curieux, je suis constamment à la recherche de nouveaux projets.<br>-<br>
+                    Mes domaines de prédilection sont le portrait, le nu artistique et la street photography.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- end carousel -->
+
+    <?php include('./components/footer.html')?>
 
     <script type="text/javascript" src="js/Jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
