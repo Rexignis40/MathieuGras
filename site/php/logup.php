@@ -7,10 +7,10 @@ $dataBinded=array(
     ':email'=> $_POST['email'],
     ':age' => $_POST["age"],
     ":num" => $_POST["num"],
-    ":adresse" => $_POST["adress"]
+    ":adresse" => $_POST["adresse"]
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
-header('Location:aceuille.php');
+header('Location: ../page/user.php');
 
 ?>

@@ -1,11 +1,20 @@
-<?php require_once "config.php" ?>
+<?php require_once "../php/config.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
 
 </head>
-<h1>vous vous êtes jamais inscrit ?, quelllllllllllle honte !, veuillez y remédier</h1>
-<form method="post" action="singe-up.php">
+<?php 
+if(isset($_SESSION["user"])){
+    ?>
+    <h1>VOUS ETES GROS</h1>
+    <a href="../php/logout.php">Disconnect</a>
+    <?php
+}
+else{
+    ?>
+    <h1>vous vous êtes jamais inscrit ?, quelllllllllllle honte !, veuillez y remédier</h1>
+<form method="post" action="../php/logup.php">
     <p>votre Prénom Nom</p>
     <input type='text' name='name' />
     <p>pegi 18 ?</p>
@@ -21,7 +30,7 @@
     <input type='submit' value='Créer un compte' />
 </form>
 <h2>HOPOOOOOOO, vous êtes CONCITOYEN, bien le retour !</h2>
-<form method="post" action="singe-in.php">
+<form method="post" action="../php/login.php">
     <p>votre pseudo</p>
     <input type='name' name='name' />
     <p>votre mot de passerait pas !</p>
@@ -30,12 +39,15 @@
     <input type='submit' value='Me connecter' />
 
 </form>
+<?php
+}
+?>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript">
 <?php if (isset($_SESSION['error'])){
         echo "M.toast({html: '".$_SESSION['error']."'})";
         unset($_SESSION['error']); 
-} ?>  
+} ?>
 </script>
 </body>
 </html>

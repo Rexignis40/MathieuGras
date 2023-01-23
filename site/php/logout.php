@@ -1,5 +1,5 @@
 <?php
-require_once "Session_Start.php";
+require_once "config.php";
 unset($_SESSION['user']);
-header('Location:index.php');
+header('Location: ../page/user.php');
 ?>
