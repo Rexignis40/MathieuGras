@@ -9,33 +9,50 @@
 
 
 /* header */
-.navWrapper, .navWrap {
-    background-color: var(--white);
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    
-}
-.navWrapper img{
-    width: 150px;
-    margin-right:10vw ;
-}
-.navWrapper a{
-    color: var(--black);
-    margin-right: 7vw;
-    font-size: large;
-}
-.navWrap a{
-    color: #000;
-}
-.navWrap {
-    width: 20vh;
-}
 .navBar{
     display: flex;
     justify-content: center;
     padding-top: 2vh;
 
+}
+
+.navWrapper {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    height: 150px;
+}
+.navWrapper img{
+    width: 125px;
+}
+
+.navWrapper ul {
+    display: flex;
+}
+
+.navWrapper a{
+    color: var(--black);
+    font-size: 23px;
+    width: 200px;
+}
+
+.navWrapper a:hover{
+    font-weight: 700;
+    background-color: var(--white);
+}
+
+.navWrapper .navbtn li {
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+
+.navWrapper .navbtn {
+    display: flex;
 }
 
 /* carrousel */
