@@ -6,7 +6,17 @@
 
 
 
+/* header */
+.navWrapper {
+    background-color: var(--salmon);
+    display: flex;
+    justify-content: center;
+}
 
+.navWrapper a, .navWrapper .brandLogo {
+    color: var(--black);
+    margin-right: 7vw;
+}
 /* footer */
 
 .pageFooter {
