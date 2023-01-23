@@ -15,14 +15,13 @@
     
 }
 .navWrapper img{
-    width: 10%;
+    width: 150px;
     margin-right:10vw ;
 }
 .navWrapper a{
     color: var(--black);
     margin-right: 7vw;
     font-size: large;
-    font-family: ;
 }
 .navWrap a{
     color: #000;
@@ -33,6 +32,8 @@
 .navBar{
     display: flex;
     justify-content: center;
+    padding-top: 2vh;
+
 }
 
 /* footer */
