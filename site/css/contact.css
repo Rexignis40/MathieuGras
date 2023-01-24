@@ -1,0 +1,12 @@
+body{
+    background-image: url(../img/fondContact.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+div.formulaire{
+    margin-top: 100px;
+}
+div.contact{
+     
+}
