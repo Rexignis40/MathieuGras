@@ -12,7 +12,7 @@ $q->bindParam(":price", $_POST["price"], PDO::PARAM_INT);
 $q->bindParam(":name", $_POST["name"]);
 $q->execute();
 
-$destination = "img/" . $pdo->lastInsertId() .'.png';
+$destination = "img/store/" . $pdo->lastInsertId() .'.png';
 
 imagepng(imagecreatefromstring(file_get_contents($_FILES["img"]["tmp_name"])), "../../".$destination, 9);
 
