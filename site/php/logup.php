@@ -11,6 +11,6 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
-header('Location: ../page/user.php');
+header('Location: ../user.php');
 
 ?>

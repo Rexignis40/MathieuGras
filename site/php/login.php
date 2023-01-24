@@ -19,6 +19,6 @@ if(empty($user)){
     header('Location:index.php');
 }else{
     $_SESSION['user'] = $user; 
-    header('Location: ../page/user.php');
+    header('Location: ../user.php');
 }
 ?>

@@ -16,6 +16,10 @@
     justify-content: center;
 }
 
+.navBar .row{
+    margin: 0 !important;
+}
+
 .navWrapper {
     background-color: var(--white);
     display: flex;
@@ -115,6 +119,28 @@ div form input.name,div form input.surname {
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
+
+
+/* store */
+
+
+.store .annonce img{
+    width: 320px;
+    height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* footer */
 

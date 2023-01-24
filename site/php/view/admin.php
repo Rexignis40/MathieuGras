@@ -1,5 +1,5 @@
 <?php
-    require_once "security.php";
+    require_once "../security.php";
 ?>
 <form method="post" action="../php/actions/addImage.php" enctype="multipart/form-data">
     <label>Name: <input type="text" name="name" required></label>
@@ -22,3 +22,16 @@ include("getListUser.php");
     <input type='hidden' name='id'/>
     <input type='submit'>
 </form>
+<?php
+$sql = "SELECT * FROM category"; 
+        $pre = $pdo->prepare($sql); 
+        $pre->execute();
+        $data = $pre->fetchAll(PDO::FETCH_ASSOC);
+
+foreach($data as $category){ ?>
+<form method="post" action="admin.php" enctype="multipart/form-data">
+    <input type='text' name='Catégory' value="<?php echo $data["category"]['name'] ?>" />
+    <input type='hidden' name='id' value="<?php echo $date["category"]['id'] ?>"/>
+    <input type='submit'>
+</form>
+<?php } ?>

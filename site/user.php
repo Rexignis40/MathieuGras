@@ -1,4 +1,4 @@
-<?php require_once "../php/config.php" ?>
+<?php require_once "php/config.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,17 +29,17 @@ if(isset($_SESSION["user"])){
     </form>
         
 
-    <a href="../php/logout.php">Disconnect</a>
+    <a href="php/logout.php">Disconnect</a>
     <?php
     if($_SESSION["user"]["admin"]){
-        include "../php/admin.php";
+        include "php/admin.php";
     }
     
 }
 else{
     ?>
     <h1>vous vous êtes jamais inscrit ?, quelllllllllllle honte !, veuillez y remédier</h1>
-<form method="post" action="../php/logup.php">
+<form method="post" action="php/logup.php">
     <p>votre Prénom Nom</p>
     <input type='text' name='name' />
     <p>pegi 18 ?</p>
@@ -69,11 +69,6 @@ else{
 ?>
 <script type="text/javascript" src="../js/Jquery.min.js"></script>
 <script type="text/javascript" src="../js/materialize.min.js"></script>
-<script type="text/javascript" src="../js/script.js">
-<?php if (isset($_SESSION['error'])){
-        echo "M.toast({html: '".$_SESSION['error']."'})";
-        unset($_SESSION['error']); 
-} ?>
-</script>
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>

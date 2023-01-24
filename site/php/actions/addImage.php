@@ -17,5 +17,5 @@ $destination = "img/store/" . $pdo->lastInsertId() .'.png';
 imagepng(imagecreatefromstring(file_get_contents($_FILES["img"]["tmp_name"])), "../../".$destination, 9);
 
 $_SESSION["output"] = "Photo upload";
-header('Location: ../../page/user.php');
+header('Location: ../../user.php');
 ?>

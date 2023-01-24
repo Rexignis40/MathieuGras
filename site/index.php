@@ -48,8 +48,6 @@
 
     <!-- end carousel -->
 
-    <?php include('./components/footer.html')?>
-
     <script type="text/javascript" src="js/Jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

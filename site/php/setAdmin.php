@@ -12,5 +12,5 @@ $q->bindParam(":admin", $_GET["v"], PDO::PARAM_BOOL);
 $q->bindParam(":id", $_GET["u"], PDO::PARAM_INT);
 $q->execute();
 
-header("Location: ../page/user.php");
+header("Location: ../user.php");
 ?>

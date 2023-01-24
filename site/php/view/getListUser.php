@@ -1,6 +1,6 @@
 <?php
-require_once("config.php");
-include('security.php');
+require_once("../config.php");
+include('../security.php');
 $html = '';
 $search = '';
 if(isset($_POST["search"])){
