@@ -16,6 +16,10 @@
     justify-content: center;
 }
 
+.navBar .row{
+    margin: 0 !important;
+}
+
 .navWrapper {
     background-color: var(--white);
     display: flex;
