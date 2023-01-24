@@ -103,7 +103,22 @@
     width: 100%;
 
 }
-
+/*contact*/
+div.formulaire{
+    margin-top: 100px;
+}
+div.remark{
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+}
+div form input.name,div form input.surname {
+    width: 50% !important;
+}
+#forms{
+    background-image: url(../img/fondContact.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 
 
 
