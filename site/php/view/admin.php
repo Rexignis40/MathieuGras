@@ -30,12 +30,12 @@ $sql = "SELECT * FROM category";
 
 foreach($data as $category){ ?>
 <br>
-<form method="post" action="../categoryChange.php" enctype="multipart/form-data">
+<form method="post" action="php/categoryChange.php" enctype="multipart/form-data">
     <input type='text' name='name' value="<?php echo $category['name'] ?>" />
     <input type='hidden' name='id' value="<?php echo $category['id'] ?>"/>
     <input type='submit'>
 </form>
-<form method="post" action="../categoryChange.php">
+<form method="post" action="php/categoryChange.php">
     <input type='hidden' name='id' value="<?php echo $category['id'] ?>" />
     <input type='submit' value="delette:<?php echo $category['name'] ?>" />
 </from>
