@@ -13,6 +13,24 @@ function GetListUser(){
     });
 }
 
+function GetImg(cat, offset){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/getUserList.php",
+    {
+        c: cat,
+        o: offset
+    },
+    function(data, status){
+        let html = "";
+        data.forEach(elm => {
+            
+        });
+        $("#content").html(html);
+        IsSend = false;
+    });
+}
+
 $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
