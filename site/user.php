@@ -10,7 +10,7 @@ if(isset($_SESSION["user"])){
     <h1>VOUS ETES GROS</h1>
     <h2> vos infos personelle:</h2>
     <?php echo $_SESSION["user"]['name'] ?>
-    <form method="post" action="adminName.php" enctype="multipart/form-data">
+    <form method="post" action="php/actions/uptateUser.php" enctype="multipart/form-data">
         <h2>Pseudo</h2>
         <input type='text' name='name' value="<?php echo $_SESSION["user"]['name'] ?>" />
         <input type='hidden' name='id' value="<?php echo $_SESSION["user"]['id'] ?>"/>
@@ -32,7 +32,7 @@ if(isset($_SESSION["user"])){
     <a href="php/logout.php">Disconnect</a>
     <?php
     if($_SESSION["user"]["admin"]){
-        include "php/admin.php";
+        include "php/view/admin.php";
     }
     
 }
@@ -55,7 +55,7 @@ else{
     <input type='submit' value='Créer un compte' />
 </form>
 <h2>HOPOOOOOOO, vous êtes CONCITOYEN, bien le retour !</h2>
-<form method="post" action="../php/login.php">
+<form method="post" action="php/login.php">
     <p>votre pseudo</p>
     <input type='name' name='name' />
     <p>votre mot de passerait pas !</p>

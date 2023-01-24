@@ -1,21 +1,21 @@
 <?php
 require_once "config.php";
 
-$sql = "SELECT id, name, price FROM image";
-if(isset($_GET["c"]) && $_GET["c"] != -1){
+$sql = "SELECT * FROM image";
+if(isset($_POST["c"]) && $_POST["c"] != -1){
     $sql .= " WHERE category=:category";
 }
 $offset = 0;
-if(isset($_GET["o"])){
-    $offset = $_GET["o"];
+if(isset($_POST["o"])){
+    $offset = $_POST["o"];
 }
 
-$q = $dbo->prepare($sql . " LIMIT 12 OFFSET :offset");
-$q->bindParam(":offset", $offset);
-if(isset($_GET["c"]) && $_GET["c"] != -1){
-    $q->bindParam(":category", $_GET["c"], PDO::PARAM_INT);
+$q = $pdo->prepare($sql . " LIMIT 12 OFFSET :offset");
+$q->bindParam(":offset", $offset, PDO::PARAM_INT);
+if(isset($_POST["c"]) && $_POST["c"] != -1){
+    $q->bindParam(":category", $_POST["c"], PDO::PARAM_INT);
 }
-$result = $q->execute();
+$q->execute();
 
-return $result->fetchAll();
+echo json_encode($q->fetchAll());
 ?>
