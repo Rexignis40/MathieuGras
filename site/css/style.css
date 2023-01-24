@@ -8,19 +8,18 @@
 
 
 
+
+
 /* header */
 .navBar{
     display: flex;
     justify-content: center;
-    padding-top: 2vh;
-
 }
 
 .navWrapper {
     background-color: var(--white);
     display: flex;
     align-items: center;
-    position: fixed;
     width: 100%;
     z-index: 1;
     top: 0;
@@ -38,6 +37,7 @@
     color: var(--black);
     font-size: 23px;
     width: 200px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navWrapper a:hover{
@@ -66,32 +66,38 @@
 }
 
 .carousel .carousel-item p{
-    position: absolute;
     text-align: left;
 }
 
 .carousel .carouselOne {
-    background-image: url("../img/questcequiltarrive.png");
+    background-image: url("../img/7.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    width: 100%;
+
 }
 
 .carousel .carouselTwo {
-    background-image: url("../img/ppeeppppaa.png");
+    background-image: url("../img/13.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    width: 100%;
+
 }
 
 .carousel .carouselThree {
-    background-image: url("../img/peppa.png");
+    background-image: url("../img/IMG_1209\ 2.JPG");
     background-repeat: no-repeat;
     background-size: 100%;
+    width: 100%;
 }
 
 .carousel .carouselFour {
-    background-image: url("../img/Decibels-Productions_Artiste_peppa-pig_surprise.jpg");
+    background-image: url("../img/000039000031.JPG");
     background-repeat: no-repeat;
     background-size: 100%;
+    width: 100%;
+
 }
 
 
