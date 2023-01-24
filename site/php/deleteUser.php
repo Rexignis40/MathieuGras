@@ -12,5 +12,5 @@ $q->bindParam(":id", $_GET["u"], PDO::PARAM_INT);
 $q->execute();
 
 $_SESSION["output"] = "Utilisateur supprimer";
-header("Location: ../page/user.php");
+header("Location: ../user.php");
 ?>
