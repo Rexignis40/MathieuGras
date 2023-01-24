@@ -51,5 +51,5 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql); 
 $pre->execute($dataBinded);
-header('location:../../user.php')
+header('location: ../../user.php')
 ?>

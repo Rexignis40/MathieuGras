@@ -1,4 +1,4 @@
-<?php require_once "../php/config.php" ?>
+<?php require_once "php/config.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
