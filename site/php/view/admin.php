@@ -1,5 +1,5 @@
 <?php
-    require_once "../security.php";
+    require "../security.php";
 ?>
 <form method="post" action="../php/actions/addImage.php" enctype="multipart/form-data">
     <label>Name: <input type="text" name="name" required></label>
@@ -17,8 +17,8 @@
 <?php
 include("getListUser.php");
 ?>
-<form method="post" action="../tuveuxquejeteretorneviolamentbydorian.php" enctype="multipart/form-data">
-    <input type='text' name='Newcatégorie' value="Nouvelle catégorie ?" />
+<form method="post" action="../actions/tuveuxquejeteretorneviolamentbydorian.php" enctype="multipart/form-data">
+    <input type='text' name='name' placeholder="Nouvelle catégorie ?" />
     <input type='hidden' name='id'/>
     <input type='submit'>
 </form>
@@ -29,9 +29,9 @@ $sql = "SELECT * FROM category";
         $data = $pre->fetchAll(PDO::FETCH_ASSOC);
 
 foreach($data as $category){ ?>
-<form method="post" action="admin.php" enctype="multipart/form-data">
-    <input type='text' name='Catégory' value="<?php echo $data["category"]['name'] ?>" />
-    <input type='hidden' name='id' value="<?php echo $date["category"]['id'] ?>"/>
+<form method="post" action="../categoryChange.php" enctype="multipart/form-data">
+    <input type='text' name='name' value="<?php echo $category['name'] ?>" />
+    <input type='hidden' name='id' value="<?php echo $category['id'] ?>"/>
     <input type='submit'>
 </form>
 <?php } ?>
