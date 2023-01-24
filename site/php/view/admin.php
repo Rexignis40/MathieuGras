@@ -30,13 +30,15 @@ $sql = "SELECT * FROM category";
 
 foreach($data as $category){ ?>
 <br>
-<form method="post" action="php/categoryChange.php" enctype="multipart/form-data">
-    <input type='text' name='name' value="<?php echo $category['name'] ?>" />
-    <input type='hidden' name='id' value="<?php echo $category['id'] ?>"/>
-    <input type='submit'>
-</form>
-<form method="post" action="php/actions/deleteCategory.php">
-    <input type='hidden' name='id' value="<?php echo $category['id'] ?>" />
-    <input type='submit' value="delette:<?php echo $category['name'] ?>" />
-</from>
+<div>
+    <form method="post" action="php/categoryChange.php">
+        <input type='text' name='name' value="<?php echo $category['name'] ?>" />
+        <input type='hidden' name='id' value="<?php echo $category['id'] ?>" />
+        <input type='submit' />
+    </form>
+    <form method="post" action="php/actions/deleteCategory.php">
+        <input type='hidden' name='id' value="<?php echo $category['id'] ?>" />
+        <input type='submit' value="delette:<?php echo $category['name'] ?>" />
+    </form>
+</div>
 <?php } ?>
