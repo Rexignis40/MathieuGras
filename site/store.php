@@ -11,19 +11,17 @@
                 <li><button onClick="">k t gorique</button></li>
             </ul>
         </nav>
-        <div class="annonce">
-            <img src="./img/IMG_8833.JPG">
-            <p class="category"></p>
-            <p class="name"></p>
-            <p class="price"></p>
+        <div id="content">
+
         </div>
+        <button onclick="GetImg(-1,0)">fveznhivrbqzyubgrzuife</button>
     </div>
 
     <?php include('./components/footer.html')?>
 </body>
-<script type="text/javascript" src="../js/Jquery.min.js"></script>
-<script type="text/javascript" src="../js/materialize.min.js"></script>
-<script type="text/javascript" src="../js/script.js">
-    
+<script type="text/javascript" src="js/Jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/script.js">
+   document.addEventListener("load", GetImg(-1, 0));
 </script>
 </html>
