@@ -4,14 +4,19 @@
     <?php include('./components/header.html')?>
     <nav>
         <ul>
-            <li><a href="">toutes</a></li>
-            <li><a href="">category 1</a></li>
-            <li><a href="">kategory 2</a></li>
-            <li><a href="">k t gorique</a></li>
+            <li><button onclick="">toutes</button></li>
         </ul>
     </nav>
     
+    <div id="content">
+
+    </div>
 
     <?php include('./components/footer.html')?>
 </body>
+<script type="text/javascript" src="../js/Jquery.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/script.js">
+    
+</script>
 </html>
