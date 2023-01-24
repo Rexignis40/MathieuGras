@@ -9,18 +9,5 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql); 
 $pre->execute($dataBinded);
-
-
-if(!isset($_POST["id"])){
-    $_SESSION["output"] = "Erreur utilisateurs non définie";
-    header("Location: ../user.php");
-    exit;
-}
-
-$q = $pdo->prepare("DELETE FROM category WHERE id=:id");
-$q->bindParam(":id", $_POST["id"], PDO::PARAM_INT);
-$q->execute();
-
-$_SESSION["output"] = "Category supprimer";
-header("Location: view/admin.php");
+header("Location: ../user.php");
 ?>

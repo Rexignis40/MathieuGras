@@ -17,7 +17,7 @@
 <?php
 include("getListUser.php");
 ?>
-<form method="post" action="../actions/tuveuxquejeteretorneviolamentbydorian.php" enctype="multipart/form-data">
+<form method="post" action="php/actions/tuveuxquejeteretorneviolamentbydorian.php" enctype="multipart/form-data">
     <input type='text' name='name' placeholder="Nouvelle catégorie ?" />
     <input type='hidden' name='id'/>
     <input type='submit'>
@@ -35,7 +35,7 @@ foreach($data as $category){ ?>
     <input type='hidden' name='id' value="<?php echo $category['id'] ?>"/>
     <input type='submit'>
 </form>
-<form method="post" action="php/categoryChange.php">
+<form method="post" action="php/actions/deleteCategory.php">
     <input type='hidden' name='id' value="<?php echo $category['id'] ?>" />
     <input type='submit' value="delette:<?php echo $category['name'] ?>" />
 </from>

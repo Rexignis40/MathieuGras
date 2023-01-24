@@ -32,7 +32,7 @@ if(isset($_SESSION["user"])){
     <a href="php/logout.php">Disconnect</a>
     <?php
     if($_SESSION["user"]["admin"]){
-        include "php/view/admin.php";
+        include("php/view/admin.php");
     }
     
 }

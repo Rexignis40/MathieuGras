@@ -6,5 +6,5 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql);
 $pre->execute($dataBinded);
-header('Location:../view/admin.php');
+header('Location: ../../user.php');
 ?>
