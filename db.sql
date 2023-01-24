@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 23 jan. 2023 à 13:44
+-- Généré le : mar. 24 jan. 2023 à 11:54
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -24,16 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `image`
 --
 
 DROP TABLE IF EXISTS `image`;
 CREATE TABLE IF NOT EXISTS `image` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `path` varchar(256) NOT NULL,
   `price` int UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `id_category` int UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -66,7 +80,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `adresse` varchar(80) NOT NULL,
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `age`, `password`, `num`, `adresse`, `admin`) VALUES
+(3, 'Labourdette ', 'r@gmail.com', 18, '1be988d47836ca1473e676b6eabcc7415b50a77f', '20', '40', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
