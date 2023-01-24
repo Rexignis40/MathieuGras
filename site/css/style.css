@@ -104,24 +104,46 @@
 
 }
 /*contact*/
-div.formulaire{
-    margin-top: 100px;
-}
-div.remark{
+div.contactMe{
     font-family: 'Dancing Script', cursive;
     font-size: 50px;
+    display: flex;
+    justify-content: end;
+
 }
-div form input.name,div form input.surname {
-    width: 50% !important;
+div.prenom {
+    margin-right: 10px;
+    width: 100%;
+}
+div.prenom1{
+    width: 100%;
 }
 #forms{
     background-image: url(../img/fondContact.png);
     background-repeat: no-repeat;
-    background-size: 100%;
 }
-
-
-
+div form input.buton{
+    background-color: var(--salmon);
+    width:402px;
+    height: 86px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    border-color: var(--salmon);
+}
+div form textarea.remark{
+    height: 300px !important;
+}
+div form input.object{
+    width: 70% !important;
+}
+div.verification{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+div.formulaire{
+    display: flex;
+}
 /* store */
 
 
