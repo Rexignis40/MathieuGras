@@ -11,14 +11,9 @@
 
 
 /* header */
-nav{
-    position:fixed;
-}
 .navBar{
     display: flex;
     justify-content: center;
-    padding-top: 2vh;
-
 }
 
 .navWrapper {
@@ -26,7 +21,7 @@ nav{
     display: flex;
     align-items: center;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
     top: 0;
     height: 150px;
 }
@@ -42,6 +37,7 @@ nav{
     color: var(--black);
     font-size: 23px;
     width: 200px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .navWrapper a:hover{
@@ -62,7 +58,7 @@ nav{
 /* carrousel */
 
 .carousel {
-    height: 100vh !important;
+    height: 95vh !important;
 }
 
 .carousel .carousel-item {
