@@ -22,3 +22,17 @@ include("getListUser.php");
     <input type='hidden' name='id'/>
     <input type='submit'>
 </form>
+<?php
+$sql = "UPDATE user SET category=:category WHERE id=:id";
+$dataBinded=array(
+    ':id'   => $_POST['id'],
+    ':category'   => $_POST['category'],
+);
+$pre = $pdo->prepare($sql); 
+$pre->execute($dataBinded);
+?>
+<form method="post" action="admin.php" enctype="multipart/form-data">
+    <input type='text' name='Catégory' value="<?php echo $_SESSION["category"]['name'] ?>" />
+    <input type='hidden' name='id' value="<?php echo $_SESSION["category"]['id'] ?>"/>
+    <input type='submit'>
+</form>
