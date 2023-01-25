@@ -74,16 +74,16 @@ body {
 
 /* carrousel */
 
-.carousel {
+.carouselIndex {
     height: 100vh !important;
     margin-top: -150px;
 }
 
-.carousel .carousel-item {
+.carouselIndex .carousel-item {
     background-color: var(--black);
 }
 
-.carousel .carousel-item {
+.carouselIndex .carousel-item {
     width: 100%;
 }
 
@@ -91,7 +91,7 @@ body {
 /* carousel 1 */
 
 
-.carousel .carousel-item .textOne{
+.carouselIndex .carousel-item .textOne{
     text-shadow: 1px 1px 2px var(--salmon), 0 0 1em var(--salmon), 0 0 0.2em var(--salmon);
     width: 600px;
 }
@@ -99,7 +99,7 @@ body {
 
 
 @media screen and (min-width: 1300px) {
-    .carousel .carousel-item .textOne{
+    .carouselIndex .carousel-item .textOne{
         text-align: justify;
         margin-top: 50vh;
     }
@@ -110,13 +110,13 @@ body {
 
 
  @media screen and (max-width: 1300px) {
-    .carousel .carousel-item .textOne{
+    .carouselIndex .carousel-item .textOne{
         text-align: center;
         margin-top: 50vh;
         width: auto;
     }
     @media screen and (min-width: 700px) {
-    .carousel .carousel-item .textOne{
+    .carouselIndex .carousel-item .textOne{
         width: 600px;
         display: block;
         margin-left: auto;
@@ -126,7 +126,7 @@ body {
     }
  }
 
-.carousel .carouselOne {
+.carouselIndex .carouselOne {
     background-image: url("../img/7.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -137,13 +137,13 @@ body {
 /* carousel 2 */
 
 
-.carousel .carousel-item .textTwo{
+.carouselIndex .carousel-item .textTwo{
     text-shadow: 1px 1px 2px var(--salmon), 0 0 1em var(--salmon), 0 0 0.2em var(--salmon);
     width: 600px;
 }
 
 @media screen and (min-width: 1300px) {
-    .carousel .carousel-item .textTwo{
+    .carouselIndex .carousel-item .textTwo{
         text-align: justify;
         margin-top: 50vh;
     }
@@ -154,13 +154,13 @@ body {
 
 
  @media screen and (max-width: 1300px) {
-    .carousel .carousel-item .textTwo{
+    .carouselIndex .carousel-item .textTwo{
         text-align: center;
         margin-top: 50vh;
         width: auto;
     }
     @media screen and (min-width: 700px) {
-    .carousel .carousel-item .textTwo{
+    .carouselIndex .carousel-item .textTwo{
         width: 600px;
         display: block;
         margin-left: auto;
@@ -172,7 +172,7 @@ body {
 
 
 
-.carousel .carouselTwo {
+.carouselIndex .carouselTwo {
     background-image: url("../img/13.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -186,42 +186,40 @@ body {
 
 
 
-
-
 @media screen and (min-width: 1000px) {
-    .carousel .carousel-item .textThree{
+    .carouselIndex .carousel-item .textThree{
         text-align: right;
         margin-top: 50vh;
     }
 }
  @media screen and (max-width: 1000px) {
-    .carousel .carousel-item .textThree{
+    .carouselIndex .carousel-item .textThree{
         text-align: center;
         margin-top: 50vh;
     }
  }
 
-.carousel .carouselThree {
+.carouselIndex .carouselThree {
     background-image: url("../img/IMG_1209\ 2.JPG");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 @media screen and (min-width: 1000px) {
-    .carousel .carousel-item .textFour{
+    .carouselIndex .carousel-item .textFour{
         text-align: right;
         margin-top: 50vh;
     }
 }
  @media screen and (max-width: 1000px) {
-    .carousel .carousel-item .textFour{
+    .carouselIndex .carousel-item .textFour{
         text-align: center;
         margin-top: 50vh;
     }
  }
 
 
-.carousel .carouselFour {
+.carouselIndex .carouselFour {
     background-image: url("../img/000039000031.JPG");
     background-repeat: no-repeat;
     background-size: cover;
@@ -229,8 +227,9 @@ body {
 
 
 
+/*portfolio*/
 
-
+.carousel
 
 
 /*contact*/

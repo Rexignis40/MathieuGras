@@ -4,7 +4,7 @@
     <?php include('./components/header.html')?>
 
     <!-- carousel -->
-    <div class="carousel carousel-slider center row">
+    <div class="carousel carousel-slider center row carouselIndex">
         <div class="carousel-item white-text carouselOne " href="">
             <p class="textOne">
                 Photographe, guitariste et pianiste, j’ai grandi dans le sud de la France, en Provence.<br>-<br>
