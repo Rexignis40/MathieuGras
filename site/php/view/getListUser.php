@@ -6,8 +6,7 @@ $search = '';
 if(isset($_POST["search"])){
     $search = $_POST["search"];
 }
-$list = $pdo->prepare("SELECT name, admin, id FROM user
-WHERE name LIKE :s LIMIT 10");
+$list = $pdo->prepare("SELECT name, admin, id FROM user WHERE name LIKE :s LIMIT 10");
 $list->bindValue(":s", '%'. $search .'%');
 $list->execute();
 
