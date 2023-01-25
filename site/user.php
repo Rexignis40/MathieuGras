@@ -23,8 +23,8 @@ if(isset($_SESSION["user"])){
         <input type='tel' name='num' value="<?php echo $_SESSION["user"]['num'] ?>" />
         <h2>age</h2>
         <input type='number' name='age' value="<?php echo $_SESSION["user"]['age'] ?>" />
-        <h2>Pseudo</h2>
-        <input type='text' name='name' value="<?php echo $_SESSION["user"]['name'] ?>" />
+        <h2>adresse</h2>
+        <input type='text' name='adresse' value="<?php echo $_SESSION["user"]['adresse'] ?>" />
         <input type='submit'>
     </form>
         

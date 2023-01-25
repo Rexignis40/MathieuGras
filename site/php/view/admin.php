@@ -1,10 +1,20 @@
 <?php
     require "php/security.php";
 ?>
+
 <form method="post" action="php/actions/addImage.php" enctype="multipart/form-data">
     <label>Name: <input type="text" name="name" required></label>
     <label>Prix: <input type="number" name="price" required></label>
     <label>Image: <input type="file" name="img" required></label>
+    <?php
+    $sql = "SELECT * FROM category"; 
+        $pre = $pdo->prepare($sql); 
+        $pre->execute();
+        $data = $pre->fetchAll(PDO::FETCH_ASSOC);
+        foreach($data as $category){ 
+           echo ('<label>category: <input type="radio" name="category" value="'.$category["id"].'" required>'.$category["name"].'</label>');
+        }
+    ?>
     <input type="submit">
 </form>
 <br>

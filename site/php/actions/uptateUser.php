@@ -1,9 +1,9 @@
 <?php
 require_once "../config.php";
-// if($_SESSION['user']['admin'] == 0){
-//     header('Location:../../user.php');
-//     exit();
-// }
+if(!$_SESSION['user']['admin']){
+    header('Location:../../user.php');
+    exit();
+}
 $sql = "UPDATE user SET name=:name,password=:password,email=:email,num=:num,age=:age,adresse=:adresse WHERE id=:id";
 $dataBinded=array(
     ':id'   => $_POST['id'],

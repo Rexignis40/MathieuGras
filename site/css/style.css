@@ -4,10 +4,15 @@
     --salmon: #E89676;
     --brown: #7E503E;
     --grey: #333; 
+    --fonttitle: 'Dancing Script', cursive;
+    --fontbold: 'Maven Pro', sans-serif;
+    --font: 'Open Sans', sans-serif;
 }
 
 
-
+body {
+    font-family: var(--font);
+}
 
 
 /* header */
@@ -24,7 +29,6 @@
     background-color: var(--white);
     display: flex;
     align-items: center;
-    width: 100%;
     z-index: 1;
     top: 0;
     height: 150px;
@@ -41,7 +45,7 @@
     color: var(--black);
     font-size: 23px;
     width: 200px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--fontbold);
 }
 
 .navWrapper a:hover{
@@ -59,53 +63,220 @@
     display: flex;
 }
 
+
+
+
+
+
+
 /* carrousel */
 
-.carousel {
-    height: 95vh !important;
+.carouselIndex {
+    height: 100vh !important;
+    margin-top: -150px;
+    margin-bottom: 0 !important;
 }
 
-.carousel .carousel-item {
+.carouselIndex .carousel-item {
     background-color: var(--black);
 }
 
-.carousel .carousel-item p{
-    text-align: left;
-}
-
-.carousel .carouselOne {
-    background-image: url("../img/7.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
+.carouselIndex .carousel-item {
     width: 100%;
-
 }
 
-.carousel .carouselTwo {
+
+
+
+/* carousel 1 */
+
+
+.carouselIndex .carousel-item .textOne{
+    width: 600px;
+}
+
+
+
+@media screen and (min-width: 1300px) {
+    .carouselIndex .carousel-item .textOne{
+        text-align: justify;
+        margin-top: 50vh;
+    }
+    .carousel.carousel-slider .carousel-item .textOne {
+        margin-left: 50%;
+    }
+}
+
+
+ @media screen and (max-width: 1300px) {
+    .carouselIndex .carousel-item .textOne{
+        text-align: center;
+        margin-top: 50vh;
+        width: auto;
+    }
+    @media screen and (min-width: 700px) {
+    .carouselIndex .carousel-item .textOne{
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    }
+ }
+
+.carouselIndex .carouselOne {
+    background-image: url("../img/117172683_786097672130366_1705502394645962023_n.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/* carousel 2 */
+
+
+.carouselIndex .carousel-item .textTwo{
+    width: 600px;
+}
+
+@media screen and (min-width: 1300px) {
+    .carouselIndex .carousel-item .textTwo{
+        text-align: justify;
+        margin-top: 50vh;
+    }
+    .carousel.carousel-slider .carousel-item .textTwo {
+        margin-left: 5%;
+    }
+}
+
+
+ @media screen and (max-width: 1300px) {
+    .carouselIndex .carousel-item .textTwo{
+        text-align: center;
+        margin-top: 50vh;
+        width: auto;
+    }
+    @media screen and (min-width: 700px) {
+    .carouselIndex .carousel-item .textTwo{
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    }
+ }
+
+
+
+.carouselIndex .carouselTwo {
     background-image: url("../img/13.png");
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
+    background-size: cover;
 
 }
 
-.carousel .carouselThree {
-    background-image: url("../img/IMG_1209\ 2.JPG");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
+
+
+
+/* carousel 3 */
+
+
+
+.carouselIndex .carousel-item .textThree{
+    width: 600px;
 }
 
-.carousel .carouselFour {
+
+
+@media screen and (min-width: 1000px) {
+    .carouselIndex .carousel-item .textThree{
+        text-align: justify;
+        margin-top: 50vh;
+        
+    }
+    .carousel.carousel-slider .carousel-item .textThree {
+        margin-left: 5%;
+        
+    }
+}
+ @media screen and (max-width: 1000px) {
+    .carouselIndex .carousel-item .textThree{
+        text-align: center;
+        margin-top: 50vh;
+        width: auto;
+    }
+    @media screen and (min-width: 700px) {
+    .carouselIndex .carousel-item .textThree{
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    }
+ }
+
+.carouselIndex .carouselThree {
     background-image: url("../img/000039000031.JPG");
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-
+    background-size: cover;
 }
+
+/* carousel 4 */
+
+.carouselIndex .carousel-item .textFour{
+    width: 600px;
+}
+
+
+@media screen and (min-width: 1000px) {
+    .carouselIndex .carousel-item .textFour{
+        text-align: right;
+        margin-top: 50vh;
+    }
+    .carousel.carousel-slider .carousel-item .textFour {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+ @media screen and (max-width: 1000px) {
+    .carouselIndex .carousel-item .textFour{
+        text-align: center;
+        margin-top: 50vh;
+        width: auto;
+    }
+    @media screen and (min-width: 700px) {
+    .carouselIndex .carousel-item .textFour{
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    }
+ }
+
+
+
+.carouselIndex .carouselFour {
+    background-image: url("../img/IMG_1209\ 2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*portfolio*/
+
+.carousel
+
+
 /*contact*/
 div.contactMe{
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--fonttitle);
     font-size: 50px;
     display: flex;
     justify-content: end;
@@ -126,7 +297,7 @@ div form input.buton{
     background-color: var(--salmon);
     width:402px;
     height: 86px;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--fonttitle);
     font-size: 50px;
     border-color: var(--salmon);
 }
@@ -144,6 +315,11 @@ div.verification{
 div.formulaire{
     display: flex;
 }
+
+
+
+
+
 /* store */
 
 
