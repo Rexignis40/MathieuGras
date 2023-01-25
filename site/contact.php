@@ -17,11 +17,11 @@
                             <input class="white surname" type='text' name='name' />
                         </div>
                     </div>
-                    <p class="white-text">Votre Email</p>
+                    <p class="white-text">Votre Email*</p>
                     <input class="white" type='email' name='email'/>
-                    <p class="white-text ">Objet</p>
+                    <p class="white-text ">Objet*</p>
                     <input class="white object" type='text' name='subject' />
-                    <p class=" white-text">Votre remarque</p>
+                    <p class=" white-text">Votre remarque*</p>
                     <textarea class="white remark " name="remarque" id="" cols="30" rows="30"></textarea>
                     <div class="verification"><input class="buton white-text" type='submit' value='Envoyer' /></div>
                     

@@ -19,8 +19,6 @@ body {
 .navBar{
     display: flex;
     justify-content: center;
-    z-index: 1;
-    position: inherit;
 }
 
 .navBar .row{
@@ -31,7 +29,6 @@ body {
     background-color: var(--white);
     display: flex;
     align-items: center;
-    width: 100%;
     z-index: 1;
     top: 0;
     height: 150px;
