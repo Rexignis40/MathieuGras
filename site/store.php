@@ -16,6 +16,7 @@
         </div>
         <button onclick="GetImg(-1,0)">fveznhivrbqzyubgrzuife</button>
     </div>
+    <input id="uid" type="hidden" value="<?php echo $_SESSION["user"]["id"]?>">
 
     <?php include('./components/footer.html')?>
 </body>
