@@ -4,16 +4,23 @@
     --salmon: #E89676;
     --brown: #7E503E;
     --grey: #333; 
+    --fonttitle: 'Dancing Script', cursive;
+    --fontbold: 'Maven Pro', sans-serif;
+    --font: 'Open Sans', sans-serif;
 }
 
 
-
+body {
+    font-family: var(--font);
+}
 
 
 /* header */
 .navBar{
     display: flex;
     justify-content: center;
+    z-index: 1;
+    position: inherit;
 }
 
 .navBar .row{
@@ -41,7 +48,7 @@
     color: var(--black);
     font-size: 23px;
     width: 200px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--fontbold);
 }
 
 .navWrapper a:hover{
@@ -59,53 +66,176 @@
     display: flex;
 }
 
+
+
+
+
+
+
 /* carrousel */
 
 .carousel {
-    height: 95vh !important;
+    height: 100vh !important;
+    margin-top: -150px;
 }
 
 .carousel .carousel-item {
     background-color: var(--black);
 }
 
-.carousel .carousel-item p{
-    text-align: left;
+.carousel .carousel-item {
+    width: 100%;
 }
+
+
+/* carousel 1 */
+
+
+.carousel .carousel-item .textOne{
+    text-shadow: 1px 1px 2px var(--salmon), 0 0 1em var(--salmon), 0 0 0.2em var(--salmon);
+    width: 600px;
+}
+
+
+
+@media screen and (min-width: 1300px) {
+    .carousel .carousel-item .textOne{
+        text-align: justify;
+        margin-top: 50vh;
+    }
+    .carousel.carousel-slider .carousel-item .textOne {
+        margin-left: 50%;
+    }
+}
+
+
+ @media screen and (max-width: 1300px) {
+    .carousel .carousel-item .textOne{
+        text-align: center;
+        margin-top: 50vh;
+        width: auto;
+    }
+    @media screen and (min-width: 700px) {
+    .carousel .carousel-item .textOne{
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    }
+ }
 
 .carousel .carouselOne {
     background-image: url("../img/7.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-
+    background-size: cover;
 }
+
+
+
+/* carousel 2 */
+
+
+.carousel .carousel-item .textTwo{
+    text-shadow: 1px 1px 2px var(--salmon), 0 0 1em var(--salmon), 0 0 0.2em var(--salmon);
+    width: 600px;
+}
+
+@media screen and (min-width: 1300px) {
+    .carousel .carousel-item .textTwo{
+        text-align: justify;
+        margin-top: 50vh;
+    }
+    .carousel.carousel-slider .carousel-item .textTwo {
+        margin-left: 5%;
+    }
+}
+
+
+ @media screen and (max-width: 1300px) {
+    .carousel .carousel-item .textTwo{
+        text-align: center;
+        margin-top: 50vh;
+        width: auto;
+    }
+    @media screen and (min-width: 700px) {
+    .carousel .carousel-item .textTwo{
+        width: 600px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    }
+ }
+
+
 
 .carousel .carouselTwo {
     background-image: url("../img/13.png");
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
+    background-size: cover;
 
 }
+
+
+
+
+/* carousel 3 */
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .carousel .carousel-item .textThree{
+        text-align: right;
+        margin-top: 50vh;
+    }
+}
+ @media screen and (max-width: 1000px) {
+    .carousel .carousel-item .textThree{
+        text-align: center;
+        margin-top: 50vh;
+    }
+ }
 
 .carousel .carouselThree {
     background-image: url("../img/IMG_1209\ 2.JPG");
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
+    background-size: cover;
 }
+
+@media screen and (min-width: 1000px) {
+    .carousel .carousel-item .textFour{
+        text-align: right;
+        margin-top: 50vh;
+    }
+}
+ @media screen and (max-width: 1000px) {
+    .carousel .carousel-item .textFour{
+        text-align: center;
+        margin-top: 50vh;
+    }
+ }
+
 
 .carousel .carouselFour {
     background-image: url("../img/000039000031.JPG");
     background-repeat: no-repeat;
-    background-size: 100%;
-    width: 100%;
-
+    background-size: cover;
 }
+
+
+
+
+
+
+
 /*contact*/
 div.contactMe{
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--fonttitle);
     font-size: 50px;
     display: flex;
     justify-content: end;
@@ -126,7 +256,7 @@ div form input.buton{
     background-color: var(--salmon);
     width:402px;
     height: 86px;
-    font-family: 'Dancing Script', cursive;
+    font-family: var(--fonttitle);
     font-size: 50px;
     border-color: var(--salmon);
 }
@@ -144,6 +274,11 @@ div.verification{
 div.formulaire{
     display: flex;
 }
+
+
+
+
+
 /* store */
 
 
