@@ -7,7 +7,7 @@ if(!isset($_POST["name"]) || !isset($_POST["price"]) || !isset($_FILES['img']["t
     exit;
 }
 
-$q = $pdo->prepare("INSERT image (price, name, category) VALUES (:price, :name, :category)");
+$q = $pdo->prepare("INSERT image (price, name, id_category) VALUES (:price, :name, :category)");
 $q->bindParam(":price", $_POST["price"], PDO::PARAM_INT);
 $q->bindParam(":name", $_POST["name"]);
 $q->bindParam(":category", $_POST["category"]);

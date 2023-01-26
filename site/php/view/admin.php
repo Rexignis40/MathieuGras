@@ -8,12 +8,12 @@
     <label>Image: <input type="file" name="img" required></label>
     <?php
     $sql = "SELECT * FROM category"; 
-        $pre = $pdo->prepare($sql); 
-        $pre->execute();
-        $data = $pre->fetchAll(PDO::FETCH_ASSOC);
-        foreach($data as $category){ 
-           echo ('<label>category: <input type="radio" name="category" value="'.$category["id"].'" required>'.$category["name"].'</label>');
-        }
+    $pre = $pdo->prepare($sql); 
+    $pre->execute();
+    $data = $pre->fetchAll(PDO::FETCH_ASSOC);
+    foreach($data as $category){ 
+       echo ('<br> <label>category: <input type="radio" name="category" value="'.$category["id"].'" required>'.$category["name"].'</label>');
+    }
     ?>
     <input type="submit">
 </form>
