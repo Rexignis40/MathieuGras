@@ -13,6 +13,10 @@ function GetListUser(){
     });
 }
 
+function GetPrestation(){
+    
+}
+
 function GetImg(cat, offset){
     if(IsSend) return;
     IsSend = true;
@@ -22,7 +26,6 @@ function GetImg(cat, offset){
         o: offset
     },
     function(data, status){
-        alert("aa")
         if(data.length != 0){
             let html = "";
             for(i = 0; i < data.length; i++){
@@ -40,7 +43,7 @@ function favorie(id){
     $.post("php/addFavorie.php",
     {
         uid: value,
-        id: id 
+        img: id 
     },
     function(data, status){
         IsSend = false;

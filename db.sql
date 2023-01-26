@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 24 jan. 2023 à 11:54
+-- Généré le : jeu. 26 jan. 2023 à 13:58
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -32,7 +32,36 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(18, 'f eza feza'),
+(15, 'F E EER RE '),
+(14, 'ZD Adz A '),
+(20, 'f eza');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `favorie`
+--
+
+DROP TABLE IF EXISTS `favorie`;
+CREATE TABLE IF NOT EXISTS `favorie` (
+  `id_user` int UNSIGNED NOT NULL,
+  `id_image` int UNSIGNED NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `favorie`
+--
+
+INSERT INTO `favorie` (`id_user`, `id_image`) VALUES
+(3, 10);
 
 -- --------------------------------------------------------
 
@@ -47,7 +76,15 @@ CREATE TABLE IF NOT EXISTS `image` (
   `name` varchar(50) NOT NULL,
   `id_category` int UNSIGNED NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `image`
+--
+
+INSERT INTO `image` (`id`, `price`, `name`, `id_category`) VALUES
+(10, 1, 'flag', 0),
+(11, 56, 'ctu', 0);
 
 -- --------------------------------------------------------
 

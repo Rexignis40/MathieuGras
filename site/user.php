@@ -1,10 +1,11 @@
 <?php require_once "php/config.php" ?>
 <!DOCTYPE html>
 <html>
-<head>
+<?php include('./components/head.html'); ?>
+<body>
 
-</head>
 <?php 
+include('./components/header.html');
 if(isset($_SESSION["user"])){
     ?>
     <h1>VOUS ETES GROS</h1>
@@ -65,6 +66,7 @@ else{
 
 </form>
 <?php
+include('./components/footer.html');
 }
 ?>
 <script type="text/javascript" src="../js/Jquery.min.js"></script>
