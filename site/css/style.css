@@ -273,7 +273,11 @@ body {
 }
 
 
-
+.carouselIndex .indicators .indicator-item {
+    height: 18px!important;
+    width: 18px !important;
+    margin: 60px 22px!important;
+  }
 /*portfolio*/
 
 .carousel

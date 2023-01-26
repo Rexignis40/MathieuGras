@@ -13,6 +13,10 @@ function GetListUser(){
     });
 }
 
+function GetPrestation(){
+    
+}
+
 function GetImg(cat, offset){
     if(IsSend) return;
     IsSend = true;
