@@ -16,5 +16,15 @@ $dataBinded=array(
 );
 $pre = $pdo->prepare($sql); 
 $pre->execute($dataBinded);
-header('location: ../../user.php')
+header('location: ../../user.php');
+$_SESSION["user"] = array(
+    'id'   => $_POST['id'],
+    'name'   => $_POST['name'],
+    'password'   => $_POST['password'],
+    'email'   => $_POST['email'],
+    'num'   => $_POST['num'],
+    'age'   => $_POST['age'],
+    'adresse'   => $_POST['adresse'],
+    'admin' => $_SESSION["user"]["admin"]
+);
 ?>

@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<?php include('./components/head.html')?>
+<?php include('./components/head.html'); ?>
 </head>
-<body id="use">
-<?php include('./components/header.html')?>
 <?php 
+include('./components/header.html');
 if(isset($_SESSION["user"])){
     ?>
     <h1> vos infos personelle:</h1>
@@ -55,6 +54,7 @@ else{
         </div>
     </div>
 <?php
+include('./components/footer.html');
 }
 ?>
     <?php include('./components/footer.html')?>
