@@ -36,6 +36,23 @@ function GetImg(cat, offset){
         IsSend = false;
     }, "json");
 }
+
+function BuyBasket(_basket, u){
+    if(IsSend) return;
+    IsSend = true;
+    console.log(_basket);
+    console.log(u);
+    $.post("php/buyBasket.php",
+    {
+        basket: _basket,
+        user: u
+    },
+    function(data, status){
+        $("#basket").html("");
+        IsSend = false;
+    });
+}
+
 function favorie(id){
     value = $("#uid").val();
     if(IsSend) return;
