@@ -271,7 +271,26 @@ body {
 
 /*portfolio*/
 
-.carousel
+.carouselPortfolio{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    width: 70% !important;
+    height: 30% !important;
+}
+
+.carouselPortfolio h2{
+    font-family: var(--fonttitle);
+    font-size: 5vh !important;
+    margin-top: 25%;
+}
+
+
+.carouselPortfolio .carouselFive {
+    background-image: url("../img/IMG_1209\ 2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
 /*contact*/
