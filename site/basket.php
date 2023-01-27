@@ -22,10 +22,12 @@ include('./components/head.html')?>
         foreach($_SESSION["basket"] as $elm){
             $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div>';
         }
+        $html .= "</div>";
+        echo $html;
     }
-    $html .= "</div>";
-    echo $html;
-    include('./components/footer.html');?>
+    ?>
+    <button onclick='BuyBasket(<?php echo json_encode($_SESSION["basket"]) ?>, <?php echo $_SESSION["user"]["id"] ?>)'>BUY</button>
+    <?php include('./components/footer.html');?>
 </body>
 <script type="text/javascript" src="js/Jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>

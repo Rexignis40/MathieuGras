@@ -29,7 +29,7 @@ include('./components/head.html')?>
                 <li><button onClick="">k t gorique</button></li>
             </ul>
         </nav>
-        <input id="uid" type="hidden" value="<?php echo $_SESSION["user"]["id"] ?>"/>
+        <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>"/>
         <div id="content">
 
         </div>

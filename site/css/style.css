@@ -13,7 +13,9 @@
 body {
     font-family: var(--font);
 }
-
+h1.titre{
+    font-family: var(--fonttitle);
+}
 
 /* header */
 
@@ -277,13 +279,15 @@ body {
     width: 18px !important;
     margin: 60px 22px!important;
   }
+
+
 /*portfolio*/
 
 .carouselPortfolio{
     margin-top: 10%;
     margin-bottom: 10%;
     margin-left: 15%;
-    width: 70% !important;
+    width: 68% !important;
     height: 30% !important;
 }
 
@@ -373,7 +377,7 @@ div.formulaire{
 .pageFooter {
     background-color: var(--brown);
     color: var(--white);
-    height: 525px;
+    height: 40%;
     font-size: 18px;
     margin-bottom: 0;
 }
@@ -383,7 +387,7 @@ div.formulaire{
 }
 
 
-/* icons */
+/* social icons */
 
 .pageFooter .contact h3 {
     text-align: center;
@@ -479,7 +483,6 @@ div.formulaire{
 
 /* contact and language */
 
-
 .pageFooter .contactAndLanguage {
     display: flex;
     justify-content: space-evenly;
@@ -542,4 +545,20 @@ div.conditions{
 }
 div.test form{
     width: 80%;
+}
+    
+}
+div.separation{
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 2% !important;
+	}
+p.spacing{
+    margin-bottom: 35%;
+    -webkit-text-stroke-width: medium;
+    font-size: larger;
 }
