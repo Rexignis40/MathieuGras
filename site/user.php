@@ -17,9 +17,8 @@ if(isset($_SESSION["user"])){
             <a href="php/logout.php">Disconnect</a>
         </div>
         <div class="col m9" id="content">
-
-        <!--
-            <h1> vos infos personelle:</h1>
+            
+            <h1> vos infos personelles:</h1>
             <?php echo $_SESSION["user"]['name'] ?>
             <form method="post" action="php/actions/uptateUser.php" enctype="multipart/form-data">
                 <h2>Pseudo</h2>
@@ -38,13 +37,21 @@ if(isset($_SESSION["user"])){
                 <input type='text' name='adresse' value="<?php echo $_SESSION["user"]['adresse'] ?>" />
                 <input type='submit'>
             </form>
--->
+
         </div>
     </div>
 
     <?php
     if($_SESSION["user"]["admin"]){
-        //include("php/view/admin.php");
+        include("php/view/admin.php");
+        ?>
+        <h3>nouvelle prestation</h3>
+        <h2>title</h2>
+        <input type='text' name='title' id="title"/>
+        <h2>description</h2>
+        <input type="text" name='description' id="description">
+        <button onClick="GetPrestation()">envoyer</button>
+    <?php 
     }
     
 }

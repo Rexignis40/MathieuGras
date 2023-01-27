@@ -13,9 +13,21 @@ function GetListUser(){
     });
 }
 
-function GetPrestation(){
-    
+async function GetPrestation(){
+    if(IsSend) return;
+    IsSend = true;
+    let prestation = [];
+    prestation["title"] = $("#title").val();
+    prestation["description"] = $("#description").val();
+    $.post("php/updatePrestation.php",
+    {
+        p: prestation
+    },
+    function(data, status){
+        IsSend = false;
+    });
 }
+
 
 function GetImg(cat, offset){
     if(IsSend) return;

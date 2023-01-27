@@ -375,7 +375,7 @@ div.formulaire{
 .pageFooter {
     background-color: var(--brown);
     color: var(--white);
-    height: 525px;
+    height: 40%;
     font-size: 18px;
     margin-bottom: 0;
 }
@@ -385,7 +385,7 @@ div.formulaire{
 }
 
 
-/* icons */
+/* social icons */
 
 .pageFooter .contact h3 {
     text-align: center;
