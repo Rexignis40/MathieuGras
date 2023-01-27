@@ -3,7 +3,7 @@ require_once "config.php";
 
 $sql = "SELECT * FROM image";
 if(isset($_POST["c"]) && $_POST["c"] != -1){
-    $sql .= " WHERE category=:category";
+    $sql .= " WHERE id_category=:category";
 }
 $offset = 0;
 if(isset($_POST["o"])){
