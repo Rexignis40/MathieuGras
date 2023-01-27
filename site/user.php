@@ -12,7 +12,7 @@ if(isset($_SESSION["user"])){
         <h1 class="titre">Mon compte</h1>
         <div class="col m3 separation">
             <p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p>
-            <p class="spacing">Galerie</p>
+            <p class="spacing" onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</p>
             <p class="spacing">Favories</p>
             <p class="spacing">Mes Achat</p>
             <p class="spacing">Suivie de commande</p>
@@ -20,6 +20,7 @@ if(isset($_SESSION["user"])){
         </div>
         <div class="col m9" id="content">
 
+        <!--
             <h1> vos infos personelle:</h1>
             <?php echo $_SESSION["user"]['name'] ?>
             <form method="post" action="php/actions/uptateUser.php" enctype="multipart/form-data">
@@ -39,12 +40,21 @@ if(isset($_SESSION["user"])){
                 <input type='text' name='adresse' value="<?php echo $_SESSION["user"]['adresse'] ?>" />
                 <input type='submit'>
             </form>
+-->
         </div>
     </div>
 
     <?php
     if($_SESSION["user"]["admin"]){
-        //include("php/view/admin.php");
+        include("php/view/admin.php");
+        ?>
+        <h3>nouvelle prestation</h3>
+        <h2>title</h2>
+        <input type='text' name='title' id="title"/>
+        <h2>description</h2>
+        <input type="text" name='description' id="description">
+        <button onClick="GetPrestation()">envoyer</button>
+    <?php 
     }
     include('./components/footer.html');   
 }
@@ -72,5 +82,13 @@ include('./components/footer.html');
 <script type="text/javascript" src="js/Jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script>
+    <?php
+    if(isset($_SESSION["output"])){
+        echo "M.toast({html: '".$_SESSION["output"]."'})";
+        unset($_SESSION["output"]);
+    }
+    ?>
+</script>
 </body>
 </html>
