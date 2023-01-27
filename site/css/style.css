@@ -502,23 +502,23 @@ div.formulaire{
 }
 
 /*user*/
-div.connection, div.inscription{
+div.connection{
     background-color: var(--black);
     opacity: 80%;
     color: var(--white);
     margin: 50px;
     padding: 50px;
+    border-radius: 2%;
 
 }
-#use{
+div.use{
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 0;
 }
 div.count{
-    display: flex;
-    justify-content: center;
-    margin: 5px;
+    margin-top:50px
 }
 div form input.butonuser{
     background-color: var(--salmon);
@@ -526,13 +526,20 @@ div form input.butonuser{
 }
 div.connection a{
     color: var(--white);
-    font-size: 20px;
-    margin: 15px;
 }
 div.connection a:hover{
     color: var(--salmon);
 }
 div.test{
     display: flex;
-    
+    margin-left: 15%;
+}
+div.test p{
+    margin-bottom: 0;
+}
+div.conditions{
+    margin-left: 15%;
+}
+div.test form{
+    width: 80%;
 }
