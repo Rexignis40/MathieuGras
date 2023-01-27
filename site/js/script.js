@@ -16,12 +16,14 @@ function GetListUser(){
 async function GetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = [];
-    prestation["title"] = $("#title").val();
-    prestation["description"] = $("#description").val();
+    let prestation = {
+        title: $("#title").val(),
+        description: $("#description").val()
+    };
+    console.log(JSON.stringify(prestation));
     $.post("php/updatePrestation.php",
     {
-        p: prestation
+        p: JSON.stringify(prestation)
     },
     function(data, status){
         IsSend = false;
