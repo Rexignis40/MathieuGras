@@ -2,16 +2,9 @@
 <?php include('./components/head.html')?>
 <body>
     <?php include('./components/header.html')?>
-    
-    
-    
-    
-    <?php 
-    // if($_SESSION["user"]["admin"]){
-    //     include("php/view/admin.php");
-    // }
-    ?>
 
+    <div id="prestation"></div>
+    
     <?php include('./components/footer.html')?>
 </body>
 </html>
