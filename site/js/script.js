@@ -52,6 +52,26 @@ function GetUserInfo(_id){
     });
 }
 
+function GetUserGalerie(_id){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/getUserGalerie.php",
+    {
+        id: _id
+    },
+    function(data, status){
+        console.log(data);
+        if(data.length != 0){
+            let html = "";
+            for(i = 0; i < data.length; i++){
+                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+            }
+            $("#content").html(html);
+        }
+        IsSend = false;
+    }, "json");
+}
+
 function BuyBasket(_basket, u){
     if(IsSend) return;
     IsSend = true;

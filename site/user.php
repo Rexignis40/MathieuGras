@@ -11,9 +11,8 @@ if(isset($_SESSION["user"])){
     <div class="row">
         <div class="col m3">
             <button onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</button>
-            <button>Galerie</button>
+            <button onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</button>
             <button>Favories</button>
-            <button>Mes Achat</button>
             <button>Suivie de commande</button>
             <a href="php/logout.php">Disconnect</a>
         </div>
