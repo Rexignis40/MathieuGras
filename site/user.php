@@ -11,9 +11,8 @@ if(isset($_SESSION["user"])){
     <div class="row">
         <div class="col m3">
             <button onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</button>
-            <button>Galerie</button>
+            <button onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</button>
             <button>Favories</button>
-            <button>Mes Achat</button>
             <button>Suivie de commande</button>
             <a href="php/logout.php">Disconnect</a>
         </div>
@@ -80,5 +79,13 @@ include('./components/footer.html');
 <script type="text/javascript" src="js/Jquery.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script>
+    <?php
+    if(isset($_SESSION["output"])){
+        echo "M.toast({html: '".$_SESSION["output"]."'})";
+        unset($_SESSION["output"]);
+    }
+    ?>
+</script>
 </body>
 </html>

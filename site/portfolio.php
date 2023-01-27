@@ -4,7 +4,7 @@
     <?php include('./components/header.html')?>
     
     <div class="row">
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="carousel carousel-slider center carouselPortfolio">
                 <div class="carousel-item white-text carouselFive" href="#one!">
                 <h2>TITRE</h2>
@@ -15,7 +15,7 @@
                 <div class="carousel-item white-text" href="#four!"></div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="carousel carousel-slider center carouselPortfolio">
                 <div class="carousel-item white-text carouselFive" href="#one!">
                 <h2>TITRE</h2>
@@ -26,7 +26,7 @@
                 <div class="carousel-item white-text" href="#four!"></div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="carousel carousel-slider center carouselPortfolio">
                 <div class="carousel-item white-text carouselFive" href="#one!">
                 <h2>TITRE</h2>
@@ -37,7 +37,7 @@
                 <div class="carousel-item white-text" href="#four!"></div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="carousel carousel-slider center carouselPortfolio">
                 <div class="carousel-item white-text carouselFive" href="#one!">
                 <h2>TITRE</h2>
@@ -48,7 +48,7 @@
                 <div class="carousel-item white-text" href="#four!"></div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="carousel carousel-slider center carouselPortfolio">
                 <div class="carousel-item white-text carouselFive" href="#one!">
                 <h2>TITRE</h2>
@@ -59,7 +59,7 @@
                 <div class="carousel-item" href="#four!"></div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s12 l4">
             <div class="carousel carousel-slider center carouselPortfolio">
                 <div class="carousel-item white-text carouselFive" href="#one!">
                 <h2>TITRE</h2>
