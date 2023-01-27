@@ -13,6 +13,10 @@ function GetListUser(){
     });
 }
 
+function GetPrestation(){
+    
+}
+
 function GetImg(cat, offset){
     if(IsSend) return;
     IsSend = true;
@@ -32,6 +36,38 @@ function GetImg(cat, offset){
         IsSend = false;
     }, "json");
 }
+
+function GetUserInfo(_id){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/getUserInfo.php",
+    {
+        id: _id
+    },
+    function(data, status){
+        if(data.length != undefined){
+            $("#content").html(data);
+        }
+        IsSend = false;
+    });
+}
+
+function BuyBasket(_basket, u){
+    if(IsSend) return;
+    IsSend = true;
+    console.log(_basket);
+    console.log(u);
+    $.post("php/buyBasket.php",
+    {
+        basket: _basket,
+        user: u
+    },
+    function(data, status){
+        $("#basket").html("");
+        IsSend = false;
+    });
+}
+
 function favorie(id){
     value = $("#uid").val();
     if(IsSend) return;

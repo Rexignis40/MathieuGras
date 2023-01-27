@@ -16,57 +16,60 @@ body {
 
 
 /* header */
-.navBar{
-    display: flex;
-    justify-content: center;
-}
 
-.navBar .row{
-    margin: 0 !important;
-}
 
 .navWrapper {
     background-color: var(--white);
     display: flex;
     align-items: center;
-    z-index: 1;
+    position: sticky;
+    z-index: 69;
     top: 0;
     height: 150px;
+    margin: 0 !important;
+    justify-content: space-evenly;
+    box-shadow: none !important;
+
 }
+
 .navWrapper img{
     width: 125px;
 }
-
 .navWrapper ul {
     display: flex;
 }
 
-.navWrapper a{
+.navWrapper .navBarBtn a{
     color: var(--black);
     font-size: 23px;
-    width: 200px;
     font-family: var(--fontbold);
 }
 
-.navWrapper a:hover{
+.navWrapper .navBarBtn a:hover{
     font-weight: 700;
     background-color: var(--white);
 }
 
-.navWrapper .navbtn li {
+
+.navWrapper .navBarIcons i{
+    width: 20px;
+    color: var(--black);
     display: flex;
-    width: 30px;
-    height: 30px;
+    align-items: center;
 }
 
-.navWrapper .navbtn {
-    display: flex;
+.navWrapper .navBarIcons a:hover{
+    font-weight: 700;
+    background-color: var(--white);
+}    
+
+@media screen and (max-width: 1000px) {
+    .navWrapper .navBarIcons img {
+        display: flex;
+        align-items: center;
+        
+    }
 }
-
-
-
-
-
 
 
 /* carrousel */
@@ -74,7 +77,6 @@ body {
 .carouselIndex {
     height: 100vh !important;
     margin-top: -150px;
-    margin-bottom: 0 !important;
 }
 
 .carouselIndex .carousel-item {
@@ -113,6 +115,8 @@ body {
         text-align: center;
         margin-top: 50vh;
         width: auto;
+        padding-left: 25px;
+        padding-right: 25px;
     }
     @media screen and (min-width: 700px) {
     .carouselIndex .carousel-item .textOne{
@@ -268,14 +272,37 @@ body {
 }
 
 
-
+.carouselIndex .indicators .indicator-item {
+    height: 18px!important;
+    width: 18px !important;
+    margin: 60px 22px!important;
+  }
 /*portfolio*/
 
-.carousel
+.carouselPortfolio{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    width: 70% !important;
+    height: 30% !important;
+}
+
+.carouselPortfolio h2{
+    font-family: var(--fonttitle);
+    font-size: 5vh !important;
+    margin-top: 25%;
+}
+
+
+.carouselPortfolio .carouselFive {
+    background-image: url("../img/IMG_1209\ 2.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
 /*contact*/
-div.contactMe{
+div.contactme {
     font-family: var(--fonttitle);
     font-size: 50px;
     display: flex;
@@ -291,6 +318,7 @@ div.prenom1{
 }
 #forms{
     background-image: url(../img/fondContact.png);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 div form input.buton{
@@ -347,6 +375,7 @@ div.formulaire{
     color: var(--white);
     height: 525px;
     font-size: 18px;
+    margin-bottom: 0;
 }
 
 .pageFooter h3 {
@@ -470,4 +499,40 @@ div.formulaire{
 .pageFooter .copyright a {
     color: var(--white);
     padding-left: 5px;
+}
+
+/*user*/
+div.connection, div.inscription{
+    background-color: var(--black);
+    opacity: 80%;
+    color: var(--white);
+    margin: 50px;
+    padding: 50px;
+
+}
+#use{
+    background-image: url(../img/rail.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div.count{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+div form input.butonuser{
+    background-color: var(--salmon);
+    border-color: var(--salmon);
+}
+div.connection a{
+    color: var(--white);
+    font-size: 20px;
+    margin: 15px;
+}
+div.connection a:hover{
+    color: var(--salmon);
+}
+div.test{
+    display: flex;
+    
 }

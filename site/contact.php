@@ -1,11 +1,12 @@
 <html lang="fr">
 <?php include('./components/head.html')?>
-<link rel="stylesheet" rel="stylesheet" href="css/contact.css">
 <body id="forms">
     <?php include('./components/header.html')?>
         <div class=" row">
             <div class=" col l6 offset-l5">
-                <div class="contactMe white-text"><p>Contactez-moi</p></div>
+                <div class=" white-text contactme">
+                    <p>Contactez-moi</p>
+                </div>
                 <form method="post" action="">
                     <div class="formulaire">
                         <div class="prenom">
