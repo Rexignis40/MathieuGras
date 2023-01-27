@@ -27,7 +27,7 @@
 <?php
 include("getListUser.php");
 ?>
-<form method="post" action="php/actions/tuveuxquejeteretorneviolamentbydorian.php" enctype="multipart/form-data">
+<form method="post" action="php/actions/createCategory.php" enctype="multipart/form-data">
     <input type='text' name='name' placeholder="Nouvelle catégorie ?" />
     <input type='hidden' name='id'/>
     <input type='submit'>

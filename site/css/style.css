@@ -13,7 +13,9 @@
 body {
     font-family: var(--font);
 }
-
+h1.titre{
+    font-family: var(--fonttitle);
+}
 
 /* header */
 
@@ -535,4 +537,18 @@ div.connection a:hover{
 div.test{
     display: flex;
     
+}
+div.separation{
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 2% !important;
+	}
+p.spacing{
+    margin-bottom: 35%;
+    -webkit-text-stroke-width: medium;
+    font-size: larger;
 }
