@@ -77,7 +77,6 @@ body {
 .carouselIndex {
     height: 100vh !important;
     margin-top: -150px;
-    margin-bottom: 0 !important;
 }
 
 .carouselIndex .carousel-item {
@@ -305,7 +304,7 @@ body {
 
 
 /*contact*/
-div.contactMe{
+div.contactme {
     font-family: var(--fonttitle);
     font-size: 50px;
     display: flex;
@@ -321,6 +320,7 @@ div.prenom1{
 }
 #forms{
     background-image: url(../img/fondContact.png);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 div form input.buton{
@@ -377,6 +377,7 @@ div.formulaire{
     color: var(--white);
     height: 525px;
     font-size: 18px;
+    margin-bottom: 0;
 }
 
 .pageFooter h3 {
@@ -499,4 +500,40 @@ div.formulaire{
 .pageFooter .copyright a {
     color: var(--white);
     padding-left: 5px;
+}
+
+/*user*/
+div.connection, div.inscription{
+    background-color: var(--black);
+    opacity: 80%;
+    color: var(--white);
+    margin: 50px;
+    padding: 50px;
+
+}
+#use{
+    background-image: url(../img/rail.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div.count{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+div form input.butonuser{
+    background-color: var(--salmon);
+    border-color: var(--salmon);
+}
+div.connection a{
+    color: var(--white);
+    font-size: 20px;
+    margin: 15px;
+}
+div.connection a:hover{
+    color: var(--salmon);
+}
+div.test{
+    display: flex;
+    
 }
