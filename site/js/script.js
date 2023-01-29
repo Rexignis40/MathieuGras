@@ -20,7 +20,6 @@ async function GetPrestation(){
         title: $("#title").val(),
         description: $("#description").val()
     };
-    console.log(JSON.stringify(prestation));
     $.post("php/updatePrestation.php",
     {
         p: JSON.stringify(prestation)

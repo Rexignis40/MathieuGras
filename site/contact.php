@@ -1,32 +1,39 @@
 <html lang="fr">
 <?php include('./components/head.html')?>
-<body id="forms">
+<body class="contact-page">
     <?php include('./components/header.html')?>
-        <div class=" row">
-            <div class=" col l6 offset-l5">
-                <div class=" white-text contactme">
+        <div class="row">
+            <div class="row col m6 offset-m5 s12">
+                <div class="col m6 offset-m6 s8 offset-s2 contact-me">
                     <p>Contactez-moi</p>
                 </div>
-                <form method="post" action="">
-                    <div class="formulaire">
-                        <div class="prenom">
-                            <p class="white-text">Prénom*</p>
-                            <input class="white name" type='text' name='name' />
+                <div class="row col m12 s12">
+                    <div class="row name">
+                        <div>
+                            <p>Prénom*</p>
+                            <input class="name" type='text' id='name' required/>
                         </div>
-                        <div class="prenom1">
-                            <p class="white-text">Nom</p>
-                            <input class="white surname" type='text' name='name' />
+                        <div>
+                            <p>Nom</p>
+                            <input class="surname" type='text' id='family-name' />
                         </div>
                     </div>
-                    <p class="white-text">Votre Email*</p>
-                    <input class="white" type='email' name='email'/>
-                    <p class="white-text ">Objet*</p>
-                    <input class="white object" type='text' name='subject' />
-                    <p class=" white-text">Votre remarque*</p>
-                    <textarea class="white remark " name="remarque" id="" cols="30" rows="30"></textarea>
-                    <div class="verification"><input class="buton white-text" type='submit' value='Envoyer' /></div>
-                    
-                </form>
+                    <div class="row">
+                        <p>Mail*</p>
+                        <input class="col m12" type='email' id='email' required/>
+                    </div>
+                    <div class="row">
+                        <p>Objet*</p>
+                        <input class="col m7" type='text' id='subject' required/>
+                    </div>
+                    <div class="row">
+                        <p>Message*</p>
+                        <textarea class="remark" id="remarque" cols="30" rows="30"></textarea>
+                    </div>
+                    <div class="row">
+                        <button class="col m4 offset-m4 s6 offset-s3 button">Envoyer</button>
+                    </div>
+                </div>
             </div>
         </div>
     
