@@ -3,7 +3,17 @@
 <body class="contact-page">
     <?php include('./components/header.html')?>
         <div class="row">
-            <div class="row col m6 offset-m5 s12">
+            <div class="col m2 hide-on-small-only social">
+                <div>
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>@matt.pty</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-twitter"></i>
+                    <p>@mattptyy</p>
+                </div>
+            </div>
+            <div class="row col m6 offset-m3 s12">
                 <div class="col m6 offset-m6 s8 offset-s2 contact-me">
                     <p>Contactez-moi</p>
                 </div>

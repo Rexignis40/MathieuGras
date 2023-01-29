@@ -318,6 +318,25 @@ h1.titre{
 .contact-page input, .contact-page textarea{
     background-color: var(--white) !important;
 }
+.contact-page .social{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+.contact-page .social>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact-page .social>div>i{
+    font-size: 50px;
+    margin-left: 20px;
+}
+
 .contact-page .contact-me {
     font-family: var(--font-title);
     font-size: 60px;
