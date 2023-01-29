@@ -79,6 +79,8 @@ h1.titre{
 .carouselIndex {
     height: 100vh !important;
     margin-top: -150px;
+    margin-bottom: 0 !important;
+
 }
 
 .carouselIndex .carousel-item {
@@ -306,6 +308,9 @@ h1.titre{
 
 
 /*contact*/
+
+
+
 .contact-page{
     color: var(--white);
     background-image: url(../img/fondContact.png);
@@ -364,6 +369,11 @@ h1.titre{
     padding-left: 3%;
     padding-right: 0;
 }
+
+
+
+
+
 
 /* store */
 
