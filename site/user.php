@@ -4,21 +4,25 @@
 <head>
 <?php include('./components/head.html'); ?>
 </head>
+<body> 
 <?php 
 include('./components/header.html');
 if(isset($_SESSION["user"])){
     ?>
     <div class="row">
-        <div class="col m3">
-            <button onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</button>
-            <button onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</button>
-            <button>Favories</button>
-            <button>Suivie de commande</button>
-            <a href="php/logout.php">Disconnect</a>
+        <h1 class="titre">Mon compte</h1>
+        <div class="col m3 separation">
+            <p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p>
+            <p class="spacing" onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</p>
+            <p class="spacing">Favories</p>
+            <p class="spacing">Mes Achat</p>
+            <p class="spacing">Suivie de commande</p>
+            <a class="spacing" href="php/logout.php">Disconnect</a>
         </div>
         <div class="col m9" id="content">
-            
-            <h1> vos infos personelles:</h1>
+
+        <!--
+            <h1> vos infos personelle:</h1>
             <?php echo $_SESSION["user"]['name'] ?>
             <form method="post" action="php/actions/uptateUser.php" enctype="multipart/form-data">
                 <h2>Pseudo</h2>
@@ -37,7 +41,7 @@ if(isset($_SESSION["user"])){
                 <input type='text' name='adresse' value="<?php echo $_SESSION["user"]['adresse'] ?>" />
                 <input type='submit'>
             </form>
-
+-->
         </div>
     </div>
 
@@ -53,13 +57,15 @@ if(isset($_SESSION["user"])){
         <button onClick="GetPrestation()">envoyer</button>
     <?php 
     }
-    
+    include('./components/footer.html');   
 }
 else{
     ?>
-    <div class="row">
+    <div class="use row">
         <div class="connection col l4 offset-l4 ">
-            <h2>SE CONNECTER</h2>
+            <div class="test">
+                <h2>SE CONNECTER</h2>
+            </div>
             <div class="test">
                 <form method="post" action="php/login.php">
                     <p>Pseudo/E-mail</p>
@@ -69,7 +75,10 @@ else{
                     <div class="count"><input class="butonuser" type='submit' value='Me connecter' /></div>
                 </form>
             </div>
-            <a href="inscription.php">S'inscrire</a>
+            <div class="conditions">
+                <p>En continuant, vous acceptez les Conditions d’utilisation et reconnaissez avoir lu notre Politique de confidentialité. Informations concernant la collecte de données</p>
+                <a href="inscription.php">Vous n'êtes pas encore inscrit? Inscrivez-vous</a>
+            </div>
         </div>
     </div>
 <?php
