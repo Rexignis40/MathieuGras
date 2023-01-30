@@ -412,10 +412,16 @@ h1.titre{
 
 /* store */
 
+
 .store .annonce img{
-    width: 320px;
-    height: 400px;
+    width: 200px;
+    height: 250px;
 }
+
+.store .annonce .name {
+    font-weight: 700;
+}
+
 
 
 

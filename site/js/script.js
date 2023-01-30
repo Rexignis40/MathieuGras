@@ -41,13 +41,12 @@ function GetListUser(){
     });
 }
 
-async function GetPrestation(){
+function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = {
-        title: $("#title").val(),
-        description: $("#description").val()
-    };
+    let prestation = [];
+    prestation["title"] = $("#title").val();
+    prestation["description"] = $("#description").val();
     $.post("php/updatePrestation.php",
     {
         p: JSON.stringify(prestation)
@@ -60,6 +59,24 @@ async function GetPrestation(){
     });
 }
 
+function GetPrestation(){
+    if(IsSend) return;
+    IsSend = true;
+        $.post("php/getPrestation.php",
+    {
+    },
+    function(data, status){
+        presta = JSON.parse(data);
+        console.log(data);
+        let html = "";
+        html += '<div class="annonce"><h2 class="titlePrestation">'+ presta["title"] +'</h2><p class="prestationDescription">'+ presta["description"] +'</p></div>';
+        $("#prestation").html(html);
+        IsSend = false;
+    }, "json");
+}
+
+
+
 
 function GetImg(cat, offset){
     if(IsSend) return;
@@ -70,13 +87,16 @@ function GetImg(cat, offset){
         o: offset
     },
     function(data, status){
+        let html = "";
         if(data.length != 0){
-            let html = "";
             for(i = 0; i < data.length; i++){
                 html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
             }
-            $("#content").html(html);
         }
+        else{
+            html = "<p>Il n'y a aucune image</p>";
+        }
+        $("#content").html(html);
         IsSend = false;
     }, "json");
 }
