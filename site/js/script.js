@@ -208,6 +208,10 @@ $('.carousel.carousel-slider').carousel({
     indicators: true
   });
 
+  setInterval(function(){
+    $('.carousel.carousel-slider').carousel("next");
+  }, 2000);
+
 function mail(){
     if(IsSend) return;
     IsSend = true;
