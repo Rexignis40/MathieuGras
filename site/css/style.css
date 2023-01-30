@@ -381,15 +381,15 @@ div.formulaire{
 }
 
 .pageFooter h3 {
-    font-size: 25px;
+    font-size: 2vh;
+}
+
+.pageFooter .contactAndLanguage {
+    padding-top: 3vh;
 }
 
 
 /* social icons */
-
-.pageFooter .contact h3 {
-    text-align: center;
-}
 
 .pageFooter .contact .socialIcons
 {
@@ -409,16 +409,15 @@ div.formulaire{
   background-color: var(--white);
   color:var(--grey);
   display:inline-block;
-  width:60px;
-  height:60px;
+  width:50px;
+  height:50px;
   text-align:center;
   border-radius:100%;
   transition:all .2s linear;
-  margin-top: 125px;
 }
 
 .pageFooter .contact .socialIcons li a i {
-    padding-top: 20px
+    padding-top: 32%;
 }
 
 .pageFooter .contact .socialIcons.size-sm a
@@ -451,40 +450,15 @@ div.formulaire{
   color: var(--white);
 }
 
+
 /* language */
-
-.pageFooter .contact h3 {
-    text-align: center;
-}
-
-.pageFooter .language ul{
-    margin-top: 50px;
-}
-
 
 .pageFooter .language img {
     width: 60;
     height: 40px;
+    border-radius: 20%;
 }
 
-.pageFooter .language li{
-    display: flex;
-    align-items: center;
-    padding-bottom: 16px;
-}
-
-.pageFooter .language a{
-    margin-left: 6rem;
-    color: var(--white);
-}
-
-
-/* contact and language */
-
-.pageFooter .contactAndLanguage {
-    display: flex;
-    justify-content: space-evenly;
-}
 
 /* copyright */
 .pageFooter .copyright {
