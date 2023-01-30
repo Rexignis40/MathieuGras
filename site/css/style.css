@@ -4,7 +4,7 @@
     --salmon: #E89676;
     --brown: #7E503E;
     --grey: #333; 
-    --font-title: 'Dancing Script', cursive;
+    --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
 }
@@ -294,7 +294,7 @@ h1.titre{
 }
 
 .carouselPortfolio h2{
-    font-family: var(--font-title);
+    font-family: var(--fonttitle);
     font-size: 5vh !important;
     margin-top: 25%;
 }
@@ -357,7 +357,7 @@ h1.titre{
 }
 
 .contact-page .contact-me p {
-    font-family: var(--font-title);
+    font-family: var(--fonttitle);
     text-align: center;
     height: 60px;
     font-size: 60px;
@@ -421,7 +421,7 @@ h1.titre{
 .annonce .titlePrestation {
     text-align: center;
     font-size: 60px;
-    font-family: var(--font-title);
+    font-family: var(--fonttitle);
 }
 .annonce .prestationDescription {
     text-align: center;
@@ -430,6 +430,19 @@ h1.titre{
 }
 
 
+.annonce .prestationBtn{
+    background-color: var(--salmon);
+    color: var(--white);
+    font-size: 30px;
+    border-color: var(--white);
+    border-style: solid;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin-left: 40%;
+    width: 20%;
+    font-family: var(--fonttitle);
+}
 
 /* store */
 

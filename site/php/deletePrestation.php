@@ -10,18 +10,3 @@ echo var_dump($json["prest"]);
 fwrite($myfile, json_encode($json));
 fclose($myfile);
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
