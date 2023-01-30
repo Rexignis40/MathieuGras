@@ -41,7 +41,7 @@
                         <textarea class="remark" id="remarque" cols="30" rows="30"></textarea>
                     </div>
                     <div class="row">
-                        <button class="col m4 offset-m4 s6 offset-s3 button">Envoyer</button>
+                        <button onclick="mail()" class="col m4 offset-m4 s6 offset-s3 button">Envoyer</button>
                     </div>
                 </div>
             </div>

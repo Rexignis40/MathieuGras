@@ -119,3 +119,20 @@ $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
   });
+
+function mail(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/mail.php",
+    {
+        prénom:$("#name").val(),
+        nom:$("#family-name").val(),
+        email:$("#email").val(),
+        obj:$("#subject").val(),
+        Msg:$("#remarque").val()
+    },
+    function(data, status){
+        console.log(data);
+        IsSend = false;
+    });
+}
