@@ -27,7 +27,7 @@ h1.titre{
     position: sticky;
     z-index: 69;
     top: 0;
-    height: 150px;
+    height: 120px;
     margin: 0 !important;
     justify-content: space-evenly;
     box-shadow: none !important;
@@ -78,7 +78,7 @@ h1.titre{
 
 .carouselIndex {
     height: 100vh !important;
-    margin-top: -150px;
+    margin-top: -120px;
     margin-bottom: 0 !important;
 
 }
@@ -310,74 +310,119 @@ h1.titre{
 /*contact*/
 
 
-
 .contact-page{
     color: var(--white);
     background-image: url(../img/fondContact.png);
     background-size: cover;
     background-repeat: no-repeat;
+    /* margin-top: -155px; */
 }
+
+.contact-page .component {
+    padding-top: 30px ;
+    margin-top: -60px;
+}
+
+
+@media screen and (min-width: 993px) {
+    .contact-me, .contactForm{
+        margin-left: 500px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .contact-me, .contactForm{
+        margin-left: 800px;
+        margin-right: 100px;
+    }
+}
+
+
 .contact-page button{
     color: var(--white);
 }
 .contact-page input, .contact-page textarea{
     background-color: var(--white) !important;
 }
-.contact-page .social{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    margin-top: 70px;
-    font-size: 30px;
+
+
+.contact-page #name, #family-name, #email, #subject{
+    padding-left: 15px;
 }
 
-.contact-page .social>div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.contact-page .social>div>i{
-    font-size: 50px;
-    margin-left: 20px;
+
+.contactForm {
+    padding-bottom: 40px;
 }
 
-.contact-page .contact-me {
+.contact-page .contact-me p {
     font-family: var(--font-title);
+    text-align: center;
+    height: 60px;
     font-size: 60px;
 }
-.contact-page .button{
+
+.contact-page .sendBtn{
+    display: block;
+    text-align: center;
+}
+
+.contact-page .sendBtn .button{
     background-color: var(--salmon);
-    height: 86px;
-    font-family: var(--font-title);
-    font-size: 50px;
+    height: 36px;
+    font-family: var(--font);
+    font-size: 20px;
     border-color: var(--salmon);
+    margin-top: 25px;
+
 }
-.contact-page textarea.remark{
-    height: 300px !important;
-    resize: none;
+
+
+.contact-page .file .button{
+    border-color: var(--white);
+    margin-left: 2px;
 }
-.contact-page .name{
+
+@media screen and (min-width: 993px) {
+    .contact-page .firstNameAndName{
     display: flex;
 }
-.contact-page .name>div{
+
+.contact-page .firstNameAndName>div{
     width: 50%;
     padding-right: 3%;
 }
-.contact-page .name>:last-child{
+.contact-page .firstNameAndName>:last-child{
     width: 50%;
     padding-left: 3%;
     padding-right: 0;
 }
+.contact-page textarea.remark{
+    height: 200px;
+    resize: none;
+    padding: 15px;
+    padding-bottom: 20px;
+}
+}
 
 
+@media screen and (max-width: 993px) {
+    .contactForm{
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .contact-page textarea.remark{
+        height: 100px;
+        resize: none;
+    }
+}
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
     font-size: 60px;
     font-family: var(--font-title);
 }
-
 .annonce .prestationDescription {
     text-align: center;
     font-size: 25px;
@@ -400,6 +445,63 @@ h1.titre{
 
 
 
+/*user*/
+div.connection{
+    background-color: var(--black);
+    opacity: 80%;
+    color: var(--white);
+    margin: 50px;
+    padding: 50px;
+    border-radius: 2%;
+
+}
+div.use{
+    background-image: url(../img/rail.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+div.count{
+    margin-top:50px
+}
+div form input.butonuser{
+    background-color: var(--salmon);
+    border-color: var(--salmon);
+}
+div.connection a{
+    color: var(--white);
+}
+div.connection a:hover{
+    color: var(--salmon);
+}
+div.test{
+    display: flex;
+    margin-left: 15%;
+}
+div.test p{
+    margin-bottom: 0;
+}
+div.conditions{
+    margin-left: 15%;
+}
+div.test form{
+    width: 80%;
+}
+    
+div.separation{
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 2% !important;
+	}
+p.spacing{
+    margin-bottom: 35%;
+    -webkit-text-stroke-width: medium;
+    font-size: larger;
+}
 
 
 
@@ -410,6 +512,7 @@ h1.titre{
 
 
 
+/* ----------------- */
 
 /* footer */
 
@@ -425,20 +528,21 @@ h1.titre{
     font-size: 2vh;
 }
 
-.pageFooter .contactAndLanguage {
+.pageFooter .socialAndLanguage {
     padding-top: 3vh;
 }
 
 
 /* social icons */
 
-.pageFooter .contact .socialIcons
+.pageFooter .social .socialIcons
 {
-    display: flex ;
-    text-align:left;
-    width: 400px;
-    
-  justify-content: space-between;
+    display: flex;
+    text-align: justify;
+
+}
+.socialIcons span{
+    margin-left: 10px;
 }
 
 .pageFooter .contact .socialIcons li
@@ -446,7 +550,7 @@ h1.titre{
   display:inline-block;
   margin-right:15px;
 }
-.pageFooter .contact .socialIcons a{
+.pageFooter .social .socialIcons a{
   background-color: var(--white);
   color:var(--grey);
   display:inline-block;
@@ -457,11 +561,11 @@ h1.titre{
   transition:all .2s linear;
 }
 
-.pageFooter .contact .socialIcons li a i {
+.pageFooter .social .socialIcons li a i {
     padding-top: 32%;
 }
 
-.pageFooter .contact .socialIcons.size-sm a
+.pageFooter .social .socialIcons.size-sm a
 {
   line-height:34px;
   height:34px;
@@ -469,22 +573,22 @@ h1.titre{
   font-size:14px
 }
 
-.pageFooter .contact .socialIcons a.facebook:hover
+.pageFooter .social .socialIcons a.facebook:hover
 {
   background-color:#3b5998;
   color: var(--white);
 }
-.pageFooter .contact .socialIcons a.twitter:hover
+.pageFooter .social .socialIcons a.twitter:hover
 {
   background-color:#00aced;
   color: var(--white);
 }
-.pageFooter .contact .socialIcons a.linkedin:hover
+.pageFooter .social .socialIcons a.linkedin:hover
 {
   background-color:#007bb6;
   color: var(--white);
 }
-.pageFooter .contact .socialIcons a.instagram:hover
+.pageFooter .social .socialIcons a.instagram:hover
 {
   background:linear-gradient(45deg,#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D,  #F56040, #F77737, #FCAF45, #FFDC80);
   opacity: 75;
@@ -493,6 +597,15 @@ h1.titre{
 
 
 /* language */
+
+.pageFooter .contact h3 {
+    text-align: center;
+}
+
+.pageFooter .language ul{
+    margin-top: 50px;
+}
+
 
 .pageFooter .language img {
     width: 60;
@@ -573,5 +686,4 @@ p.spacing{
     margin-bottom: 35%;
     -webkit-text-stroke-width: medium;
     font-size: larger;
-    cursor: pointer;
 }

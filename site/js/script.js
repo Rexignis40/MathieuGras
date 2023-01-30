@@ -96,13 +96,16 @@ function GetImg(cat, offset){
         o: offset
     },
     function(data, status){
+        let html = "";
         if(data.length != 0){
-            let html = "";
             for(i = 0; i < data.length; i++){
                 html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
             }
-            $("#content").html(html);
         }
+        else{
+            html = "<p>Il n'y a aucune image</p>";
+        }
+        $("#content").html(html);
         IsSend = false;
     }, "json");
 }
@@ -176,3 +179,20 @@ $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
   });
+
+function mail(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/mail.php",
+    {
+        prénom:$("#name").val(),
+        nom:$("#family-name").val(),
+        email:$("#email").val(),
+        obj:$("#subject").val(),
+        Msg:$("#remarque").val()
+    },
+    function(data, status){
+        console.log(data);
+        IsSend = false;
+    });
+}
