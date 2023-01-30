@@ -34,7 +34,7 @@
                         <input class="button" type="button" value="Joindre un fichier">
                     </div> 
                     <div class="sendBtn">
-                        <button class="button">Envoyer</button>
+                        <button onclick="mail()" class="button">Envoyer</button>
                     </div> 
                 </div>                 
             </div>
