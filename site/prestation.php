@@ -2,16 +2,14 @@
 <?php include('./components/head.html')?>
 <body>
     <?php include('./components/header.html')?>
-    
-    
-    
-    
-    <?php 
-    // if($_SESSION["user"]["admin"]){
-    //     include("php/view/admin.php");
-    // }
-    ?>
 
+    <div id="prestation"></div>
+    
     <?php include('./components/footer.html')?>
+
+    
+<script type="text/javascript" src="js/Jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

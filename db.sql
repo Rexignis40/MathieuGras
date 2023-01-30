@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 26 jan. 2023 à 13:58
+-- Généré le : ven. 27 jan. 2023 à 15:57
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -97,8 +97,25 @@ CREATE TABLE IF NOT EXISTS `sell` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
   `img` int UNSIGNED NOT NULL,
   `user` int UNSIGNED NOT NULL,
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `price` int UNSIGNED NOT NULL,
+  `state` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `sell`
+--
+
+INSERT INTO `sell` (`id`, `img`, `user`, `date`, `price`, `state`) VALUES
+(1, 10, 3, '2023-01-26 17:35:13', 1, 0),
+(2, 10, 3, '2023-01-26 17:36:03', 1, 0),
+(3, 11, 3, '2023-01-26 17:36:03', 56, 0),
+(4, 10, 3, '2023-01-26 17:36:04', 1, 0),
+(5, 11, 3, '2023-01-26 17:36:04', 56, 0),
+(6, 10, 3, '2023-01-26 17:38:50', 1, 0),
+(7, 11, 3, '2023-01-26 17:38:50', 56, 0),
+(8, 10, 3, '2023-01-26 17:39:57', 1, 0);
 
 -- --------------------------------------------------------
 
