@@ -13,20 +13,40 @@ function GetListUser(){
     });
 }
 
-async function GetPrestation(){
+function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = [];
-    prestation["title"] = $("#title").val();
-    prestation["description"] = $("#description").val();
-    $.post("php/updatePrestation.php",
+    let prestation = {
+        title: $("#title").val(),
+        description: $("#description").val()
+    };
+    console.log(JSON.stringify(prestation));
+    $.post("php/setPrestation.php",
     {
-        p: prestation
+        p: JSON.stringify(prestation)
     },
     function(data, status){
         IsSend = false;
     });
 }
+
+function GetPrestation(){
+    if(IsSend) return;
+    IsSend = true;
+        $.post("php/getPrestation.php",
+    {
+    },
+    function(data, status){
+        presta = JSON.parse(data);
+        console.log(data);
+        let html = "";
+        html += '<div class="annonce"><h2 class="titlePrestation">'+ presta["title"] +'</h2><p class="prestationDescription">'+ presta["description"] +'</p></div>';
+        $("#prestation").html(html);
+        IsSend = false;
+    }, "json");
+}
+
+
 
 
 function GetImg(cat, offset){

@@ -23,17 +23,17 @@ include('./components/head.html')?>
     <div class="store">
         <nav class="navBarCategory">
             <ul>
-                <li><button onClick="">toutes</button></li>
-                <li><button onClick="">category 1</button></li>
-                <li><button onClick="">kategory 2</button></li>
-                <li><button onClick="">k t gorique</button></li>
+                <li><a onClick="">toutes</a></li>
+                <li><a onClick="">categorie 1</a></li>
+                <li><a onClick="">categorie 2</a></li>
+                <li><a onClick="">categorie 3</a></li>
             </ul>
         </nav>
-        <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>"/>
-        <div id="content">
-
+        <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>">
+        <div>
+            <div id="content"></div>
+            <button onclick="GetImg(-1,0)">Load</button>    
         </div>
-        <button onclick="GetImg(-1,0)">Load</button>    
     </div>
 
     <?php include('./components/footer.html')?>

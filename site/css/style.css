@@ -351,12 +351,42 @@ div.formulaire{
 
 
 /* store */
+.store {
+    display: flex;
+    
+}
+.store .navBarCategory {
+    background-color: var(--white);
+    display: contents;
+}
+.store .navBarCategory ul li{
+    width: 100%;
+}
+.store .navBarCategory ul li a{
+    color: var(--black);
+    font-family: var(--fontbold);
+    height: 50px;
+}
 
+
+.store .navBarCategory ul li a:hover{
+    background-color: var(--white);
+    font-weight: 550;
+}
+
+.store .annonce {
+    margin-left: 20px;
+}
 
 .store .annonce img{
-    width: 320px;
-    height: 400px;
+    width: 200px;
+    height: 250px;
 }
+
+.store .annonce .name {
+    font-weight: 700;
+}
+
 
 
 

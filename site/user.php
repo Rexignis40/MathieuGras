@@ -51,6 +51,7 @@ if(isset($_SESSION["user"])){
         <h2>description</h2>
         <input type="text" name='description' id="description">
         <button onClick="GetPrestation()">envoyer</button>
+        <p><?php echo json_decode('prestation.json')?></p>
     <?php 
     }
     
