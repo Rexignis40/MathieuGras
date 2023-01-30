@@ -371,7 +371,18 @@ h1.titre{
 }
 
 
+/* prestation */
+.annonce .titlePrestation {
+    text-align: center;
+    font-size: 60px;
+    font-family: var(--font-title);
+}
 
+.annonce .prestationDescription {
+    text-align: center;
+    font-size: 25px;
+    font-family: var(--font);
+}
 
 
 
@@ -562,4 +573,5 @@ p.spacing{
     margin-bottom: 35%;
     -webkit-text-stroke-width: medium;
     font-size: larger;
+    cursor: pointer;
 }
