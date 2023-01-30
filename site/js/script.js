@@ -88,15 +88,25 @@ function GetImg(cat, offset){
     },
     function(data, status){
         let html = "";
+        let page = "";
+        if(offset != 0){
+            page += "<button onclick='GetImg("+cat+","+(offset-12)+")'><-</button>";
+        }
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                if(i == 12){
+                    page += "<button onclick='GetImg("+cat+","+(offset+12)+")'>-></button>";
+                }
+                else{
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                }
             }
         }
         else{
             html = "<p>Il n'y a aucune image</p>";
         }
         $("#content").html(html);
+        $("#page").html(page);
         IsSend = false;
     }, "json");
 }
