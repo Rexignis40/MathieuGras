@@ -84,11 +84,28 @@ function deletePrestation(_id){
     });
 }
 
+//Store Page
+let imgCount = 0;
+function GetImgCount(){
+    return $.post("php/getImgCount.php",
+    {
+    },
+    function(data, status){
+        imgCount = data;
+    });
+}
 
+function RemoveInput(id){
+    $("#" + id).val("");
+}
 
+function GetImgFromInput(cat){
+    GetImg(cat, ($("#num-page").val() - 1) * 12);
+}
 
-function GetImg(cat, offset){
-    if(IsSend) return;
+async function GetImg(cat, offset){
+    if(imgCount == 0) await GetImgCount();
+    if(IsSend || offset > imgCount + 12) return;
     IsSend = true;
     $.post("php/getImg.php",
     {
@@ -101,6 +118,7 @@ function GetImg(cat, offset){
         if(offset != 0){
             page += "<button onclick='GetImg("+cat+","+(offset-12)+")'><-</button>";
         }
+        page += "<input id='num-page' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(imgCount/12)+"</p>";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
                 if(i == 12){
