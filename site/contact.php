@@ -1,28 +1,38 @@
 <html lang="fr">
 <?php include('./components/head.html')?>
-<body id="forms">
+<body class="contact-page">
     <?php include('./components/header.html')?>
-        <div class=" row">
-            <div class=" col l6 offset-l5">
-                <div class=" white-text contactme">
+        <div class="row">
+            <div class="col m2 hide-on-small-only social">
+                <div>
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>@matt.pty</p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-twitter"></i>
+                    <p>@mattptyy</p>
+                </div>
+            </div>
+            <div class="row col m6 offset-m3 s12">
+                <div class="col m6 offset-m6 s8 offset-s2 contact-me">
                     <p>Contactez-moi</p>
                 </div>
                 <form method="post" action="">
                     <div class="formulaire">
                         <div class="prenom">
-                            <p class="white-text">Prénom*</p>
+                            <p class="white-text">Prénom</p>
                             <input class="white name" type='text' name='name' />
                         </div>
-                        <div class="prenom1">
-                            <p class="white-text">Nom</p>
-                            <input class="white surname" type='text' name='name' />
+                        <div>
+                            <p>Nom</p>
+                            <input class="surname" type='text' id='family-name' />
                         </div>
                     </div>
-                    <p class="white-text">Votre Email*</p>
+                    <p class="white-text">Mail</p>
                     <input class="white" type='email' name='email'/>
-                    <p class="white-text ">Objet*</p>
+                    <p class="white-text ">Objet</p>
                     <input class="white object" type='text' name='subject' />
-                    <p class=" white-text">Votre remarque*</p>
+                    <p class=" white-text">Message</p>
                     <textarea class="white remark " name="remarque" id="" cols="30" rows="30"></textarea>
                     <div class="verification"><input class="buton white-text" type='submit' value='Envoyer' /></div>
                     

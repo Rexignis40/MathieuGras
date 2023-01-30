@@ -4,7 +4,7 @@
     --salmon: #E89676;
     --brown: #7E503E;
     --grey: #333; 
-    --fonttitle: 'Dancing Script', cursive;
+    --font-title: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
 }
@@ -13,7 +13,9 @@
 body {
     font-family: var(--font);
 }
-
+h1.titre{
+    font-family: var(--fonttitle);
+}
 
 /* header */
 
@@ -77,6 +79,8 @@ body {
 .carouselIndex {
     height: 100vh !important;
     margin-top: -150px;
+    margin-bottom: 0 !important;
+
 }
 
 .carouselIndex .carousel-item {
@@ -290,7 +294,7 @@ body {
 }
 
 .carouselPortfolio h2{
-    font-family: var(--fonttitle);
+    font-family: var(--font-title);
     font-size: 5vh !important;
     margin-top: 25%;
 }
@@ -304,79 +308,75 @@ body {
 
 
 /*contact*/
-div.contactme {
-    font-family: var(--fonttitle);
-    font-size: 50px;
-    display: flex;
-    justify-content: end;
 
-}
-div.prenom {
-    margin-right: 10px;
-    width: 100%;
-}
-div.prenom1{
-    width: 100%;
-}
-#forms{
+
+
+.contact-page{
+    color: var(--white);
     background-image: url(../img/fondContact.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
-div form input.buton{
+.contact-page button{
+    color: var(--white);
+}
+.contact-page input, .contact-page textarea{
+    background-color: var(--white) !important;
+}
+.contact-page .social{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    margin-top: 70px;
+    font-size: 30px;
+}
+
+.contact-page .social>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contact-page .social>div>i{
+    font-size: 50px;
+    margin-left: 20px;
+}
+
+.contact-page .contact-me {
+    font-family: var(--font-title);
+    font-size: 60px;
+}
+.contact-page .button{
     background-color: var(--salmon);
-    width:402px;
     height: 86px;
-    font-family: var(--fonttitle);
+    font-family: var(--font-title);
     font-size: 50px;
     border-color: var(--salmon);
 }
-div form textarea.remark{
+.contact-page textarea.remark{
     height: 300px !important;
+    resize: none;
 }
-div form input.object{
-    width: 70% !important;
-}
-div.verification{
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-div.formulaire{
+.contact-page .name{
     display: flex;
 }
+.contact-page .name>div{
+    width: 50%;
+    padding-right: 3%;
+}
+.contact-page .name>:last-child{
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 0;
+}
+
 
 
 
 
 
 /* store */
-.store {
-    display: flex;
-    
-}
-.store .navBarCategory {
-    background-color: var(--white);
-    display: contents;
-}
-.store .navBarCategory ul li{
-    width: 100%;
-}
-.store .navBarCategory ul li a{
-    color: var(--black);
-    font-family: var(--fontbold);
-    height: 50px;
-}
 
-
-.store .navBarCategory ul li a:hover{
-    background-color: var(--white);
-    font-weight: 550;
-}
-
-.store .annonce {
-    margin-left: 20px;
-}
 
 .store .annonce img{
     width: 200px;
@@ -411,15 +411,15 @@ div.formulaire{
 }
 
 .pageFooter h3 {
-    font-size: 25px;
+    font-size: 2vh;
+}
+
+.pageFooter .contactAndLanguage {
+    padding-top: 3vh;
 }
 
 
 /* social icons */
-
-.pageFooter .contact h3 {
-    text-align: center;
-}
 
 .pageFooter .contact .socialIcons
 {
@@ -439,16 +439,15 @@ div.formulaire{
   background-color: var(--white);
   color:var(--grey);
   display:inline-block;
-  width:60px;
-  height:60px;
+  width:50px;
+  height:50px;
   text-align:center;
   border-radius:100%;
   transition:all .2s linear;
-  margin-top: 125px;
 }
 
 .pageFooter .contact .socialIcons li a i {
-    padding-top: 20px
+    padding-top: 32%;
 }
 
 .pageFooter .contact .socialIcons.size-sm a
@@ -481,40 +480,15 @@ div.formulaire{
   color: var(--white);
 }
 
+
 /* language */
-
-.pageFooter .contact h3 {
-    text-align: center;
-}
-
-.pageFooter .language ul{
-    margin-top: 50px;
-}
-
 
 .pageFooter .language img {
     width: 60;
     height: 40px;
+    border-radius: 20%;
 }
 
-.pageFooter .language li{
-    display: flex;
-    align-items: center;
-    padding-bottom: 16px;
-}
-
-.pageFooter .language a{
-    margin-left: 6rem;
-    color: var(--white);
-}
-
-
-/* contact and language */
-
-.pageFooter .contactAndLanguage {
-    display: flex;
-    justify-content: space-evenly;
-}
 
 /* copyright */
 .pageFooter .copyright {
@@ -533,23 +507,23 @@ div.formulaire{
 }
 
 /*user*/
-div.connection, div.inscription{
+div.connection{
     background-color: var(--black);
     opacity: 80%;
     color: var(--white);
     margin: 50px;
     padding: 50px;
+    border-radius: 2%;
 
 }
-#use{
+div.use{
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 0;
 }
 div.count{
-    display: flex;
-    justify-content: center;
-    margin: 5px;
+    margin-top:50px
 }
 div form input.butonuser{
     background-color: var(--salmon);
@@ -557,13 +531,35 @@ div form input.butonuser{
 }
 div.connection a{
     color: var(--white);
-    font-size: 20px;
-    margin: 15px;
 }
 div.connection a:hover{
     color: var(--salmon);
 }
 div.test{
     display: flex;
+    margin-left: 15%;
+}
+div.test p{
+    margin-bottom: 0;
+}
+div.conditions{
+    margin-left: 15%;
+}
+div.test form{
+    width: 80%;
+}
     
+div.separation{
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 2% !important;
+	}
+p.spacing{
+    margin-bottom: 35%;
+    -webkit-text-stroke-width: medium;
+    font-size: larger;
 }

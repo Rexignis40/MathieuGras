@@ -1,0 +1,169 @@
+
+:root{
+    --black: #000;
+    --white: #fff;
+    --salmon: #E89676;
+    --brown: #7E503E;
+    --grey: #333; 
+    --font-title: 'Dancing Script', cursive;
+    --fontbold: 'Maven Pro', sans-serif;
+    --font: 'Open Sans', sans-serif;
+}
+
+
+body {
+    font-family: var(--font);
+}
+
+.navWrapper {
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    z-index: 69;
+    top: 0;
+    height: 150px;
+    margin: 0 !important;
+    justify-content: space-evenly;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+
+}
+
+.navWrapper img{
+    width: 125px;
+}
+.navWrapper ul {
+    display: flex;
+}
+
+.navWrapper .navBarBtn a{
+    color: var(--black);
+    font-size: 23px;
+    font-family: var(--fontbold);
+}
+
+.navWrapper .navBarBtn a:hover{
+    font-weight: 700;
+    background-color: var(--white);
+}
+
+
+.navWrapper .navBarIcons i{
+    width: 20px;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+}
+
+.navWrapper .navBarIcons a:hover{
+    font-weight: 700;
+    background-color: var(--white);
+}    
+
+@media screen and (max-width: 1000px) {
+    .navWrapper .navBarIcons img {
+        display: flex;
+        align-items: center;
+        
+    }
+}
+
+
+
+
+
+/* code d'une éventuelle page contact */
+
+
+
+.contact-page{
+    color: var(--white);
+    background-image: url(../img/fondContact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -155px;
+}
+
+.contact-page .component {
+    padding-top: 60px ;
+}
+
+
+@media screen and (min-width: 993px) {
+    .contact-me, .contactForm{
+        margin-left: 500px;
+        margin-right: 100px;
+    }
+   
+}
+.contact-page button{
+    color: var(--white);
+}
+.contact-page input, .contact-page textarea{
+    background-color: var(--white) !important;
+}
+
+.contactForm {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-page .contact-me p {
+    font-family: var(--font-title);
+    text-align: center;
+    height: 60px;
+    padding-top: 60px;
+    font-size: 60px;
+}
+
+.contact-page .sendBtn{
+    display: block;
+    text-align: center;
+}
+
+.contact-page .button{
+    background-color: var(--salmon);
+    height: 86px;
+    font-family: var(--font-title);
+    font-size: 50px;
+    border-color: var(--salmon);
+    margin-top: 35px;
+
+}
+.contact-page textarea.remark{
+    height: 200px;
+    resize: none;
+}
+
+@media screen and (min-width: 993px) {
+    .contact-page .firstNameAndName{
+    display: flex;
+}
+
+.contact-page .firstNameAndName>div{
+    width: 50%;
+    padding-right: 3%;
+}
+.contact-page .firstNameAndName>:last-child{
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 0;
+}
+.contact-page textarea.remark{
+    height: 200px;
+    resize: none;
+}
+}
+
+
+@media screen and (max-width: 993px) {
+    .contactForm{
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .contact-page textarea.remark{
+        height: 100px;
+        resize: none;
+    }
+}

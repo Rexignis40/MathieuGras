@@ -1,5 +1,33 @@
 IsSend = false;
 
+$(document).ready(function(){
+    var state = false,
+        links = $('.navbar-responsive__link')
+      $('#nav-icon3').click(function(){
+          $(this).toggleClass('open');
+      if(!state) {
+        $('.navbar-responsive').css("transform", "translate3d(0,0,0)")
+        state = true
+      } else {
+        $('.navbar-responsive').css("transform", "translate3d(-100%,0,0)")
+        state = false
+      }
+      
+      })
+    $.each(links, function(index,value){
+      value.addEventListener("click",function(){
+        if(!state) {
+          $('.navbar-responsive').css("transform", "translate3d(0,0,0)")
+          state = true
+        } else {
+          $('.navbar-responsive').css("transform", "translate3d(-100%,0,0)")
+          state = false
+        }
+        $('#nav-icon3').removeClass('open')
+      })
+    })
+  })
+
 function GetListUser(){
     if(IsSend) return;
     IsSend = true;
@@ -16,16 +44,17 @@ function GetListUser(){
 function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = {
-        title: $("#title").val(),
-        description: $("#description").val()
-    };
-    console.log(JSON.stringify(prestation));
-    $.post("php/setPrestation.php",
+    let prestation = [];
+    prestation["title"] = $("#title").val();
+    prestation["description"] = $("#description").val();
+    $.post("php/updatePrestation.php",
     {
         p: JSON.stringify(prestation)
     },
     function(data, status){
+        let html = "";
+        html += '<div><p>'+ data["title"] +'</p></div>';
+        alert(html);
         IsSend = false;
     });
 }
@@ -96,7 +125,7 @@ function GetUserGalerie(_id){
         if(data.length != 0){
             let html = "";
             for(i = 0; i < data.length; i++){
-                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')">Like</button></div>';
             }
             $("#content").html(html);
         }
