@@ -434,123 +434,6 @@ h1.titre{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* footer */
-
-.pageFooter {
-    background-color: var(--brown);
-    color: var(--white);
-    height: 40%;
-    font-size: 18px;
-    margin-bottom: 0;
-}
-
-.pageFooter h3 {
-    font-size: 2vh;
-}
-
-.pageFooter .contactAndLanguage {
-    padding-top: 3vh;
-}
-
-
-/* social icons */
-
-.pageFooter .contact .socialIcons
-{
-    display: flex ;
-    text-align:left;
-    width: 400px;
-    
-  justify-content: space-between;
-}
-
-.pageFooter .contact .socialIcons li
-{
-  display:inline-block;
-  margin-right:15px;
-}
-.pageFooter .contact .socialIcons a{
-  background-color: var(--white);
-  color:var(--grey);
-  display:inline-block;
-  width:50px;
-  height:50px;
-  text-align:center;
-  border-radius:100%;
-  transition:all .2s linear;
-}
-
-.pageFooter .contact .socialIcons li a i {
-    padding-top: 32%;
-}
-
-.pageFooter .contact .socialIcons.size-sm a
-{
-  line-height:34px;
-  height:34px;
-  width:34px;
-  font-size:14px
-}
-
-.pageFooter .contact .socialIcons a.facebook:hover
-{
-  background-color:#3b5998;
-  color: var(--white);
-}
-.pageFooter .contact .socialIcons a.twitter:hover
-{
-  background-color:#00aced;
-  color: var(--white);
-}
-.pageFooter .contact .socialIcons a.linkedin:hover
-{
-  background-color:#007bb6;
-  color: var(--white);
-}
-.pageFooter .contact .socialIcons a.instagram:hover
-{
-  background:linear-gradient(45deg,#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D,  #F56040, #F77737, #FCAF45, #FFDC80);
-  opacity: 75;
-  color: var(--white);
-}
-
-
-/* language */
-
-.pageFooter .language img {
-    width: 60;
-    height: 40px;
-    border-radius: 20%;
-}
-
-
-/* copyright */
-.pageFooter .copyright {
-    display: flex;
-    align-items: center;
-}
-
-.pageFooter .copyright p {
-    color: var(--grey);
-    padding-left: 5px;
-}
-
-.pageFooter .copyright a {
-    color: var(--white);
-    padding-left: 5px;
-}
-
 /*user*/
 div.connection{
     background-color: var(--black);
@@ -607,4 +490,121 @@ p.spacing{
     margin-bottom: 35%;
     -webkit-text-stroke-width: medium;
     font-size: larger;
+}
+
+
+
+
+
+
+
+
+
+
+/* ----------------- */
+
+/* footer */
+
+.pageFooter {
+    background-color: var(--brown);
+    color: var(--white);
+    height: 40%;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.pageFooter h3 {
+    font-size: 2vh;
+}
+
+.pageFooter .socialAndLanguage {
+    padding-top: 3vh;
+}
+
+
+/* social icons */
+
+.pageFooter .social .socialIcons
+{
+    display: flex ;
+    text-align:left;
+    width: 400px;
+    
+  justify-content: space-between;
+}
+
+.pageFooter .social .socialIcons li
+{
+  display:inline-block;
+  margin-right:15px;
+}
+.pageFooter .social .socialIcons a{
+  background-color: var(--white);
+  color:var(--grey);
+  display:inline-block;
+  width:50px;
+  height:50px;
+  text-align:center;
+  border-radius:100%;
+  transition:all .2s linear;
+}
+
+.pageFooter .social .socialIcons li a i {
+    padding-top: 32%;
+}
+
+.pageFooter .social .socialIcons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+
+.pageFooter .social .socialIcons a.facebook:hover
+{
+  background-color:#3b5998;
+  color: var(--white);
+}
+.pageFooter .social .socialIcons a.twitter:hover
+{
+  background-color:#00aced;
+  color: var(--white);
+}
+.pageFooter .social .socialIcons a.linkedin:hover
+{
+  background-color:#007bb6;
+  color: var(--white);
+}
+.pageFooter .social .socialIcons a.instagram:hover
+{
+  background:linear-gradient(45deg,#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D,  #F56040, #F77737, #FCAF45, #FFDC80);
+  opacity: 75;
+  color: var(--white);
+}
+
+
+/* language */
+
+.pageFooter .language img {
+    width: 60;
+    height: 40px;
+    border-radius: 20%;
+}
+
+
+/* copyright */
+.pageFooter .copyright {
+    display: flex;
+    align-items: center;
+}
+
+.pageFooter .copyright p {
+    color: var(--grey);
+    padding-left: 5px;
+}
+
+.pageFooter .copyright a {
+    color: var(--white);
+    padding-left: 5px;
 }
