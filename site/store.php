@@ -23,10 +23,15 @@ include('./components/head.html')?>
     <div class="store">
         <nav class="navBarCategory">
             <ul>
-                <li><button onClick="">toutes</button></li>
-                <li><button onClick="">category 1</button></li>
-                <li><button onClick="">kategory 2</button></li>
-                <li><button onClick="">k t gorique</button></li>
+                <li><button onclick="GetImg(-1, 0)">All</button></li>
+                <?php
+                $q = $pdo->prepare("SELECT * FROM category");
+                $q->execute();
+                $category = $q->fetchAll();
+                foreach($category as $c){
+                    echo "<li><button onclick='GetImg(".$c["id"].", 0)'>".$c["name"]."</button></li>";
+                }
+                ?>
             </ul>
         </nav>
         <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>"/>
