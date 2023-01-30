@@ -27,7 +27,7 @@ h1.titre{
     position: sticky;
     z-index: 69;
     top: 0;
-    height: 150px;
+    height: 120px;
     margin: 0 !important;
     justify-content: space-evenly;
     box-shadow: none !important;
@@ -78,7 +78,7 @@ h1.titre{
 
 .carouselIndex {
     height: 100vh !important;
-    margin-top: -150px;
+    margin-top: -120px;
     margin-bottom: 0 !important;
 
 }
@@ -310,68 +310,103 @@ h1.titre{
 /*contact*/
 
 
-
 .contact-page{
     color: var(--white);
     background-image: url(../img/fondContact.png);
     background-size: cover;
     background-repeat: no-repeat;
+    /* margin-top: -155px; */
 }
+
+.contact-page .component {
+    padding-top: 30px ;
+    margin-top: -60px;
+}
+
+
+@media screen and (min-width: 993px) {
+    .contact-me, .contactForm{
+        margin-left: 500px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .contact-me, .contactForm{
+        margin-left: 800px;
+        margin-right: 100px;
+    }
+}
+
+
 .contact-page button{
     color: var(--white);
 }
 .contact-page input, .contact-page textarea{
     background-color: var(--white) !important;
 }
-.contact-page .social{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-    margin-top: 70px;
-    font-size: 30px;
+
+.contactForm {
+    padding-bottom: 40px;
 }
 
-.contact-page .social>div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.contact-page .social>div>i{
-    font-size: 50px;
-    margin-left: 20px;
-}
-
-.contact-page .contact-me {
+.contact-page .contact-me p {
     font-family: var(--font-title);
+    text-align: center;
+    height: 60px;
     font-size: 60px;
 }
+
+.contact-page .sendBtn{
+    display: block;
+    text-align: center;
+}
+
 .contact-page .button{
     background-color: var(--salmon);
-    height: 86px;
-    font-family: var(--font-title);
-    font-size: 50px;
+    height: 36px;
+    font-family: var(--font);
+    font-size: 20px;
     border-color: var(--salmon);
+    margin-top: 25px;
+
 }
 .contact-page textarea.remark{
-    height: 300px !important;
+    height: 200px;
     resize: none;
 }
-.contact-page .name{
+
+@media screen and (min-width: 993px) {
+    .contact-page .firstNameAndName{
     display: flex;
 }
-.contact-page .name>div{
+
+.contact-page .firstNameAndName>div{
     width: 50%;
     padding-right: 3%;
 }
-.contact-page .name>:last-child{
+.contact-page .firstNameAndName>:last-child{
     width: 50%;
     padding-left: 3%;
     padding-right: 0;
 }
+.contact-page textarea.remark{
+    height: 200px;
+    resize: none;
+}
+}
 
 
-
+@media screen and (max-width: 993px) {
+    .contactForm{
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .contact-page textarea.remark{
+        height: 100px;
+        resize: none;
+    }
+}
 
 
 
