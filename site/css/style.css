@@ -470,7 +470,15 @@ h1.titre{
 
 .store #content {
     margin-left: 90px;
+    width: 100%;
 }
+
+.store .annonce-line{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .store .annonce img{
     width: 200px;
     height: 250px;

@@ -120,12 +120,17 @@ async function GetImg(cat, offset){
         }
         page += "<input id='num-page' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(Math.ceil(imgCount/12))+"</p>";
         if(data.length != 0){
+            html += "<div class='annonce-line'>";
             for(i = 0; i < data.length; i++){
                 if(i == 12){
                     page += "<button onclick='GetImg("+cat+","+(offset+12)+")'>-></button>";
                 }
                 else{
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                    if(i != 0 && i % 4 == 0){
+                        html += "</div>";
+                        if(i != 12) html += "<div class='annonce-line'>";
+                    }
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button></div>';
                 }
             }
         }
