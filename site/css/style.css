@@ -346,6 +346,12 @@ h1.titre{
     background-color: var(--white) !important;
 }
 
+
+.contact-page #name, #family-name, #email, #subject{
+    padding-left: 15px;
+}
+
+
 .contactForm {
     padding-bottom: 40px;
 }
@@ -362,7 +368,7 @@ h1.titre{
     text-align: center;
 }
 
-.contact-page .button{
+.contact-page .sendBtn .button{
     background-color: var(--salmon);
     height: 36px;
     font-family: var(--font);
@@ -371,9 +377,11 @@ h1.titre{
     margin-top: 25px;
 
 }
-.contact-page textarea.remark{
-    height: 200px;
-    resize: none;
+
+
+.contact-page .file .button{
+    border-color: var(--white);
+    margin-left: 2px;
 }
 
 @media screen and (min-width: 993px) {
@@ -393,6 +401,8 @@ h1.titre{
 .contact-page textarea.remark{
     height: 200px;
     resize: none;
+    padding: 15px;
+    padding-bottom: 20px;
 }
 }
 

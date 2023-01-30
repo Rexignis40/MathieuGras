@@ -20,16 +20,19 @@
                     </div>
                     <div class="mail">
                         <p>Mail*</p>
-                        <input class="" type='email' id='email' required/>
+                        <input class="email" type='email' id='email' required/>
                     </div>
                     <div class="object">
                         <p>Objet*</p>
-                        <input class="" type='text' id='subject' required/>
+                        <input class="object" type='text' id='subject' required/>
                     </div>
                     <div class="message">
                         <p>Message*</p>
                         <textarea class="remark" id="remarque" cols="20" rows="20"></textarea>
                     </div>
+                    <div class="file">
+                        <input class="button" type="button" value="Joindre un fichier">
+                    </div> 
                     <div class="sendBtn">
                         <button class="button">Envoyer</button>
                     </div> 
