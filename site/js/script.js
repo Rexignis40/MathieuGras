@@ -84,11 +84,28 @@ function deletePrestation(_id){
     });
 }
 
+//Store Page
+let imgCount = 0;
+function GetImgCount(){
+    return $.post("php/getImgCount.php",
+    {
+    },
+    function(data, status){
+        imgCount = data;
+    });
+}
 
+function RemoveInput(id){
+    $("#" + id).val("");
+}
 
+function GetImgFromInput(cat){
+    GetImg(cat, ($("#num-page").val() - 1) * 12);
+}
 
-function GetImg(cat, offset){
-    if(IsSend) return;
+async function GetImg(cat, offset){
+    if(imgCount == 0) await GetImgCount();
+    if(IsSend || offset > imgCount + 12) return;
     IsSend = true;
     $.post("php/getImg.php",
     {
@@ -97,15 +114,26 @@ function GetImg(cat, offset){
     },
     function(data, status){
         let html = "";
+        let page = "";
+        if(offset != 0){
+            page += "<button onclick='GetImg("+cat+","+(offset-12)+")'><-</button>";
+        }
+        page += "<input id='num-page' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(imgCount/12)+"</p>";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                if(i == 12){
+                    page += "<button onclick='GetImg("+cat+","+(offset+12)+")'>-></button>";
+                }
+                else{
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                }
             }
         }
         else{
             html = "<p>Il n'y a aucune image</p>";
         }
         $("#content").html(html);
+        $("#page").html(page);
         IsSend = false;
     }, "json");
 }
@@ -179,6 +207,10 @@ $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
   });
+
+  setInterval(function(){
+    $('.carousel.carousel-slider').carousel("next");
+  }, 2000);
 
 function mail(){
     if(IsSend) return;

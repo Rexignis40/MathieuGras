@@ -37,7 +37,7 @@ include('./components/head.html')?>
         <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>">
         <div>
             <div id="content"></div>
-            <button onclick="GetImg(-1,0)">Load</button>    
+            <div id="page"></div>
         </div>
     </div>
 
