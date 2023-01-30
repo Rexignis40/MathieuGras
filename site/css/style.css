@@ -315,12 +315,6 @@ h1.titre{
     background-image: url(../img/fondContact.png);
     background-size: cover;
     background-repeat: no-repeat;
-    /* margin-top: -155px; */
-}
-
-.contact-page .component {
-    padding-top: 30px ;
-    margin-top: -60px;
 }
 
 
@@ -446,7 +440,37 @@ h1.titre{
 
 /* store */
 
+.store{
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+}
 
+.vl{
+    height: 75vh;
+    width: 1px;
+    background-color: var(--black);
+}
+
+.store .category li {
+    list-style: none;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 50px;
+    text-align: left;
+    font-size: 24px;
+}
+
+.store .category .btnCategory {
+    background-color: var(--white); 
+    border: none;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.store #content {
+    margin-left: 90px;
+}
 .store .annonce img{
     width: 200px;
     height: 250px;

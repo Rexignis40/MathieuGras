@@ -118,7 +118,7 @@ async function GetImg(cat, offset){
         if(offset != 0){
             page += "<button onclick='GetImg("+cat+","+(offset-12)+")'><-</button>";
         }
-        page += "<input id='num-page' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(imgCount/12)+"</p>";
+        page += "<input id='num-page' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(Math.ceil(imgCount/12))+"</p>";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
                 if(i == 12){
@@ -210,7 +210,7 @@ $('.carousel.carousel-slider').carousel({
 
   setInterval(function(){
     $('.carousel.carousel-slider').carousel("next");
-  }, 2000);
+  }, 5000);
 
 function mail(){
     if(IsSend) return;
