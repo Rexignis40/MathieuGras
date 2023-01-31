@@ -14,7 +14,8 @@ body {
     font-family: var(--font);
 }
 h1.titre{
-    font-family: var(--fonttitle);
+    font-family: var(--font-title);
+    padding-left: 2%;
 }
 
 /* header */
@@ -33,12 +34,18 @@ h1.titre{
     box-shadow: none !important;
 
 }
-
+@media screen and (max-width: 1000px) {
+    .navWrapper {
+        justify-content: space-between;
+    }}
 .navWrapper img{
     width: 125px;
 }
 .navWrapper ul {
     display: flex;
+}
+.sidenav{
+    left: calc(100% - 200px);
 }
 
 .navWrapper .navBarBtn a{
@@ -72,8 +79,28 @@ h1.titre{
         
     }
 }
+.sidenav{
+    font-family: var(--fontbold);
+}
+.logo img{
+    width: 125px;
+    height: 84px;
+    margin: 20px;
+}
 
-
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo a{
+    margin-left: 20%;
+}
+.logo i{
+    font-size: 25px;
+}
+.navBarLogo{
+    margin-left: 20px;
+}
 /* carrousel */
 
 .carouselIndex {
@@ -754,7 +781,6 @@ div.connection{
     margin: 50px;
     padding: 50px;
     border-radius: 2%;
-
 }
 div.use{
     background-image: url(../img/rail.jpg);
@@ -781,9 +807,12 @@ div.test{
 }
 div.test p{
     margin-bottom: 0;
+    font-size: 150%;
 }
 div.conditions{
     margin-left: 15%;
+    margin-bottom: 2%;
+    font-size: 125%;
 }
 div.test form{
     width: 80%;
@@ -799,7 +828,11 @@ div.separation{
     padding-left: 2% !important;
 	}
 p.spacing{
-    margin-bottom: 35%;
+    margin-bottom: 10%;
     -webkit-text-stroke-width: medium;
     font-size: larger;
+}
+p.spacing:hover{
+    color:#3b5998;
+    cursor: pointer;
 }

@@ -239,3 +239,8 @@ function mail(){
         IsSend = false;
     });
 }
+  
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
