@@ -66,16 +66,6 @@ else{
 include('./components/footer.html');
 }
 ?>
-<script type="text/javascript" src="js/Jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script>
-    <?php
-    if(isset($_SESSION["output"])){
-        echo "M.toast({html: '".$_SESSION["output"]."'})";
-        unset($_SESSION["output"]);
-    }
-    ?>
-</script>
 </body>
+<?php include("./components/script.php"); ?>
 </html>

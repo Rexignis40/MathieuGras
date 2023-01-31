@@ -1,4 +1,27 @@
 IsSend = false;
+function SwitchTheme(theme){
+    if(!theme){
+        document.documentElement.style.setProperty('--white', 'black');
+        document.documentElement.style.setProperty('--black', 'white');
+        $("#logo").attr("src", "img/dark_logo.png");
+        return;
+    }
+    document.documentElement.style.setProperty('--white', 'white');
+    document.documentElement.style.setProperty('--black', 'black');
+    $("#logo").attr("src", "img/logo.png");
+}
+
+function ChangeTheme(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/setTheme.php",
+    {
+    },
+    function(data, status){
+        SwitchTheme(parseInt(data));
+        IsSend = false;
+    });
+}
 
 $(document).ready(function(){
     var state = false,

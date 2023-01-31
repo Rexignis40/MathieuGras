@@ -12,6 +12,8 @@
 
 body {
     font-family: var(--font);
+    background-color: var(--white);
+    color: var(--black);
 }
 h1.titre{
     font-family: var(--font-title);
