@@ -34,7 +34,7 @@ include('./components/head.html')?>
         </div>
         <div class="vl"></div>
         <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>">
-        <div>
+        <div class="contentAndPage">
             <div id="content"></div>
             <div id="page"></div>
         </div>
