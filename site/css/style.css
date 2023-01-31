@@ -484,10 +484,70 @@ h1.titre{
     height: 250px;
 }
 
+
 .store .annonce .name {
     font-weight: 700;
 }
 
+.contentAndPage #page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.contentAndPage #page input {
+    border-bottom: none !important;
+    margin: 0 !important;
+}
+input:focus{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.pageBefore, .pageAfter, .pageBeforeImpossible, .pageAfterImpossible {
+    background-color: var(--white); 
+    border: none;
+    color: var(--black);
+    cursor: pointer;
+}
+.pageBefore:active {
+    background-color: var(--white);
+    color: var(--salmon);
+}
+.pageBefore {
+    margin-right: 50px;
+}
+
+.pageBeforeImpossible {
+    margin-right: 50px;
+    opacity: 50%;
+}
+
+.pageafter:active {
+    background-color: var(--white);
+    color: var(--salmon);
+}
+
+.pageAfter {
+    margin-left: 50px;
+}
+
+.pageAfterImpossible {
+    margin-left: 50px;
+    opacity: 50%;
+}
+
+#numPage {
+    width: 50px;
+}
 
 
 /*user*/
