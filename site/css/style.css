@@ -14,7 +14,8 @@ body {
     font-family: var(--font);
 }
 h1.titre{
-    font-family: var(--fonttitle);
+    font-family: var(--font-title);
+    padding-left: 2%;
 }
 
 /* header */
@@ -33,12 +34,18 @@ h1.titre{
     box-shadow: none !important;
 
 }
-
+@media screen and (max-width: 1000px) {
+    .navWrapper {
+        justify-content: space-between;
+    }}
 .navWrapper img{
     width: 125px;
 }
 .navWrapper ul {
     display: flex;
+}
+.sidenav{
+    left: calc(100% - 200px);
 }
 
 .navWrapper .navBarBtn a{
@@ -72,8 +79,28 @@ h1.titre{
         
     }
 }
+.sidenav{
+    font-family: var(--fontbold);
+}
+.logo img{
+    width: 125px;
+    height: 84px;
+    margin: 20px;
+}
 
-
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo a{
+    margin-left: 20%;
+}
+.logo i{
+    font-size: 25px;
+}
+.navBarLogo{
+    margin-left: 20px;
+}
 /* carrousel */
 
 .carouselIndex {
@@ -485,10 +512,70 @@ h1.titre{
     height: 250px;
 }
 
+
 .store .annonce .name {
     font-weight: 700;
 }
 
+.contentAndPage #page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.contentAndPage #page input {
+    border-bottom: none !important;
+    margin: 0 !important;
+}
+input:focus{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.pageBefore, .pageAfter, .pageBeforeImpossible, .pageAfterImpossible {
+    background-color: var(--white); 
+    border: none;
+    color: var(--black);
+    cursor: pointer;
+}
+.pageBefore:active {
+    background-color: var(--white);
+    color: var(--salmon);
+}
+.pageBefore {
+    margin-right: 50px;
+}
+
+.pageBeforeImpossible {
+    margin-right: 50px;
+    opacity: 50%;
+}
+
+.pageafter:active {
+    background-color: var(--white);
+    color: var(--salmon);
+}
+
+.pageAfter {
+    margin-left: 50px;
+}
+
+.pageAfterImpossible {
+    margin-left: 50px;
+    opacity: 50%;
+}
+
+#numPage {
+    width: 50px;
+}
 
 
 /*user*/
@@ -719,7 +806,6 @@ div.connection{
     margin: 50px;
     padding: 50px;
     border-radius: 2%;
-
 }
 div.use{
     background-image: url(../img/rail.jpg);
@@ -746,9 +832,12 @@ div.test{
 }
 div.test p{
     margin-bottom: 0;
+    font-size: 150%;
 }
 div.conditions{
     margin-left: 15%;
+    margin-bottom: 2%;
+    font-size: 125%;
 }
 div.test form{
     width: 80%;
@@ -764,7 +853,11 @@ div.separation{
     padding-left: 2% !important;
 	}
 p.spacing{
-    margin-bottom: 35%;
+    margin-bottom: 10%;
     -webkit-text-stroke-width: medium;
     font-size: larger;
+}
+p.spacing:hover{
+    color:#3b5998;
+    cursor: pointer;
 }

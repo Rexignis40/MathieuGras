@@ -1,6 +1,8 @@
 <?php
 require_once "config.php";
-$to = 'a.camandona@orange.fr';
+ini_set("SMTP", "smtp.gmail.com");
+ini_set("smtp_port", "25");
+$to = 'alexfusix10@gmail.com';
 $message      = wordwrap($_POST["prénom"]." ".$_POST["nom"]."<br>".$_POST["Msg"]);
 $object       = $_POST["obj"];
 $headers = array(
