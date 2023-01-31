@@ -157,6 +157,24 @@ function GetUserInfo(_id){
         IsSend = false;
     });
 }
+function SetUserInfo(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/actions/uptateUser.php",
+    {
+        Prénom:$("#FN").val(),
+        Nom:$("#N").val(),
+        Email:$("#E").val(),
+        Password:$("#P").val(),
+        Age:$("#age").val(),
+        Adresse:$("#A").val(),
+        Num:$("#Nu").val()
+    },
+    function(data, status){
+        console.log(data);
+        IsSend = false;
+    });
+}
 
 function GetUserGalerie(_id){
     if(IsSend) return;
