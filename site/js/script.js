@@ -58,6 +58,7 @@ function SetPrestation(){
         contentType: false,
         processData: false,
         success: function(response){
+            console.log(response);
            IsSend = false;
         },
      });
