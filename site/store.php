@@ -21,19 +21,23 @@ include('./components/head.html')?>
 
     include('./components/header.html')?>
     <div class="store">
-        <nav class="navBarCategory">
-            <ul>
-                <li><button onClick="">toutes</button></li>
-                <li><button onClick="">category 1</button></li>
-                <li><button onClick="">kategory 2</button></li>
-                <li><button onClick="">k t gorique</button></li>
-            </ul>
-        </nav>
-        <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>"/>
-        <div id="content">
-
+        <div class="category">
+        <li><button class="btnCategory" onclick="GetImg(-1, 0)">All</button></li>
+        <?php
+                $q = $pdo->prepare("SELECT * FROM category");
+                $q->execute();
+                $category = $q->fetchAll();
+                foreach($category as $c){
+                    echo "<li><button class='btnCategory'  onclick='GetImg(".$c["id"].", 0)'>".$c["name"]."</button></li>";
+                }
+                ?>
         </div>
-        <button onclick="GetImg(-1,0)">Load</button>    
+        <div class="vl"></div>
+        <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>">
+        <div>
+            <div id="content"></div>
+            <div id="page"></div>
+        </div>
     </div>
 
     <?php include('./components/footer.html')?>

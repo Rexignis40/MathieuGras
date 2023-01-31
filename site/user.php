@@ -20,28 +20,6 @@ if(isset($_SESSION["user"])){
             <a class="spacing" href="php/logout.php">Disconnect</a>
         </div>
         <div class="col m9" id="content">
-
-        <!--
-            <h1> vos infos personelle:</h1>
-            <?php echo $_SESSION["user"]['name'] ?>
-            <form method="post" action="php/actions/uptateUser.php" enctype="multipart/form-data">
-                <h2>Pseudo</h2>
-                <input type='text' name='name' value="<?php echo $_SESSION["user"]['name'] ?>" />
-                <input type='hidden' name='id' value="<?php echo $_SESSION["user"]['id'] ?>"/>
-                <h2>mdp</h2> 
-                <input type='password' name='password' value="<?php echo $_SESSION["user"]['password'] ?>" />
-                <h2>Email</h2>
-                <span class="email"><?php echo $_SESSION["user"]['email'] ?></span>
-                <input type='email' name='email' value="<?php echo $_SESSION["user"]['email'] ?>" />
-                <h2>num</h2>
-                <input type='tel' name='num' value="<?php echo $_SESSION["user"]['num'] ?>" />
-                <h2>age</h2>
-                <input type='number' name='age' value="<?php echo $_SESSION["user"]['age'] ?>" />
-                <h2>adresse</h2>
-                <input type='text' name='adresse' value="<?php echo $_SESSION["user"]['adresse'] ?>" />
-                <input type='submit'>
-            </form>
--->
         </div>
     </div>
 
@@ -54,7 +32,7 @@ if(isset($_SESSION["user"])){
         <input type='text' name='title' id="title"/>
         <h2>description</h2>
         <input type="text" name='description' id="description">
-        <button onClick="GetPrestation()">envoyer</button>
+        <button onClick="SetPrestation()">envoyer</button>        
     <?php 
     }
     include('./components/footer.html');   
