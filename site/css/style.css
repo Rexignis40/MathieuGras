@@ -33,12 +33,18 @@ h1.titre{
     box-shadow: none !important;
 
 }
-
+@media screen and (max-width: 1000px) {
+    .navWrapper {
+        justify-content: space-between;
+    }}
 .navWrapper img{
     width: 125px;
 }
 .navWrapper ul {
     display: flex;
+}
+.sidenav{
+    left: calc(100% - 200px);
 }
 
 .navWrapper .navBarBtn a{
@@ -72,8 +78,28 @@ h1.titre{
         
     }
 }
+.sidenav{
+    font-family: var(--fontbold);
+}
+.logo img{
+    width: 125px;
+    height: 84px;
+    margin: 20px;
+}
 
-
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo a{
+    margin-left: 20%;
+}
+.logo i{
+    font-size: 25px;
+}
+.navBarLogo{
+    margin-left: 20px;
+}
 /* carrousel */
 
 .carouselIndex {
@@ -326,7 +352,7 @@ h1.titre{
     background-color: var(--salmon);
     height: 86px;
     font-family: var(--font-title);
-    font-size: 50px;
+    font-size: 200%;
     border-color: var(--salmon);
 }
 .contact-page textarea.remark{
@@ -505,7 +531,6 @@ div.connection{
     margin: 50px;
     padding: 50px;
     border-radius: 2%;
-
 }
 div.use{
     background-image: url(../img/rail.jpg);
@@ -532,9 +557,12 @@ div.test{
 }
 div.test p{
     margin-bottom: 0;
+    font-size: 150%;
 }
 div.conditions{
     margin-left: 15%;
+    margin-bottom: 2%;
+    font-size: 125%;
 }
 div.test form{
     width: 80%;

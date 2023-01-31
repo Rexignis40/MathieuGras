@@ -119,3 +119,14 @@ $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
   });
+  
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+$('.button-collapse').sideNav({
+    menuWidth: 300,
+    closeOnClick: true,
+    edge: 'right', // <--- CHECK THIS OUT
+  }
+);
+$('.collapsible').collapsible();
