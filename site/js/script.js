@@ -44,18 +44,23 @@ function GetListUser(){
 function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = {
-        title : $("#title").val(),
-        description : $("#description").val()
-    } 
-    $.post("php/setPrestation.php",
-    {
-        p: JSON.stringify(prestation)
-    },
-    function(data, status){
-        console.log(data);
-        IsSend = false;
-    });
+
+    var form = new FormData();
+    form.append("title", $("#title").val());
+    form.append("desc", $("#description").val());
+    form.append("img1", $("#img1")[0].files[0]);
+    form.append("img2", $("#img2")[0].files[0]);
+
+    $.ajax({
+        url: 'php/setPrestation.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
 }
 
 

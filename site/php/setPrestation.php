@@ -1,4 +1,4 @@
-<?php 
+<?php
 $myfile = fopen("prestation/prestation.json", "r"); 
 $json = json_decode(fread($myfile, 1024), true);
 fclose($myfile);

@@ -29,9 +29,12 @@ if(isset($_SESSION["user"])){
         ?>
         <h3>nouvelle prestation</h3>
         <h2>title</h2>
-        <input type='text' name='title' id="title"/>
+        <input name="title" type='text' id="title"/>
         <h2>description</h2>
-        <input type="text" name='description' id="description">
+        <input name="desc" type="text" id="description">
+        <h2>Image</h2>
+        <input name="img1" type="file" id="img1">
+        <input name="img2" type="file" id="img2">
         <button onClick="SetPrestation()">envoyer</button>        
     <?php 
     }
