@@ -14,7 +14,8 @@ body {
     font-family: var(--font);
 }
 h1.titre{
-    font-family: var(--fonttitle);
+    font-family: var(--font-title);
+    padding-left: 2%;
 }
 
 /* header */
@@ -613,7 +614,11 @@ div.separation{
     padding-left: 2% !important;
 	}
 p.spacing{
-    margin-bottom: 35%;
+    margin-bottom: 10%;
     -webkit-text-stroke-width: medium;
     font-size: larger;
+}
+p.spacing:hover{
+    color:#3b5998;
+    cursor: pointer;
 }
