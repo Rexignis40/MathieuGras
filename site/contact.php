@@ -2,7 +2,7 @@
 <?php include('./components/head.html')?>
 <body class="contact-page">
     <?php include('./components/header.html')?>
-        <div  class="contact-page">
+        <div>
             <div class="component">
                 <div class="contact-me">
                     <p>Contactez-moi</p>

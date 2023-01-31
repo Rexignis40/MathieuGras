@@ -32,8 +32,7 @@ if(isset($_SESSION["user"])){
         <input type='text' name='title' id="title"/>
         <h2>description</h2>
         <input type="text" name='description' id="description">
-        <button onClick="GetPrestation()">envoyer</button>
-        <p><?php echo json_decode('prestation.json')?></p>
+        <button onClick="SetPrestation()">envoyer</button>        
     <?php 
     }
     include('./components/footer.html');   

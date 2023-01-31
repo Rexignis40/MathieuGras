@@ -44,20 +44,20 @@ function GetListUser(){
 function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = [];
-    prestation["title"] = $("#title").val();
-    prestation["description"] = $("#description").val();
-    $.post("php/updatePrestation.php",
+    let prestation = {
+        title : $("#title").val(),
+        description : $("#description").val()
+    } 
+    $.post("php/setPrestation.php",
     {
         p: JSON.stringify(prestation)
     },
     function(data, status){
-        let html = "";
-        html += '<div><p>'+ data["title"] +'</p></div>';
-        alert(html);
+        console.log(data);
         IsSend = false;
     });
 }
+
 
 function GetPrestation(){
     if(IsSend) return;
@@ -66,20 +66,46 @@ function GetPrestation(){
     {
     },
     function(data, status){
-        presta = JSON.parse(data);
-        console.log(data);
-        let html = "";
-        html += '<div class="annonce"><h2 class="titlePrestation">'+ presta["title"] +'</h2><p class="prestationDescription">'+ presta["description"] +'</p></div>';
-        $("#prestation").html(html);
+        $("#prestation").html(data);
         IsSend = false;
-    }, "json");
+    });
 }
 
-
-
-
-function GetImg(cat, offset){
+function deletePrestation(_id){
     if(IsSend) return;
+    IsSend = true;
+    $.post("php/deletePrestation.php",
+    {
+        i: _id
+    },
+    function(data, status){
+        console.log(data);
+        IsSend = false;
+    });
+}
+
+//Store Page
+let imgCount = 0;
+function GetImgCount(){
+    return $.post("php/getImgCount.php",
+    {
+    },
+    function(data, status){
+        imgCount = data;
+    });
+}
+
+function RemoveInput(id){
+    $("#" + id).val("");
+}
+
+function GetImgFromInput(cat){
+    GetImg(cat, ($("#num-page").val() - 1) * 12);
+}
+
+async function GetImg(cat, offset){
+    if(imgCount == 0) await GetImgCount();
+    if(IsSend || offset > imgCount + 12) return;
     IsSend = true;
     $.post("php/getImg.php",
     {
@@ -88,15 +114,31 @@ function GetImg(cat, offset){
     },
     function(data, status){
         let html = "";
+        let page = "";
+        if(offset != 0){
+            page += "<button onclick='GetImg("+cat+","+(offset-12)+")'><-</button>";
+        }
+        page += "<input id='num-page' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(Math.ceil(imgCount/12))+"</p>";
         if(data.length != 0){
+            html += "<div class='annonce-line'>";
             for(i = 0; i < data.length; i++){
-                html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form></div>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button>';
+                if(i == 12){
+                    page += "<button onclick='GetImg("+cat+","+(offset+12)+")'>-></button>";
+                }
+                else{
+                    if(i != 0 && i % 4 == 0){
+                        html += "</div>";
+                        if(i != 12) html += "<div class='annonce-line'>";
+                    }
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form>'+'<button onclick="favorie('+ data[i]["id"] +')">Like</button></div>';
+                }
             }
         }
         else{
             html = "<p>Il n'y a aucune image</p>";
         }
         $("#content").html(html);
+        $("#page").html(page);
         IsSend = false;
     }, "json");
 }
@@ -170,6 +212,10 @@ $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
   });
+
+  setInterval(function(){
+    $('.carousel.carousel-slider').carousel("next");
+  }, 5000);
 
 function mail(){
     if(IsSend) return;
