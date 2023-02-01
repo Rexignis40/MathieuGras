@@ -6,7 +6,7 @@ $dataBinded=array(
     ':id'   => $_SESSION["user"]["id"],
     ':name'   => $_POST['Nom'],
     ':first_name'   => $_POST['Prénom'],
-    ':password'   => $_POST['Password'],
+    ':password'   => sha1(sha1($_POST['Password'])),
     ':email'   => $_POST['Email'],
     ':num'   => $_POST['Num'],
     ':age'   => $_POST['Age'],
@@ -14,6 +14,6 @@ $dataBinded=array(
 );
 
 $pre = $pdo->prepare($sql); 
-$pre->execute($dataBinded); 
+$pre->execute($dataBinded);  
 header('location: ../../user.php');
 ?>

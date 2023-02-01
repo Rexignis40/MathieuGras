@@ -11,6 +11,6 @@ $q->execute();
 
 if($q->rowCount() == 1){
     $user = $q->fetch();
-    echo '<h2><input type="text" id="FN" value ='.$user["first_name"].'><input type="text" id="N" value ='.$user["name"].'></h2><p><input type="password" id="P" value ='.$user["password"].'></p><input type="number" id="age" value ='.$user["age"].'><p></p><p><input type="mail" id="E" value ='.$user["email"].'></p><p><input type="text" id="A" value ='.$user["adresse"].'></p><p><input type="tel" id="Nu" value ='.$user["num"].'></p><button onclick="SetUserInfo()">Appliquer les modification</button> ';
+    echo '<div class="you"><div class="nomPrenom"><p><input  type="text" id="FN" value ='.$user["first_name"].'></p><p><input type="text" id="N" value ='.$user["name"].'></p></div><p><input type="password" id="P" value ='.$user["password"].'></p><p><input type="mail" id="E" value ='.$user["email"].'></p><p><input type="number" id="age" value ='.$user["age"].'></p><p><input type="text" id="A" value ='.$user["adresse"].'></p><p><input type="tel" id="Nu" value ='.$user["num"].'></p><button onclick="SetUserInfo()">Appliquer les modification</button></div>';
 }
 ?>
