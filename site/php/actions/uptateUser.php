@@ -1,30 +1,19 @@
 <?php
 require_once "../config.php";
-if(!$_SESSION['user']['admin']){
-    header('Location:../../user.php');
-    exit();
-}
-$sql = "UPDATE user SET name=:name,password=:password,email=:email,num=:num,age=:age,adresse=:adresse WHERE id=:id";
+
+$sql = "UPDATE user SET first_name=:first_name,name=:name,password=:password,email=:email,num=:num,age=:age,adresse=:adresse WHERE id=:id";
 $dataBinded=array(
-    ':id'   => $_POST['id'],
-    ':name'   => $_POST['name'],
-    ':password'   => $_POST['password'],
-    ':email'   => $_POST['email'],
-    ':num'   => $_POST['num'],
-    ':age'   => $_POST['age'],
-    ':adresse'   => $_POST['adresse']
+    ':id'   => $_SESSION["user"]["id"],
+    ':name'   => $_POST['Nom'],
+    ':first_name'   => $_POST['Prénom'],
+    ':password'   => $_POST['Password'],
+    ':email'   => $_POST['Email'],
+    ':num'   => $_POST['Num'],
+    ':age'   => $_POST['Age'],
+    ':adresse'   => $_POST['Adresse']
 );
+
 $pre = $pdo->prepare($sql); 
-$pre->execute($dataBinded);
+$pre->execute($dataBinded);  
 header('location: ../../user.php');
-$_SESSION["user"] = array(
-    'id'   => $_POST['id'],
-    'name'   => $_POST['name'],
-    'password'   => $_POST['password'],
-    'email'   => $_POST['email'],
-    'num'   => $_POST['num'],
-    'age'   => $_POST['age'],
-    'adresse'   => $_POST['adresse'],
-    'admin' => $_SESSION["user"]["admin"]
-);
 ?>

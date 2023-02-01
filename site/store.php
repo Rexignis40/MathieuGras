@@ -34,7 +34,7 @@ include('./components/head.html')?>
         </div>
         <div class="vl"></div>
         <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>">
-        <div>
+        <div class="contentAndPage">
             <div id="content"></div>
             <div id="page"></div>
         </div>
@@ -42,9 +42,7 @@ include('./components/head.html')?>
 
     <?php include('./components/footer.html')?>
 </body>
-<script type="text/javascript" src="js/Jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<?php include("./components/script.php"); ?>
 <script>
    document.body.addEventListener("load", GetImg(-1, 0));
 </script>

@@ -14,6 +14,8 @@
             </div>
             <div class="test">
                 <form method="post" action="php/logup.php">
+                    <p>Prénom</p>
+                    <input class="white-text" type='text' name='first_name' />
                     <p>Nom</p>
                     <input class="white-text" type='text' name='name' />
                     <p>Age</p>
@@ -36,8 +38,9 @@
         </div>
 </div>
     <?php include('./components/footer.html')?>
-<script type="text/javascript" src="js/Jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="../js/Jquery.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
 </body>
+    <?php include("./components/script.php"); ?>
 </html>

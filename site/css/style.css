@@ -107,7 +107,7 @@ h1.titre{
 }
 .menu{
     font-size: 300% !important;
-    margin-right: 100px;
+    margin-right: 50px;
 }
 /* carrousel */
 
@@ -527,7 +527,6 @@ h1.titre{
 
 
 
-
 /* ----------------- */
 
 /* footer */
@@ -657,75 +656,3 @@ h1.titre{
     padding-left: 5px;
 }
 
-/*user*/
-div.connection{
-    background-color: var(--black);
-    opacity: 80%;
-    color: var(--white);
-    border-radius: 2%;
-    text-align: justify;
-    margin: 50px;
-    padding: 50px;
-}
-div.use{
-    background-image: url(../img/rail.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-bottom: 25px;
-    padding-top: 25px;
-    margin-bottom: 0;
-}
-div.count{
-    margin-top:50px
-}
-div form input.butonuser{
-    background-color: var(--salmon);
-    border-color: var(--salmon);
-}
-div.connection a{
-    color: var(--white);
-}
-div.connection a:hover{
-    color: var(--salmon);
-}
-div.connect{
-    display: flex;
-    margin-left: 15%;
-}
-div.connect p{
-    margin-bottom: 0;
-    font-size: 125%;
-}
-div.conditions{
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 5%;
-    font-size: 80%;
-}
-div.conditions a{
-    font-size: 135%;
-    margin-bottom: 5%;
-}
-div.connect form{
-    width: 80%;
-}
-
-
-div.separation{
-    border-right: 2px solid black;
-    height: 100%;
-    display: flex;
-    vertical-align: middle;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding-left: 2% !important;
-	}
-p.spacing{
-    margin-bottom: 10%;
-    -webkit-text-stroke-width: medium;
-    font-size: larger;
-}
-p.spacing:hover{
-    color:#3b5998;
-    cursor: pointer;
-}
