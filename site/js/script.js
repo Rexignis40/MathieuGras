@@ -223,26 +223,24 @@ function SetUserInfo(){
     IsSend = true;
     $.post("php/actions/uptateUser.php",
     {
-        Prénom:$("#FN").val(),
-        Nom:$("#N").val(),
-        Email:$("#E").val(),
-        Password:$("#P").val(),
-        Age:$("#age").val(),
-        Adresse:$("#A").val(),
-        Num:$("#Nu").val()
+        first_name:$("#FN").val(),
+        name:$("#N").val(),
+        email:$("#E").val(),
+        password:$("#P").val(),
+        age:$("#age").val(),
+        adresse:$("#A").val(),
+        num:$("#Nu").val()
     },
     function(data, status){
-        console.log(data);
         IsSend = false;
     });
 }
 
-function GetUserGalerie(_id){
+function GetUserGalerie(){
     if(IsSend) return;
     IsSend = true;
     $.post("php/getUserGalerie.php",
     {
-        id: _id
     },
     function(data, status){
         let html = "";
@@ -281,15 +279,13 @@ function GetUserLike(_id){
     }, "json");
 }
 
-function BuyBasket(_basket, u){
+function BuyBasket(){
     if(IsSend) return;
     IsSend = true;
     console.log(_basket);
     console.log(u);
     $.post("php/buyBasket.php",
     {
-        basket: _basket,
-        user: u
     },
     function(data, status){
         $("#basket").html("");
@@ -302,7 +298,6 @@ function favorie(id){
     IsSend = true;
     $.post("php/addFavorie.php",
     {
-        uid: $("#uid").val(),
         img: id 
     },
     function(data, status){

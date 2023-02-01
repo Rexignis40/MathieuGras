@@ -8,7 +8,7 @@ if(!isset($_POST['password']) || !isset($_POST['email']) ){
 $sql = "SELECT * FROM user WHERE email=:email AND password=:password"; 
 $pre = $pdo->prepare($sql); 
 $pre->bindParam(":email",$_POST['email']);
-$pre->bindValue(":password",sha1(sha1($_POST['password']."vdvfdgdf234567890°+£µ*%MPHBN?KOYGHBsgvdf788383fdvfdf4894891154bdfbdsvdfv")."4g8rez48v4rfbg56re4b5fd78hf5b4reh486fe4g8re8"));
+$pre->bindValue(":password",sha1(md5($_POST['password']."vdvfdgdf234567890°+£µ*%MPHBN?KOYGHBsgvdf788383fdvfdf4894891154bdfbdsvdfv")."4g8rez48v4rfbg56re4b5fd78hf5b4reh486fe4g8re8"));
 $pre->execute();
 if($pre->rowCount() != 1){
     $_SESSION['output'] =  "Email ou mot de passe incorrect !";

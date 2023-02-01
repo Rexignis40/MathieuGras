@@ -1,5 +1,5 @@
 <?php  
-require_once('config.php'); 
+require_once('config.php');
 $myfile = fopen("prestation/prestation.json", "r"); 
 $json = json_decode(fread($myfile, filesize("prestation/prestation.json")), true)["prest"];
 fclose($myfile);

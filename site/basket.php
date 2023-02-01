@@ -26,7 +26,7 @@ include('./components/head.html')?>
         echo $html;
     }
     ?>
-    <button onclick='BuyBasket(<?php echo json_encode($_SESSION["basket"]) ?>, <?php echo $_SESSION["user"]["id"] ?>)'>BUY</button>
+    <button onclick='BuyBasket()'>BUY</button>
     <?php include('./components/footer.html');?>
 </body>
 <?php include("./components/script.php"); ?>

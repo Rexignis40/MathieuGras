@@ -1,4 +1,7 @@
 <?php
+if(!isset($_POST["title"]) || !isset($_POST["desc"]) || !isset($_POST["price"])){
+    exit();
+}
 $myfile = fopen("prestation/prestation.json", "r"); 
 $json = json_decode(fread($myfile, filesize("prestation/prestation.json")), true);
 fclose($myfile);
