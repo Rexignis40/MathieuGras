@@ -7,11 +7,11 @@
     <label>Prix: <input type="number" name="price" required></label>
     <label>Image: <input type="file" name="img" required></label>
     <?php
-    $sql = "SELECT * FROM category"; 
-    $pre = $pdo->prepare($sql); 
+    $sql = "SELECT * FROM category";
+    $pre = $pdo->prepare($sql);
     $pre->execute();
     $data = $pre->fetchAll(PDO::FETCH_ASSOC);
-    foreach($data as $category){ 
+    foreach($data as $category){
        echo ('<br> <label>category: <input type="radio" name="category" value="'.$category["id"].'" required>'.$category["name"].'</label>');
     }
     ?>
