@@ -14,17 +14,17 @@
             </div>
             <div class="test">
                 <form method="post" action="php/logup.php">
-                    <p>votre Prénom Nom</p>
+                    <p>Nom</p>
                     <input class="white-text" type='text' name='name' />
                     <p>Age</p>
                     <input class="white-text" type='number' name='age' />
-                    <p>votre E mail</p>
+                    <p>E-mail</p>
                     <input class="white-text" type='email' name='email'/>
-                    <p>votre mot de passe</p>
+                    <p>Mot de passe</p>
                     <input class="white-text" type='password' name='password' />
-                    <p>votre numéro de téléphone</p>
+                    <p>Numéro de téléphone</p>
                     <input class="white-text" type='tel' name='num' />
-                    <p>votre adresse</p>
+                    <p>Adresse</p>
                     <input class="white-text" type='text' name='adresse' />
                     <div class="count"><input class="butonuser" type='submit' value='Créer un compte' /></div>
                 </form>
@@ -36,8 +36,8 @@
         </div>
 </div>
     <?php include('./components/footer.html')?>
-<script type="text/javascript" src="../js/Jquery.min.js"></script>
-<script type="text/javascript" src="../js/materialize.min.js"></script>
-<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="js/Jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

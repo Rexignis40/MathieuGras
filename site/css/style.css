@@ -44,9 +44,6 @@ h1.titre{
 .navWrapper ul {
     display: flex;
 }
-.sidenav{
-    left: calc(100% - 200px);
-}
 
 .navWrapper .navBarBtn a{
     color: var(--black);
@@ -85,12 +82,13 @@ h1.titre{
 .logo img{
     width: 125px;
     height: 84px;
-    margin: 20px;
 }
 
 .logo{
     display: flex;
     align-items: center;
+    vertical-align: center;
+    margin: 20px;
 }
 .logo a{
     margin-left: 20%;
@@ -100,6 +98,12 @@ h1.titre{
 }
 .navBarLogo{
     margin-left: 20px;
+}
+.acceuil{
+    margin-top: 20px;
+}
+.navBar .sidenav a:hover{
+    background-color: var(--white);
 }
 /* carrousel */
 
@@ -546,17 +550,17 @@ div.connection a{
 div.connection a:hover{
     color: var(--salmon);
 }
-div.test{
+div.connect{
     display: flex;
     margin-left: 15%;
 }
-div.test p{
+div.connect p{
     margin-bottom: 0;
 }
 div.conditions{
     margin-left: 15%;
 }
-div.test form{
+div.connect form{
     width: 80%;
 }
     
@@ -718,15 +722,15 @@ div.connection{
     background-color: var(--black);
     opacity: 80%;
     color: var(--white);
-    margin: 50px;
-    padding: 50px;
     border-radius: 2%;
+    text-align: justify;
 }
 div.use{
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    margin-bottom: 0;
+    padding-bottom: 25px;
+    padding-top: 25px;
 }
 div.count{
     margin-top:50px
@@ -741,23 +745,25 @@ div.connection a{
 div.connection a:hover{
     color: var(--salmon);
 }
-div.test{
-    display: flex;
-    margin-left: 15%;
-}
-div.test p{
+div.connect p{
     margin-bottom: 0;
-    font-size: 150%;
+    font-size: 125%;
 }
 div.conditions{
     margin-left: 15%;
-    margin-bottom: 2%;
-    font-size: 125%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    font-size: 80%;
 }
-div.test form{
+div.conditions a{
+    font-size: 135%;
+    margin-bottom: 5%;
+}
+div.connect form{
     width: 80%;
 }
-    
+
+
 div.separation{
     border-right: 2px solid black;
     height: 100%;
