@@ -64,6 +64,27 @@ function GetListUser(){
     });
 }
 
+function SendImgPrest(id){
+    if(IsSend) return;
+    IsSend = true;
+
+    var form = new FormData();
+    form.append("uid", id);
+    form.append("name", $("#name-user-img").val());
+    form.append("img", $("#img-user")[0].files[0]);
+
+    $.ajax({
+        url: 'php/SendImgPrest.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
+}
+
 function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
@@ -248,7 +269,29 @@ function GetUserGalerie(_id){
         let html = "";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+            }
+        }
+        else{
+            html += "<div><p>Vous n'avez aucune image</p></div>";
+        }
+        $("#content").html(html);
+        IsSend = false;
+    }, "json");
+}
+
+function GetUserBuyImg(_id){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/getUserBuyImg.php",
+    {
+        id: _id
+    },
+    function(data, status){
+        let html = "";
+        if(data.length != 0){
+            for(i = 0; i < data.length; i++){
+                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
             }
         }
         else{

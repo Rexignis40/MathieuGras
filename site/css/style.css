@@ -449,15 +449,16 @@ h1.titre{
         resize: none;
     }
 }
+
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-family: var(--fonttitle);
 }
 .annonce .prestationDescription {
     text-align: center;
-    font-size: 25px;
+    font-size: 16px;
     font-family: var(--font);
 }
 
@@ -470,10 +471,17 @@ h1.titre{
 
 }
 
+.prestationPrice{
+    text-align: center;
+    font-size: 16px;
+    font-family: var(--fonttitle);
+    font-style: italic;
+}
+
 @media screen and (min-width: 1000px){
     .annonce .prestationDescription {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     }
 }
 
@@ -753,32 +761,24 @@ p.spacing{
 
 
 
-
-
-
-
-
-
-
-/* ----------------- */
-
 /* footer */
 
 .pageFooter {
     background-color: var(--brown);
     color: var(--white);
-    height: 40%;
     margin-bottom: 0px;
+    background: linear-gradient(var(--brown),#694435);
 }
 
 .pageFooter h3 {
     font-size: 2vh;
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 
 .pageFooter .socialAndLanguage {
     padding-top: 3vh;
-    background-color: #671f1a;
-    padding-bottom: 24px;
+    margin-bottom: 0px;
 }
 
 
@@ -865,8 +865,10 @@ p.spacing{
     filter: grayscale(0%);
 }
 
+/* presentation & contact */
+
+
 .pageFooter .presentationContact {
-    background-color: #7E503E;
     margin-bottom: 0px;
     padding-bottom: 20px;
     margin-top: 30px;
@@ -892,25 +894,16 @@ p.spacing{
 
 .pageFooter .info p {
     margin: 0px;
-    padding-bottom: 30px;
-}
-
-/* presentatio & contact */
-.pageFooter .presentationContact {
-    background-color: #7E503E;
-    margin-bottom: 0px;
-    padding-bottom: 30px;
 }
 
 /* copyright */
 .pageFooter .copyright {
     display: flex;
     align-items: center;
-    background-color: #671f1a;
 }
 
 .pageFooter .copyright p {
-    color: rgb(189, 189, 189);
+    color: #ECCCBF;
     padding-left: 10px;
 }
 
