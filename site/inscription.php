@@ -14,7 +14,9 @@
             </div>
             <div class="test">
                 <form method="post" action="php/logup.php">
-                    <p>votre Prénom Nom</p>
+                    <p>votre Prénom</p>
+                    <input class="white-text" type='text' name='first_name' />
+                    <p>votre Nom</p>
                     <input class="white-text" type='text' name='name' />
                     <p>Age</p>
                     <input class="white-text" type='number' name='age' />

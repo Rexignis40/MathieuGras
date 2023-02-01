@@ -53,7 +53,7 @@ else{
             <div class="test">
                 <form method="post" action="php/login.php">
                     <p>Pseudo/E-mail</p>
-                    <input class="white-text" type='text' name='name' />
+                    <input class="white-text" type='text' name='email' />
                     <p>Mot de passe</p>
                     <input class="white-text" type='password' name='password' />
                     <div class="count"><input class="butonuser" type='submit' value='Me connecter' /></div>
