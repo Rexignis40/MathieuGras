@@ -7,6 +7,8 @@
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
+
+    --carousel-img-portfolio: "../img/IMG_1209\ 2.JPG";
 }
 
 
@@ -338,8 +340,8 @@ h1.titre{
 }
 
 
-.carouselPortfolio .carouselFive {
-    background-image: url("../img/IMG_1209\ 2.JPG");
+.carouselPortfolio .carouselImgPortfolio {
+    background-image: var(--carousel-img-portfolio);
     background-repeat: no-repeat;
     background-size: cover;
 }

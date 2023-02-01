@@ -100,6 +100,8 @@ function GetPrestation(){
     });
 }
 
+
+
 function deletePrestation(_id){
     if(IsSend) return;
     IsSend = true;
@@ -112,6 +114,39 @@ function deletePrestation(_id){
         IsSend = false;
     });
 }
+
+//Portfolio
+
+function SetPortfolio(){
+    if(IsSend) return;
+    IsSend = true;
+
+    var form = new FormData();
+    form.append("title", $("#title").val());
+    form.append("desc", $("#description").val());
+    form.append("img1", $("#img1")[0].files[0]);
+    form.append("img2", $("#img2")[0].files[0]);
+    form.append("img3", $("#img3")[0].files[0]);
+    form.append("img4", $("#img4")[0].files[0]);
+
+    $.ajax({
+        url: 'php/setPrestation.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
+}
+
+function GetPortfolio(){
+    for(i = 0; i < 4; i++){
+        document.documentElement.style.setProperty('--carousel-img-portfolio', 'img/portfolio/portfolio1img'+i+'.png');
+    }
+}
+
 
 //Store Page
 let imgCount = 0;
