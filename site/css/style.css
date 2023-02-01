@@ -865,6 +865,36 @@ p.spacing{
     filter: grayscale(0%);
 }
 
+.pageFooter .presentationContact {
+    background-color: #7E503E;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+}
+
+.pageFooter .presentation {
+    text-align: justify;
+    border-left: 3px solid var(--white);
+}
+
+.pageFooter .info {
+    border-left: 3px solid var(--white);
+}
+
+.pageFooter .info .phone, .adress, .emailFooter{
+    display: flex;
+}
+
+.pageFooter .fa-solid{
+    margin: 7px;
+    margin-left: 0px;
+}
+
+.pageFooter .info p {
+    margin: 0px;
+    padding-bottom: 30px;
+}
+
 /* presentatio & contact */
 .pageFooter .presentationContact {
     background-color: #7E503E;
