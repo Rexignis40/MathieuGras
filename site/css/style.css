@@ -12,6 +12,8 @@
 
 body {
     font-family: var(--font);
+    background-color: var(--white);
+    color: var(--black);
 }
 h1.titre{
     font-family: var(--font-title);
@@ -442,30 +444,129 @@ h1.titre{
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-family: var(--fonttitle);
+}
+
+.annonce .img{
+    display: block;
+    margin: 50 auto 80px auto; 
+    width: 40%;
+    max-width: 40%;
+    max-height: 50vh;
+    
 }
 .annonce .prestationDescription {
     text-align: center;
-    font-size: 25px;
+    font-size: 14px;
     font-family: var(--font);
 }
 
-
-.annonce .prestationBtn{
-    background-color: var(--salmon);
-    color: var(--white);
-    font-size: 30px;
-    border-color: var(--white);
-    border-style: solid;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    margin-left: 40%;
-    width: 20%;
-    font-family: var(--fonttitle);
+@media screen and (min-width: 1000px){
+    .annonce .prestationDescription {
+    margin-left: 100px;
+    margin-right: 100px;
+    }
 }
 
+@media screen and (max-width: 1000px) {
+    .annonce .prestationDescription {
+        margin-left: 40px;
+        margin-right: 40px;
+        }
+}
+
+.annonce .prestationPrice {
+    text-align: center;
+    font-size: 14px;
+    font-family: var(--fonttitle);
+    font-style: italic;
+    margin-top: 50px;
+}
+
+.trash{
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    font-size: 40px;
+}
+
+.trash:hover{
+    cursor: pointer;
+}
+
+.ligne{
+    width: 80%;
+    height: 1px;
+    background-color: var(--black);
+}
+
+@media screen and (min-width: 1100px) {
+    .agendaBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 40%;
+        width: 20%;
+        font-family: var(--fonttitle);
+        margin-bottom: 200px;
+        margin-top: 150px;
+    }
+
+    .annonce .prestationBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 40%;
+        width: 20%;
+        font-family: var(--fonttitle);
+        margin-bottom: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 1100px){
+    .agendaBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 25%;
+        width: 50%;
+        font-family: var(--fonttitle);
+        margin-bottom: 200px;
+        margin-top: 150px;
+    }
+
+    .annonce .prestationBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 25%;
+        width: 50%;
+        font-family: var(--fonttitle);
+    }
+    
+}
 /* store */
 
 .store{
@@ -798,66 +899,3 @@ p.spacing{
     padding-left: 5px;
 }
 
-/*user*/
-div.connection{
-    background-color: var(--black);
-    opacity: 80%;
-    color: var(--white);
-    margin: 50px;
-    padding: 50px;
-    border-radius: 2%;
-}
-div.use{
-    background-image: url(../img/rail.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 0;
-}
-div.count{
-    margin-top:50px
-}
-div form input.butonuser{
-    background-color: var(--salmon);
-    border-color: var(--salmon);
-}
-div.connection a{
-    color: var(--white);
-}
-div.connection a:hover{
-    color: var(--salmon);
-}
-div.test{
-    display: flex;
-    margin-left: 15%;
-}
-div.test p{
-    margin-bottom: 0;
-    font-size: 150%;
-}
-div.conditions{
-    margin-left: 15%;
-    margin-bottom: 2%;
-    font-size: 125%;
-}
-div.test form{
-    width: 80%;
-}
-    
-div.separation{
-    border-right: 2px solid black;
-    height: 100%;
-    display: flex;
-    vertical-align: middle;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding-left: 2% !important;
-	}
-p.spacing{
-    margin-bottom: 10%;
-    -webkit-text-stroke-width: medium;
-    font-size: larger;
-}
-p.spacing:hover{
-    color:#3b5998;
-    cursor: pointer;
-}

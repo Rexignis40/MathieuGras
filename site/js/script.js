@@ -1,4 +1,27 @@
 IsSend = false;
+function SwitchTheme(theme){
+    if(!theme){
+        document.documentElement.style.setProperty('--white', 'black');
+        document.documentElement.style.setProperty('--black', 'white');
+        $("#logo").attr("src", "img/dark_logo.png");
+        return;
+    }
+    document.documentElement.style.setProperty('--white', 'white');
+    document.documentElement.style.setProperty('--black', 'black');
+    $("#logo").attr("src", "img/logo.png");
+}
+
+function ChangeTheme(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/setTheme.php",
+    {
+    },
+    function(data, status){
+        SwitchTheme(parseInt(data));
+        IsSend = false;
+    });
+}
 
 $(document).ready(function(){
     var state = false,
@@ -44,18 +67,24 @@ function GetListUser(){
 function SetPrestation(){
     if(IsSend) return;
     IsSend = true;
-    let prestation = {
-        title : $("#title").val(),
-        description : $("#description").val()
-    } 
-    $.post("php/setPrestation.php",
-    {
-        p: JSON.stringify(prestation)
-    },
-    function(data, status){
-        console.log(data);
-        IsSend = false;
-    });
+
+    var form = new FormData();
+    form.append("title", $("#title").val());
+    form.append("desc", $("#description").val());
+    form.append("price", $("#price").val());
+    form.append("img1", $("#img1")[0].files[0]);
+    form.append("img2", $("#img2")[0].files[0]);
+
+    $.ajax({
+        url: 'php/setPrestation.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
 }
 
 

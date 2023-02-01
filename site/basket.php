@@ -29,7 +29,5 @@ include('./components/head.html')?>
     <button onclick='BuyBasket(<?php echo json_encode($_SESSION["basket"]) ?>, <?php echo $_SESSION["user"]["id"] ?>)'>BUY</button>
     <?php include('./components/footer.html');?>
 </body>
-<script type="text/javascript" src="js/Jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+<?php include("./components/script.php"); ?>
 </html>

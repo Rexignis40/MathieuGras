@@ -35,9 +35,7 @@
             </div>
         </div>
 </div>
-    <?php include('./components/footer.html')?>
-<script type="text/javascript" src="../js/Jquery.min.js"></script>
-<script type="text/javascript" src="../js/materialize.min.js"></script>
-<script type="text/javascript" src="../js/script.js"></script>
+    <?php include('./components/footer.html'); ?>
 </body>
+    <?php include("./components/script.php"); ?>
 </html>

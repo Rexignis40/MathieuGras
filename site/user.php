@@ -29,9 +29,14 @@ if(isset($_SESSION["user"])){
         ?>
         <h3>nouvelle prestation</h3>
         <h2>title</h2>
-        <input type='text' name='title' id="title"/>
+        <input name="title" type='text' id="title"/>
         <h2>description</h2>
-        <input type="text" name='description' id="description">
+        <input name="desc" type="text" id="description">
+        <h2>price</h2>
+        <input name="price" type="text" id="price">
+        <h2>Image</h2>
+        <input name="img1" type="file" id="img1">
+        <input name="img2" type="file" id="img2">
         <button onClick="SetPrestation()">envoyer</button>        
     <?php 
     }
@@ -63,16 +68,6 @@ else{
 include('./components/footer.html');
 }
 ?>
-<script type="text/javascript" src="js/Jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script>
-    <?php
-    if(isset($_SESSION["output"])){
-        echo "M.toast({html: '".$_SESSION["output"]."'})";
-        unset($_SESSION["output"]);
-    }
-    ?>
-</script>
 </body>
+<?php include("./components/script.php"); ?>
 </html>
