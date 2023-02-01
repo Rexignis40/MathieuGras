@@ -132,10 +132,22 @@ function GetImgFromInput(cat){
     GetImg(cat, ($("#num-page").val() - 1) * 12);
 }
 
+lastScreenWidth = 5000;
+actualCat = -1;
+actualOffset = 0;
+window.addEventListener('resize', function(event) {
+    w = event.currentTarget.innerWidth;
+    if(w < 1100 && lastScreenWidth >= 1100 || w > 1100 && lastScreenWidth <= 1100 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImg(actualCat, actualOffset);
+    lastScreenWidth = w;
+}, true);
+
+
 async function GetImg(cat, offset){
     if(imgCount == 0) await GetImgCount();
     if(IsSend || offset > imgCount + 12) return;
     IsSend = true;
+    actualCat = cat;
+    actualOffset = offset;
     $.post("php/getImg.php",
     {
         c: cat,
@@ -152,10 +164,24 @@ async function GetImg(cat, offset){
         }
         page += "<input id='numPage' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(Math.ceil(imgCount/12))+"</p>";
         if(data.length != 0){
+            modulo = 4;
+            if(window.innerWidth < 1500){
+                if(window.innerWidth < 1300){
+                    if(window.innerWidth < 1100){
+                        modulo = 1;
+                    }
+                    else{
+                        modulo = 2;
+                    }
+                }
+                else{
+                    modulo = 3;
+                }
+            }
             html += "<div class='annonce-line'>";
             for(i = 0; i < data.length; i++){
                 if(i == 12) break;
-                    if(i != 0 && i % 4 == 0){
+                    if(i != 0 && i % modulo == 0){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
