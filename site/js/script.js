@@ -153,6 +153,19 @@ function GetImgFromInput(cat){
     GetImg(cat, ($("#num-page").val() - 1) * 12);
 }
 
+let like;
+function IdImgByUser(id_image){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/IdImgByUser.php",
+    {
+        id: id_image
+    },
+    function(data, status){
+        like = data;
+        IsSend = false;
+    });
+}
 lastScreenWidth = 5000;
 actualCat = -1;
 actualOffset = 0;
@@ -162,7 +175,16 @@ window.addEventListener('resize', function(event) {
     lastScreenWidth = w;
 }, true);
 
-
+function IsIdIn(id, tableau){
+    result = false;
+    tableau.forEach(elm => {
+        if(elm == id){
+            result = true;
+            break;
+        }
+    });
+    return result;
+}
 async function GetImg(cat, offset){
     if(imgCount == 0) await GetImgCount();
     if(IsSend || offset > imgCount + 12) return;
@@ -206,8 +228,8 @@ async function GetImg(cat, offset){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form>'+'<button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
-                    // <i class="fa-solid fa-cart-shopping"></i> le cadddddddddddddddddddddddddddddddddie
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="category"></p><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form>'+'<button onclick="favorie('+ data[i]["id"] +')">'+IdImgByUser($_SESSION[user][id])?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>'+'</button></div>';
+                    // <i class="fa-solid fa-cart-shopping"></i> le cadddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddie
             }
             if(data.length == 13){
                 page += "<button class='pageAfter' onclick='GetImg("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
