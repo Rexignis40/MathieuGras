@@ -459,6 +459,15 @@ h1.titre{
     font-family: var(--font);
 }
 
+.annonce .img{
+    display: block;
+    margin: 50 auto 80px auto; 
+    width: 40%;
+    max-width: 40%;
+    max-height: 50vh;
+
+}
+
 
 .annonce .prestationBtn{
     background-color: var(--salmon);
