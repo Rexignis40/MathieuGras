@@ -449,15 +449,16 @@ h1.titre{
         resize: none;
     }
 }
+
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-family: var(--fonttitle);
 }
 .annonce .prestationDescription {
     text-align: center;
-    font-size: 25px;
+    font-size: 16px;
     font-family: var(--font);
 }
 
@@ -470,10 +471,17 @@ h1.titre{
 
 }
 
+.prestationPrice{
+    text-align: center;
+    font-size: 16px;
+    font-family: var(--fonttitle);
+    font-style: italic;
+}
+
 @media screen and (min-width: 1000px){
     .annonce .prestationDescription {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     }
 }
 
