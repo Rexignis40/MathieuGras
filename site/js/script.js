@@ -215,7 +215,6 @@ function IsIdIn(id, tableau){
     tableau.forEach(elm => {
         if(elm == id){
             result = true;
-            break;
         }
     });
     return result;
@@ -243,7 +242,7 @@ async function GetImg(cat, offset){
         page += "<input id='numPage' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(Math.ceil(imgCount/12))+"</p>";
         if(data.length != 0){
             modulo = 4;
-            if(window.innerWidth < 1500){
+            if(window.innerWidth < 1700){
                 if(window.innerWidth < 1300){
                     if(window.innerWidth < 1100){
                         modulo = 1;
@@ -263,7 +262,7 @@ async function GetImg(cat, offset){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input name="product" type="submit" value="Buy"></form>'+'<button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input id="basket" name="product" type="submit" value="Buy"></form>'+'<button class="like" onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
                     // <i class="fa-solid fa-cart-shopping"></i> le cadddddddddddddddddddddddddddddddddie
             }
             if(data.length == 13){
