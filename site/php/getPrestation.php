@@ -15,10 +15,11 @@ for($i = 0; $i < sizeof($json); $i++){
     if (file_exists("../img/prestation/". $elm["title"] ."img2.png")) {
         $html .= "<img class='img' src='img/prestation/". $elm["title"] ."img2.png' />";
       }
-    $html .= '<a class="prestationBtn" href="store.php">achete moi</a><hr class="ligne">';
+    $html .= '<a class="prestationBtn" href="store.php">Sélectionner</a>';
     if(isset($_SESSION["user"]) && $_SESSION["user"]["admin"]){
         $html .= '<br><button class="trash" onClick="deletePrestation('. $i .')"><i class="fa-solid fa-trash"></i></button>';
     }
+    $html .= '<hr class="ligne">';
     $html .= '</div>';
 }
 echo $html;
