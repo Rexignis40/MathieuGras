@@ -22,16 +22,17 @@ include('./components/head.html')?>
     include('./components/header.html')?>
     <div class="store">
         <div class="category">
-        <li><button class="btnCategory" onclick="GetImg(-1, 0)">All</button></li>
+        <li><button class="btnCategory" onclick="GetImg(-1, 0)">tout</button></li>
         <?php
                 $q = $pdo->prepare("SELECT * FROM category");
                 $q->execute();
                 $category = $q->fetchAll();
                 foreach($category as $c){
-                    echo "<li><button class='btnCategory'  onclick='GetImg(".$c["id"].", 0)'>".$c["name"]."</button></li>";
+                    echo "<li><button class='btnCategory' onclick='GetImg(".$c["id"].", 0)'>".$c["name"]."</button></li>";
                 }
                 ?>
         </div>
+        <hr>
         <div class="vl"></div>
         <input id="uid" type="hidden" value="<?php if (isset($_SESSION["user"])) { echo $_SESSION["user"]["id"]; } ?>">
         <div class="contentAndPage">
