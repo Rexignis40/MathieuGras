@@ -47,13 +47,13 @@ else{
     ?>
     <div class="use row">
         <div class="connection col l4 offset-l4 ">
-            <div class="test">
+            <div class="connect">
                 <h2>SE CONNECTER</h2>
             </div>
-            <div class="test">
+            <div class="connect">
                 <form method="post" action="php/login.php">
-                    <p>Pseudo/E-mail</p>
-                    <input class="white-text" type='text' name='email' />
+                    <p>E-mail</p>
+                    <input class="white-text" type='email' name='email' />
                     <p>Mot de passe</p>
                     <input class="white-text" type='password' name='password' />
                     <div class="count"><input class="butonuser" type='submit' value='Me connecter' /></div>
