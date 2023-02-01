@@ -13,5 +13,5 @@ $q->bindParam(":id", $_POST["id"], PDO::PARAM_INT);
 $q->execute();
 
 $_SESSION["output"] = "Category supprimer";
-header("Location: ../../user.php");
+header("Location: ../user.php");
 ?>
