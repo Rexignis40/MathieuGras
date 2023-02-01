@@ -6,6 +6,7 @@ fclose($myfile);
 $myfile = fopen("prestation/prestation.json", "w");
 $newElm["title"] = $_POST["title"];
 $newElm["description"] = $_POST["desc"];
+$newElm["price"] = $_POST["price"];
 array_push($json["prest"], json_encode($newElm));
 fwrite($myfile, json_encode($json));
 fclose($myfile);

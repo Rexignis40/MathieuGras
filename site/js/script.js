@@ -71,6 +71,7 @@ function SetPrestation(){
     var form = new FormData();
     form.append("title", $("#title").val());
     form.append("desc", $("#description").val());
+    form.append("price", $("#price").val());
     form.append("img1", $("#img1")[0].files[0]);
     form.append("img2", $("#img2")[0].files[0]);
 

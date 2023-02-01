@@ -447,27 +447,109 @@ h1.titre{
     font-size: 60px;
     font-family: var(--fonttitle);
 }
+
+.annonce .img{
+    display: block;
+    margin: 50 auto 80px auto; 
+    width: 40%;
+    max-width: 40%;
+    max-height: 50vh;
+    
+}
 .annonce .prestationDescription {
     text-align: center;
     font-size: 25px;
     font-family: var(--font);
 }
 
-
-.annonce .prestationBtn{
-    background-color: var(--salmon);
-    color: var(--white);
-    font-size: 30px;
-    border-color: var(--white);
-    border-style: solid;
-    padding: 10px;
-    display: block;
+.annonce .prestationPrice {
     text-align: center;
-    margin-left: 40%;
-    width: 20%;
+    font-size: 16px;
     font-family: var(--fonttitle);
+    font-style: italic;
+    margin-top: 50px;
 }
 
+.trash{
+    background-color: var(--white);
+    color: var(--black);
+    border: none;
+    font-size: 40px;
+}
+
+.trash:hover{
+    cursor: pointer;
+}
+
+.ligne{
+    width: 80%;
+    height: 1px;
+    background-color: var(--black);
+}
+@media screen and (min-width: 1100px) {
+    .agendaBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 40%;
+        width: 20%;
+        font-family: var(--fonttitle);
+        margin-bottom: 100px;
+    }
+
+    .annonce .prestationBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 40%;
+        width: 20%;
+        font-family: var(--fonttitle);
+        margin-bottom: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 1100px){
+    .agendaBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 25%;
+        width: 50%;
+        font-family: var(--fonttitle);
+        margin-bottom: 100px;
+    }
+
+    .annonce .prestationBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 25%;
+        width: 50%;
+        font-family: var(--fonttitle);
+    }
+    
+}
 /* store */
 
 .store{

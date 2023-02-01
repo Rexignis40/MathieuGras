@@ -32,6 +32,8 @@ if(isset($_SESSION["user"])){
         <input name="title" type='text' id="title"/>
         <h2>description</h2>
         <input name="desc" type="text" id="description">
+        <h2>price</h2>
+        <input name="price" type="number" id="price">
         <h2>Image</h2>
         <input name="img1" type="file" id="img1">
         <input name="img2" type="file" id="img2">
