@@ -11,7 +11,7 @@ for($i = 0; $i < sizeof($json); $i++){
     if (file_exists("../img/prestation/". $elm["title"] ."img1.png")) {
         $html .= "<img class='img' src='img/prestation/". $elm["title"] ."img1.png' />";
       }
-    $html .= '<p class="prestationDescription">'. $elm["description"] .'</p><p class="prestationPrice">'. $elm["price"] .' €</p>';
+    $html .= '<p class="prestationDescription">'. $elm["description"] .'</p><p class="prestationPrice">'. $elm["price"] .'</p>';
     if (file_exists("../img/prestation/". $elm["title"] ."img2.png")) {
         $html .= "<img class='img' src='img/prestation/". $elm["title"] ."img2.png' />";
       }

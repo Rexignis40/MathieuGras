@@ -1,6 +1,6 @@
 <?php
 $myfile = fopen("prestation/prestation.json", "r"); 
-$json = json_decode(fread($myfile, 1024), true);
+$json = json_decode(fread($myfile, filesize("prestation/prestation.json")), true);
 fclose($myfile);
 
 $myfile = fopen("prestation/prestation.json", "w");

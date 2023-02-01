@@ -444,7 +444,7 @@ h1.titre{
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-family: var(--fonttitle);
 }
 
@@ -458,13 +458,27 @@ h1.titre{
 }
 .annonce .prestationDescription {
     text-align: center;
-    font-size: 25px;
+    font-size: 14px;
     font-family: var(--font);
+}
+
+@media screen and (min-width: 1000px){
+    .annonce .prestationDescription {
+    margin-left: 100px;
+    margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .annonce .prestationDescription {
+        margin-left: 40px;
+        margin-right: 40px;
+        }
 }
 
 .annonce .prestationPrice {
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--fonttitle);
     font-style: italic;
     margin-top: 50px;
@@ -486,6 +500,7 @@ h1.titre{
     height: 1px;
     background-color: var(--black);
 }
+
 @media screen and (min-width: 1100px) {
     .agendaBtn{
         background-color: var(--salmon);
@@ -499,7 +514,8 @@ h1.titre{
         margin-left: 40%;
         width: 20%;
         font-family: var(--fonttitle);
-        margin-bottom: 100px;
+        margin-bottom: 200px;
+        margin-top: 150px;
     }
 
     .annonce .prestationBtn{
@@ -532,7 +548,8 @@ h1.titre{
         margin-left: 25%;
         width: 50%;
         font-family: var(--fonttitle);
-        margin-bottom: 100px;
+        margin-bottom: 200px;
+        margin-top: 150px;
     }
 
     .annonce .prestationBtn{
