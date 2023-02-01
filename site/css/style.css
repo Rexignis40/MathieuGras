@@ -753,15 +753,6 @@ p.spacing{
 
 
 
-
-
-
-
-
-
-
-/* ----------------- */
-
 /* footer */
 
 .pageFooter {
@@ -911,4 +902,14 @@ p.spacing{
 .pageFooter .copyright a {
     color: var(--white);
     padding-left: 5px;
+}
+.you .nomPrenom{
+    display: flex;
+}
+.you input{  
+border-bottom: none !important;
+margin: 0 !important;
+}  
+.you p{
+    outline-style: solid;
 }
