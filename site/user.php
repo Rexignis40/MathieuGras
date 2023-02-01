@@ -9,12 +9,13 @@
 include('./components/header.html');
 if(isset($_SESSION["user"])){
     ?>
+    <input id="uid" type="hidden" value="<?php echo $_SESSION["user"]["id"]; ?>"/>
     <div class="row">
         <h1 class="titre">Mon compte</h1>
         <div class="col m3 separation">
             <p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p>
             <p class="spacing" onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</p>
-            <p class="spacing">Favories</p>
+            <p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p>
             <p class="spacing">Mes Achat</p>
             <p class="spacing">Suivie de commande</p>
             <a class="spacing" href="php/logout.php">Disconnect</a>
