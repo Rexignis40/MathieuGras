@@ -2,12 +2,13 @@
     --black: #000;
     --white: #fff;
     --salmon: #E89676;
-    --brown: #B5755C;
+    --brown: #7E503E;
     --grey: #333; 
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
 }
+
 
 
 body {
@@ -45,9 +46,6 @@ h1.titre{
 }
 .navWrapper ul {
     display: flex;
-}
-.sidenav{
-    left: calc(100% - 200px);
 }
 
 .navWrapper .navBarBtn a{
@@ -87,12 +85,13 @@ h1.titre{
 .logo img{
     width: 125px;
     height: 84px;
-    margin: 20px;
 }
 
 .logo{
     display: flex;
     align-items: center;
+    vertical-align: center;
+    margin: 20px;
 }
 .logo a{
     margin-left: 20%;
@@ -102,6 +101,16 @@ h1.titre{
 }
 .navBarLogo{
     margin-left: 20px;
+}
+.acceuil{
+    margin-top: 20px;
+}
+.navBar .sidenav a:hover{
+    background-color: var(--white);
+}
+.menu{
+    font-size: 300% !important;
+    margin-right: 50px;
 }
 /* carrousel */
 
@@ -384,7 +393,6 @@ h1.titre{
     text-align: center;
     height: 60px;
     font-size: 60px;
-    margin-top: 15px;
 }
 
 .contact-page .sendBtn{
@@ -444,8 +452,13 @@ h1.titre{
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
     font-family: var(--fonttitle);
+}
+.annonce .prestationDescription {
+    text-align: center;
+    font-size: 25px;
+    font-family: var(--font);
 }
 
 .annonce .img{
@@ -454,12 +467,7 @@ h1.titre{
     width: 40%;
     max-width: 40%;
     max-height: 50vh;
-    
-}
-.annonce .prestationDescription {
-    text-align: center;
-    font-size: 14px;
-    font-family: var(--font);
+
 }
 
 @media screen and (min-width: 1000px){
@@ -474,14 +482,6 @@ h1.titre{
         margin-left: 40px;
         margin-right: 40px;
         }
-}
-
-.annonce .prestationPrice {
-    text-align: center;
-    font-size: 14px;
-    font-family: var(--fonttitle);
-    font-style: italic;
-    margin-top: 50px;
 }
 
 .trash{
@@ -532,7 +532,20 @@ h1.titre{
         font-family: var(--fonttitle);
         margin-bottom: 50px;
     }
-    
+}
+
+.annonce .prestationBtn{
+    background-color: var(--salmon);
+    color: var(--white);
+    font-size: 30px;
+    border-color: var(--white);
+    border-style: solid;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin-left: 40%;
+    width: 20%;
+    font-family: var(--fonttitle);
 }
 
 @media screen and (max-width: 1100px){
@@ -565,8 +578,9 @@ h1.titre{
         width: 50%;
         font-family: var(--fonttitle);
     }
-    
+
 }
+
 /* store */
 
 .store{
@@ -583,15 +597,15 @@ h1.titre{
 
 .store .category li {
     list-style: none;
-    margin-left: 90px;
-    margin-right: 90px;
+    margin-left: 60px;
+    margin-right: 60px;
     margin-top: 50px;
     text-align: left;
-    font-size: 24px;
+    font-size: 16px;
 }
 
 .store .category .btnCategory {
-    background-color: var(--white); 
+    background-color: var(--white);     
     border: none;
     color: var(--black);
     cursor: pointer;
@@ -612,7 +626,6 @@ h1.titre{
     width: 200px;
     height: 250px;
 }
-
 
 .store .annonce .name {
     font-weight: 700;
@@ -640,6 +653,7 @@ input:focus{
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
 
 .pageBefore, .pageAfter, .pageBeforeImpossible, .pageAfterImpossible {
     background-color: var(--white); 
@@ -753,19 +767,18 @@ p.spacing{
 .pageFooter {
     background-color: var(--brown);
     color: var(--white);
+    height: 40%;
     margin-bottom: 0px;
-    background: linear-gradient(var(--brown),#694435);
 }
 
 .pageFooter h3 {
     font-size: 2vh;
-    margin-bottom: 3px;
-    margin-top: 3px;
 }
 
 .pageFooter .socialAndLanguage {
     padding-top: 3vh;
-    margin-bottom: 0px;
+    background-color: #671f1a;
+    padding-bottom: 24px;
 }
 
 
@@ -852,10 +865,8 @@ p.spacing{
     filter: grayscale(0%);
 }
 
-/* presentation & contact */
-
-
 .pageFooter .presentationContact {
+    background-color: #7E503E;
     margin-bottom: 0px;
     padding-bottom: 20px;
     margin-top: 30px;
@@ -881,16 +892,25 @@ p.spacing{
 
 .pageFooter .info p {
     margin: 0px;
+    padding-bottom: 30px;
+}
+
+/* presentatio & contact */
+.pageFooter .presentationContact {
+    background-color: #7E503E;
+    margin-bottom: 0px;
+    padding-bottom: 30px;
 }
 
 /* copyright */
 .pageFooter .copyright {
     display: flex;
     align-items: center;
+    background-color: #671f1a;
 }
 
 .pageFooter .copyright p {
-    color: #ECCCBF;
+    color: rgb(189, 189, 189);
     padding-left: 10px;
 }
 
@@ -899,3 +919,13 @@ p.spacing{
     padding-left: 5px;
 }
 
+.you .nomPrenom{
+    display: flex;
+}
+.you input{  
+border-bottom: none !important;
+margin: 0 !important;
+}  
+.you p{
+    outline-style: solid;
+}
