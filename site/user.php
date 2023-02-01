@@ -28,7 +28,7 @@ if(isset($_SESSION["user"])){
     if($_SESSION["user"]["admin"]){
         include("php/view/admin.php");
         ?>
-        <h3>nouvelle prestation</h3>
+        <h3>Nouvelle prestation</h3>
         <h2>title</h2>
         <input name="title" type='text' id="title"/>
         <h2>description</h2>
@@ -38,9 +38,21 @@ if(isset($_SESSION["user"])){
         <h2>Image</h2>
         <input name="img1" type="file" id="img1">
         <input name="img2" type="file" id="img2">
-        <button onClick="SetPrestation()">envoyer</button>        
+        <button onClick="SetPrestation()">envoyer</button>
+        <h3>Nouvelle catégorie dans PORTFOLIO</h3>
+        <h2>title</h2>
+        <input name="title" type='text' id="title"/>
+        <h2>description</h2>
+        <input name="desc" type="text" id="description">
+        <h2>Image</h2>
+        <input name="img1" type="file" id="img1">
+        <input name="img2" type="file" id="img2">
+        <input name="img3" type="file" id="img3">
+        <input name="img4" type="file" id="img4">
+        <button onClick="SetPortfolio()">envoyer</button>          
     <?php 
     }
+    
     include('./components/footer.html');   
 }
 else{

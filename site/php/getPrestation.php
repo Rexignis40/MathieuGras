@@ -1,7 +1,7 @@
 <?php  
 require_once('config.php'); 
-$myfile = fopen("prestation/prestation.json", "r"); 
-$json = json_decode(fread($myfile, filesize("prestation/prestation.json")), true)["prest"];
+$myfile = fopen("json/prestation.json", "r"); 
+$json = json_decode(fread($myfile, filesize("json/prestation.json")), true)["prest"];
 fclose($myfile);
 $html = "";
 for($i = 0; $i < sizeof($json); $i++){
