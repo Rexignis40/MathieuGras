@@ -219,14 +219,38 @@ function GetUserGalerie(_id){
         id: _id
     },
     function(data, status){
-        console.log(data);
+        let html = "";
         if(data.length != 0){
-            let html = "";
             for(i = 0; i < data.length; i++){
                 html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
             }
-            $("#content").html(html);
         }
+        else{
+            html += "<div><p>Vous n'avez aucune image</p></div>";
+        }
+        $("#content").html(html);
+        IsSend = false;
+    }, "json");
+}
+
+function GetUserLike(_id){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/getUserLike.php",
+    {
+        id: _id
+    },
+    function(data, status){
+        let html = "";
+        if(data.length != 0){
+            for(i = 0; i < data.length; i++){
+                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+            }
+        }
+        else{
+            html += "<div><p>Vous n'avez aucune image like</p></div>";
+        }
+        $("#content").html(html);
         IsSend = false;
     }, "json");
 }
@@ -248,12 +272,11 @@ function BuyBasket(_basket, u){
 }
 
 function favorie(id){
-    value = $("#uid").val();
     if(IsSend) return;
     IsSend = true;
     $.post("php/addFavorie.php",
     {
-        uid: value,
+        uid: $("#uid").val(),
         img: id 
     },
     function(data, status){
