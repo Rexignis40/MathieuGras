@@ -4,7 +4,7 @@ if(!isset($_POST["id"])){
     exit();
 }
 
-$q = $pdo->prepare("SELECT image.name AS name, image.id AS id FROM favorie INNER JOIN image ON image.id=favorie.id_image WHERE favorie.id_user=:id");
+$q = $pdo->prepare("SELECT image.name, image.id FROM image INNER JOIN sell ON image.id = sell.img WHERE sell.user=:id");
 $q->bindParam(":id", $_POST["id"], PDO::PARAM_INT);
 $q->execute();
 echo json_encode($q->fetchAll());
