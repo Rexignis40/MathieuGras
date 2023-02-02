@@ -13,7 +13,7 @@ if(isset($_SESSION["user"])){
     <div class="row">
         <h1 class="titre">Mon compte</h1>
         <div class="col m3 separation">
-            <p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p>
+            <p class="spacing" onclick="GetUserInfo()">Informations Personelles</p>
             <p class="spacing" onclick="GetUserGalerie()">Galerie</p>
             <p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p>
             <p class="spacing" onclick="GetUserBuyImg(<?php echo $_SESSION['user']['id'] ?>)">Mes Achat</p>

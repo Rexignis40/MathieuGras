@@ -286,12 +286,26 @@ function SetUserInfo(){
         first_name:$("#FN").val(),
         name:$("#N").val(),
         email:$("#E").val(),
-        password:$("#P").val(),
+        Old_password:$("#OP").val(),
+        New_password:$("#NP").val(),
         age:$("#age").val(),
         adresse:$("#A").val(),
         num:$("#Nu").val()
     },
     function(data, status){
+        IsSend = false;
+    });
+}
+function SetUserPassword(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/actions/uptateUserPassword.php",
+    {
+        Old_password:$("#OP").val(),
+        New_password:$("#NP").val(),
+    },
+    function(data, status){
+        console.log(data);
         IsSend = false;
     });
 }
