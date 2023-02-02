@@ -243,7 +243,7 @@ async function GetImgStore(cat, offset){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +')">'+IdImgByUser($_SESSION[user][id])?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>'+'</button></div>';
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input id="basket" name="product" type="submit" value="Buy"></form>'+'<button class="like" onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
             }
             if(data.length == 13){
                 page += "<button class='pageAfter' onclick='GetImgStore("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
@@ -270,7 +270,7 @@ function GetUserInfo(_id){
     },
     function(data, status){
         if(data.length != undefined){
-            $("#content").html(data);
+            $("#content-user").html(data);
         }
         IsSend = false;
     });
@@ -309,7 +309,7 @@ function GetUserGalerie(){
         else{
             html += "<div><p>Vous n'avez aucune image</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
         IsSend = false;
     }, "json");
 }
@@ -331,7 +331,7 @@ function GetUserBuyImg(_id){
         else{
             html += "<div><p>Vous n'avez aucune image</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
         IsSend = false;
     }, "json");
 }
@@ -365,7 +365,7 @@ function GetUserLike(_id){
         else{
             html += "<div><p>Vous n'avez aucune image like</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
     }, "json");
 }
 
@@ -411,17 +411,25 @@ $('.carousel.carousel-slider').carousel({
 function mail(){
     if(IsSend) return;
     IsSend = true;
-    $.post("php/mail.php",
-    {
-        prénom:$("#name").val(),
-        nom:$("#family-name").val(),
-        email:$("#email").val(),
-        obj:$("#subject").val(),
-        Msg:$("#remarque").val()
-    },
-    function(data, status){
-        IsSend = false;
-    });
+    
+    var form = new FormData();
+    form.append("prénom", $("#name").val());
+    form.append("nom", $("#family-name").val());
+    form.append("email", $("#email").val());
+    form.append("obj", $("#subject").val());
+    form.append("msg", $("#remarque").val());
+    form.append("f", $("#f")[0].files[0]);
+
+    $.ajax({
+        url: 'php/mail.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
 }
   
 $(document).ready(function(){
