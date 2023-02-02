@@ -1,11 +1,11 @@
 <?php
 require_once("config.php");
-if(!isset($_POST["id"])){
+if(!isset($_SESSION["user"])){
     exit();
 }
 
 $q = $pdo->prepare("SELECT first_name, name, password, age, email, adresse, num FROM user WHERE id=:id");
-$q->bindParam(":id", $_POST["id"], PDO::PARAM_INT);
+$q->bindParam(":id", $_SESSION["user"]["id"], PDO::PARAM_INT);
 $q->execute();
 
 if($q->rowCount() == 1){

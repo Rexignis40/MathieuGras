@@ -1,6 +1,9 @@
 <?php
-require_once "config.php";
-    if(!isset($_POST["id"]) || !isset($_POST["name"]) || !isset($_POST["price"]) || !isset($_SESSION["basket"])){
+    require_once "config.php";
+    if(!isset($_POST["id"]) || !isset($_POST["name"]) || !isset($_POST["price"])){
+        exit();
+    }
+    if(!isset($_SESSION["basket"])){
         $_SESSION["basket"] = array();
     }
     $isInBasket = false;
