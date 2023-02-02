@@ -54,12 +54,12 @@ $(document).ready(function(){
 function GetListUser(){
     if(IsSend) return;
     IsSend = true;
-    $.post("php/getUserList.php",
+    $.post("php/getListUser.php",
     {
         search: $("#search-bar").val()
     },
     function(data, status){
-        $("#user-list").html(data);
+        $("#userList").html(data);
         IsSend = false;
     });
 }
@@ -70,8 +70,8 @@ function SendImgPrest(id){
 
     var form = new FormData();
     form.append("uid", id);
-    form.append("name", $("#name-user-img").val());
-    form.append("img", $("#img-user")[0].files[0]);
+    form.append("name", $("#name-"+id+"-img").val());
+    form.append("img", $("#img-"+id+"")[0].files[0]);
 
     $.ajax({
         url: 'php/SendImgPrest.php',
@@ -80,6 +80,8 @@ function SendImgPrest(id){
         contentType: false,
         processData: false,
         success: function(response){
+            $("#name-"+id+"-img").val("");
+            $("#img-"+id).val("");
            IsSend = false;
         },
      });
@@ -132,6 +134,7 @@ function deletePrestation(_id){
     },
     function(data, status){
         console.log(data);
+        $("#prest"+_id).css("display", "none");
         IsSend = false;
     });
 }
@@ -185,7 +188,7 @@ function RemoveInput(id){
 }
 
 function GetImgFromInput(cat){
-    GetImg(cat, ($("#num-page").val() - 1) * 12);
+    GetImgStore(cat, ($("#num-page").val() - 1) * 12);
 }
 
 lastScreenWidth = 5000;
@@ -193,10 +196,9 @@ actualCat = -1;
 actualOffset = 0;
 window.addEventListener('resize', function(event) {
     w = event.currentTarget.innerWidth;
-    if(w < 1100 && lastScreenWidth >= 1100 || w > 1100 && lastScreenWidth <= 1100 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImg(actualCat, actualOffset);
+    if(w < 1100 && lastScreenWidth >= 1100 || w > 1100 && lastScreenWidth <= 1100 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImgStore(actualCat, actualOffset);
     lastScreenWidth = w;
 }, true);
-
 
 async function GetImgStore(cat, offset){
     if(imgCount == 0) await GetImgCount();
@@ -209,11 +211,11 @@ async function GetImgStore(cat, offset){
         c: cat,
         o: offset
     },
-    function(data, status){
+    async function(data, status){
         let html = "";
         let page = "";
         if(offset != 0){
-            page += "<button class='pageBefore' onclick='GetImg("+cat+","+(offset-12)+")'><i class='fa-solid fa-arrow-left'></i></button>";
+            page += "<button class='pageBefore' onclick='GetImgStore("+cat+","+(offset-12)+")'><i class='fa-solid fa-arrow-left'></i></button>";
         }
         else{
             page += "<button class='pageBeforeImpossible' ><i class='fa-solid fa-arrow-left'></i></button>";
@@ -241,10 +243,13 @@ async function GetImgStore(cat, offset){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +', this)">';
+                    if(data[i]["fav"] != undefined) html += '<i class="fa-solid fa-heart"></i></button></div>';
+                    else html += '<i class="fa-regular fa-heart"></i></button></div>';
+                    
             }
             if(data.length == 13){
-                page += "<button class='pageAfter' onclick='GetImg("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
+                page += "<button class='pageAfter' onclick='GetImgStore("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
             }
             else{
                 page += "<button class='pageAfterImpossible'><i class='fa-solid fa-arrow-right'></i></button>";
@@ -278,32 +283,30 @@ function SetUserInfo(){
     IsSend = true;
     $.post("php/actions/uptateUser.php",
     {
-        Prénom:$("#FN").val(),
-        Nom:$("#N").val(),
-        Email:$("#E").val(),
-        Password:$("#P").val(),
-        Age:$("#age").val(),
-        Adresse:$("#A").val(),
-        Num:$("#Nu").val()
+        first_name:$("#FN").val(),
+        name:$("#N").val(),
+        email:$("#E").val(),
+        password:$("#P").val(),
+        age:$("#age").val(),
+        adresse:$("#A").val(),
+        num:$("#Nu").val()
     },
     function(data, status){
-        console.log(data);
         IsSend = false;
     });
 }
 
-function GetUserGalerie(_id){
+function GetUserGalerie(){
     if(IsSend) return;
     IsSend = true;
     $.post("php/getUserGalerie.php",
     {
-        id: _id
     },
     function(data, status){
         let html = "";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +', this)"><i class="fa-solid fa-heart"></i></button></div>';
             }
         }
         else{
@@ -325,7 +328,7 @@ function GetUserBuyImg(_id){
         let html = "";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +', this)"><i class="fa-solid fa-heart"></i></button></div>';
             }
         }
         else{
@@ -351,8 +354,6 @@ function AddToBasket(_id, _name, _price){
 }
 
 function GetUserLike(_id){
-    if(IsSend) return;
-    IsSend = true;
     $.post("php/getUserLike.php",
     {
         id: _id
@@ -361,42 +362,42 @@ function GetUserLike(_id){
         let html = "";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
+                html += '<div class="image"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +', this)"><i class="fa-solid fa-heart"></i></button></div>';
             }
         }
         else{
             html += "<div><p>Vous n'avez aucune image like</p></div>";
         }
         $("#content").html(html);
-        IsSend = false;
     }, "json");
 }
 
-function BuyBasket(_basket, u){
+function BuyBasket(){
     if(IsSend) return;
     IsSend = true;
-    console.log(_basket);
-    console.log(u);
     $.post("php/buyBasket.php",
     {
-        basket: _basket,
-        user: u
     },
     function(data, status){
-        $("#basket").html("");
+        $("#basketContent").html("");
         IsSend = false;
     });
 }
 
-function favorie(id){
+function favorie(id, elm){
     if(IsSend) return;
     IsSend = true;
     $.post("php/addFavorie.php",
     {
-        uid: $("#uid").val(),
         img: id 
     },
     function(data, status){
+        if(data){
+            $(elm).html('<i class="fa-solid fa-heart"></i>');
+        }
+        else{
+            $(elm).html('<i class="fa-regular fa-heart"></i>');
+        }
         IsSend = false;
     });
 }
@@ -422,7 +423,6 @@ function mail(){
         Msg:$("#remarque").val()
     },
     function(data, status){
-        console.log(data);
         IsSend = false;
     });
 }

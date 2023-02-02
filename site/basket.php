@@ -1,10 +1,12 @@
 <html lang="fr">
 <?php require_once("php/config.php"); 
 include('./components/head.html')?>
-<body>
+<body class="basket">
+    <?php include('./components/header.html'); ?>
+    <div>
     <?php
-    include('./components/header.html');
-    
+    $total = 0;
+    $html = '<div id="basketContent">';
     if(isset($_SESSION["basket"])){
         if(isset($_POST["delete"]) && isset($_POST["id"])){
             $index;
@@ -17,16 +19,19 @@ include('./components/head.html')?>
                 array_splice($_SESSION["basket"], $index, 1);
             }
         }
-
-        $html = '<div id="basket">';
         foreach($_SESSION["basket"] as $elm){
-            $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div>';
+            $total += $elm["price"];
+            $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><div><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'€</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div></div>';
         }
-        $html .= "</div>";
-        echo $html;
     }
+    $html .= "</div>";
+    echo $html;
     ?>
-    <button onclick='BuyBasket(<?php echo json_encode($_SESSION["basket"]) ?>, <?php echo $_SESSION["user"]["id"] ?>)'>BUY</button>
+    <div class='recipe'>
+        <p><?php echo $total ?>€</p>
+        <button id="buyButton" onclick='BuyBasket()'>BUY</button>
+    </div>
+    </div>
     <?php include('./components/footer.html');?>
 </body>
 <?php include("./components/script.php"); ?>

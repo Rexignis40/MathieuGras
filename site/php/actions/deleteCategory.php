@@ -3,7 +3,7 @@ require "../security.php";
 require_once "../config.php";
 
 if(!isset($_POST["id"])){
-    $_SESSION["output"] = "Erreur utilisateurs non définie";
+    $_SESSION["output"] = "Erreur catégorie non définie";
     header("Location: ../user.php");
     exit;
 }
