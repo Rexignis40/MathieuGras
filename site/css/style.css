@@ -11,13 +11,12 @@
     --font: 'Open Sans', sans-serif;
 }
 
-
-
 body {
     font-family: var(--font);
     background-color: var(--white);
     color: var(--black);
 }
+
 h1.titre{
     font-family: var(--font-title);
     padding-left: 2%;
@@ -1051,6 +1050,49 @@ input[type=number]::-webkit-inner-spin-button {
     border-left: none;
 }
 
+
+.connection{
+    background-color: var(--black);
+    opacity: 80%;
+    color: var(--white);
+    margin: 50px;
+    padding: 50px;
+    border-radius: 2%;
+
+}
+.use{
+    background-image: url(../img/rail.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+.count{
+    margin-top:50px
+}
+ form input.butonuser{
+    background-color: var(--salmon);
+    border-color: var(--salmon);
+}
+.connection a{
+    color: var(--white);
+}
+.connection a:hover{
+    color: var(--salmon);
+}
+.test{
+    display: flex;
+    margin-left: 15%;
+}
+.test p{
+    margin-bottom: 0;
+}
+.conditions{
+    margin-left: 15%;
+}
+.test form{
+    width: 80%;
+}
+
 /*user*/
 
 
@@ -1163,47 +1205,6 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 50px;
 }
 
-.connection{
-    background-color: var(--black);
-    opacity: 80%;
-    color: var(--white);
-    margin: 50px;
-    padding: 50px;
-    border-radius: 2%;
-
-}
-.use{
-    background-image: url(../img/rail.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 0;
-}
-.count{
-    margin-top:50px
-}
- form input.butonuser{
-    background-color: var(--salmon);
-    border-color: var(--salmon);
-}
-.connection a{
-    color: var(--white);
-}
-.connection a:hover{
-    color: var(--salmon);
-}
-.test{
-    display: flex;
-    margin-left: 15%;
-}
-.test p{
-    margin-bottom: 0;
-}
-.conditions{
-    margin-left: 15%;
-}
-.test form{
-    width: 80%;
-}
 
 /* admin */
 
@@ -1243,6 +1244,10 @@ form .formSubmit, .formSubmit {
     margin-top: 25px;
 }
 
+#createAnnonce h3, #createCat h3{
+    font-family: var(--fonttitle);
+}
+
 .listUser, .sendPrest, #createAnnonce, #createCat, #updateCat, .createNewPrest, .createNewCategory{
     margin-left: 15%;
     margin-right: 15%;
@@ -1259,6 +1264,10 @@ form .formSubmit, .formSubmit {
 .createNewCategory {
     margin-bottom: 150px;
 }
+
+.createNewPrest h3, .createNewPrest h4, .createNewCategory h3, .createNewCategory h4 {
+    font-family: var(--fonttitle);
+} 
 
 /* footer */
 
