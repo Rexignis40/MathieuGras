@@ -97,6 +97,12 @@ function SetPrestation(){
     form.append("price", $("#price").val());
     form.append("img1", $("#img1")[0].files[0]);
     form.append("img2", $("#img2")[0].files[0]);
+    
+    $("#title").val("");
+    $("#description").val("");
+    $("#price").val("");
+    $("#img1").val("");
+    $("#img2").val("");
 
     $.ajax({
         url: 'php/setPrestation.php',
@@ -133,7 +139,6 @@ function deletePrestation(_id){
         i: _id
     },
     function(data, status){
-        console.log(data);
         $("#prest"+_id).css("display", "none");
         IsSend = false;
     });
@@ -154,6 +159,13 @@ function SetPortfolio(){
     form.append("img3", $("#img3-portfolio")[0].files[0]);
     form.append("img4", $("#img4-portfolio")[0].files[0]);
 
+    $("#title-portfolio").val("");
+    $("#description-portfolio").val("");
+    $('input[name="which-carousel"]:checked').val("");
+    $("#img1-portfolio").val("");
+    $("#img2-portfolio").val("");
+    $("#img3-portfolio").val("");
+    $("#img4-portfolio").val("");
     $.ajax({
         url: 'php/setPortfolio.php',
         type: 'post',
@@ -161,13 +173,6 @@ function SetPortfolio(){
         contentType: false,
         processData: false,
         success: function(response){
-            $("#title-portfolio").val("");
-            $("#description-portfolio").val("");
-            $('input[name="which-carousel"]:checked').val("");
-            $("#img1-portfolio").val("");
-            $("#img2-portfolio").val("");
-            $("#img3-portfolio").val("");
-            $("#img4-portfolio").val("");
             IsSend = false;
         },
      });
@@ -302,7 +307,6 @@ function SetUserPassword(){
         New_password:$("#NP").val(),
     },
     function(data, status){
-        console.log(data);
         IsSend = false;
     });
 }
@@ -434,6 +438,13 @@ function mail(){
     form.append("msg", $("#remarque").val());
     if($("#f")[0] != undefined) form.append("f", $("#f")[0].files[0]);
 
+    $("#name").val("");
+    $("#family-name").val("");
+    $("#email").val("");
+    $("#subject").val("");
+    $("#remarque").val("");
+    $("#f").val("");
+
     $.ajax({
         url: 'php/mail.php',
         type: 'post',
@@ -441,12 +452,6 @@ function mail(){
         contentType: false,
         processData: false,
         success: function(response){
-            $("#name").val("");
-            $("#family-name").val("");
-            $("#email").val("");
-            $("#subject").val("");
-            $("#remarque").val("");
-            $("#f").val("");
            IsSend = false;
         },
      });
