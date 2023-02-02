@@ -15,17 +15,17 @@ if(isset($_SESSION["user"])){
         <div class="navAndContent">
             <div class="navBarUserAndSeparation">
                 <div class="navBarUser">
-                    <li><p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p></li>
-                    <li><p class="spacing" onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</p></li>
+                    <li><p class="spacing" onclick="GetUserInfo()">Informations Personelles</p></li>
+                    <li><p class="spacing" onclick="GetUserGalerie()">Galerie</p></li>
                     <li><p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p></li>
-                    <li><p class="spacing">Mes Achat</p></li>
+                    <li><p class="spacing" onclick="GetUserBuyImg(<?php echo $_SESSION['user']['id'] ?>)">Mes Achat</p></li>
                     <li><p class="spacing">Suivie de commande</p></li>
                     <li><a class="spacing" href="php/logout.php">Disconnect</a></li>
                 </div>
                 
                 <div class="separation"></div>
             </div>
-            <div id="content"></div>
+            <div id="content-user"></div>
         </div>
         
     </div>

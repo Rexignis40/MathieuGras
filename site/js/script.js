@@ -270,7 +270,7 @@ function GetUserInfo(_id){
     },
     function(data, status){
         if(data.length != undefined){
-            $("#content").html(data);
+            $("#content-user").html(data);
         }
         IsSend = false;
     });
@@ -309,7 +309,7 @@ function GetUserGalerie(){
         else{
             html += "<div><p>Vous n'avez aucune image</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
         IsSend = false;
     }, "json");
 }
@@ -331,7 +331,7 @@ function GetUserBuyImg(_id){
         else{
             html += "<div><p>Vous n'avez aucune image</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
         IsSend = false;
     }, "json");
 }
@@ -365,7 +365,7 @@ function GetUserLike(_id){
         else{
             html += "<div><p>Vous n'avez aucune image like</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
     }, "json");
 }
 
