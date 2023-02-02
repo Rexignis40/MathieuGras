@@ -16,7 +16,15 @@ $pre->execute(array(
     ":num" => $_POST["num"],
     ":adresse" => $_POST["adresse"]
     ));
-$_SESSION["output"] = "Compte créer";
-header('Location: ../user.php');
+$_SESSION["user"] = array(
+    'first_name' => $_POST['first_name'],
+    'name'   => $_POST['name'],
+    'email'=> $_POST['email'],
+    'age' => $_POST["age"],
+    "num" => $_POST["num"],
+    "adresse" => $_POST["adresse"]
+);
+$_SESSION["output"] = "Vous êtes bien connecté";
+header('Location: ../index.php');
 
 ?>
