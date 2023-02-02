@@ -5,7 +5,7 @@
 <h2 class="panelAdminTitle">Panel admin</h2>
 <br>
 <div class="listUser">
-    <h3 class="listUserTitle">liste des comptes</h3>
+    <h3 class="listUserTitle">Liste des comptes</h3>
     <form onSubmit="GetListUser();
                     return false;">
         <input type="text" id="search-bar">
@@ -18,7 +18,7 @@
 </div>
 
 <div id="createAnnonce">
-    <h3>créer une annonce</h3>
+    <h3>Créer une annonce</h3>
     <form method="post" action="php/actions/addImage.php" enctype="multipart/form-data">
         <label>Name: <input class="newAnnonce" type="text" name="name" required></label>
         <label>Prix: <input class="newAnnonce" type="number" name="price" required></label>
@@ -36,7 +36,7 @@
     </form>
 </div>
 <div id="createCat">
-    <h3>nouvelle catégorie</h3>
+    <h3>Nouvelle catégorie</h3>
     <form  method="post" action="php/actions/createCategory.php" enctype="multipart/form-data">
         <input class="newCat" type='text' name='name' placeholder="Nouvelle catégorie ?" />
         <input class="newCat" type='hidden' name='id'/>
@@ -60,7 +60,7 @@ foreach($data as $category){ ?>
     </form>
     <form id="updateCat"method="post" action="php/actions/deleteCategory.php">
         <input class="updateCat" type='hidden' name='id' value="<?php echo $category['id'] ?>" />
-        <input class="formSubmit" type='submit' value="delette:<?php echo $category['name'] ?>" />
+        <input class="formSubmit" type='submit' value="delete:<?php echo $category['name'] ?>" />
     </form>
 </div>
 <?php } ?>

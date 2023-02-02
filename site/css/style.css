@@ -86,6 +86,10 @@ h1.titre{
 
 /* sidenav */
 
+.navWrapper .menu {
+    color: var(--black);
+}
+
 .sidenav{
     font-family: var(--fontbold);
 }

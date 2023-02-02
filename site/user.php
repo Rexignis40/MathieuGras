@@ -22,7 +22,6 @@ if(isset($_SESSION["user"])){
                     <li><p class="spacing">Suivie de commande</p></li>
                     <li><a class="spacing" href="php/logout.php">Déconnexion</a></li>
                 </div>
-                
                 <div class="separation"></div>
             </div>
             <div id="content-user"></div>
