@@ -44,7 +44,7 @@ if(isset($_SESSION["user"])){
             <h4>Images</h4>
             <input name="img1" type="file" id="img1">
             <input name="img2" type="file" id="img2">
-            <button onClick="SetPrestation()">Envoyer</button>
+            <button class="submitNewPrest" onClick="SetPrestation()">Envoyer</button>
         </div>
         <div class="createNewCategory">
             <h2>Changer les galeries dans portfolio</h2>
@@ -63,7 +63,7 @@ if(isset($_SESSION["user"])){
             <input name="img2" type="file" id="img2-portfolio">
             <input name="img3" type="file" id="img3-portfolio">
             <input name="img4" type="file" id="img4-portfolio">
-            <button onClick="SetPortfolio()">Envoyer</button>
+            <button class="submitNewCategory" onClick="SetPortfolio()">Envoyer</button>
         </div>    
     <?php 
     }

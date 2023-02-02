@@ -1318,7 +1318,7 @@ input[type=number]::-webkit-inner-spin-button {
     font-family: var(--fonttitle);
 }
 
-form #search-bar, label #name-user-img, form label .newAnnonce, form .newCat, form .updateCat, .newPrest, .newCategory {
+form #search-bar, label #name-user-img, form label .newAnnonce, form .newCat, form .updateCat, .newPrest, .newCategory{
     border-bottom: none;
     margin-top: 15px!important;
     outline-style: solid !important;
@@ -1330,12 +1330,14 @@ form #search-bar, label #name-user-img, form label .newAnnonce, form .newCat, fo
     color: var(--black);
 }
 
+
+
 form #search-bar:focus{
     border-bottom: none !important;
     box-shadow: none !important;
 }
 
-form .formSubmit, .formSubmit {
+form .formSubmit, .formSubmit, .submitNewPrest, .submitNewCategory {    
     background-color: var(--salmon);
     height: 36px;
     font-family: var(--font);

@@ -60,7 +60,7 @@ foreach($data as $category){ ?>
     </form>
     <form id="updateCat"method="post" action="php/actions/deleteCategory.php">
         <input class="updateCat" type='hidden' name='id' value="<?php echo $category['id'] ?>" />
-        <input class="formSubmit" type='submit' value="delete:<?php echo $category['name'] ?>" />
+        <input class="formSubmit" type='submit' value="effacer :<?php echo $category['name'] ?>" />
     </form>
 </div>
 <?php } ?>
