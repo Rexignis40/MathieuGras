@@ -9,7 +9,8 @@
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
-    --carousel-img-portfolio: "../img/IMG_1209\ 2.JPG";
+
+    --carousel-img-portfolio: url("../img/IMG_1209\ 2.JPG");
 }
 
 
@@ -835,29 +836,6 @@ input[type=number]::-webkit-inner-spin-button {
     width: 50px;
 }
 
-
-/*basket*/
-#basketContent{
-    height: 45vh;
-}
-
-.basket #buyButton{
-    background-color: var(--salmon);
-    padding: 10px;
-    margin: 20px 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
-    border-top: none;
-    border-left: none;
-}
-
-@media screen and (max-width: 750px) {
-    .basket #buyButton{
-        width: 80%;
-    }
-}
 
 /*user*/
 

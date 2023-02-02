@@ -1,10 +1,11 @@
 <?php
 require "../config.php";
-$sql = "INSERT INTO category(name) VALUES(:name)";
-$dataBinded=array(
+if(!isset($_POST["name"])){
+    exit;
+}
+$pre = $pdo->prepare("INSERT INTO category(name) VALUES(:name)");
+$pre->execute(array(
     ':name'   => $_POST['name']
-);
-$pre = $pdo->prepare($sql);
-$pre->execute($dataBinded);
+));
 header('Location: ../../user.php');
 ?>
