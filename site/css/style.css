@@ -7,8 +7,6 @@
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
-
-    --carousel-img-portfolio: url("../img/IMG_1209\ 2.JPG");
 }
 
 
@@ -323,7 +321,8 @@ h1.titre{
   }
 
 
-/*portfolio*/
+/* ---------- */
+/*PORTFOLIO*/
 
 .carouselPortfolio{
     margin-top: 10%;
@@ -339,17 +338,116 @@ h1.titre{
     margin-top: 25%;
 }
 
-
-.carouselPortfolio .carouselImgPortfolio {
-    background-image: var(--carousel-img-portfolio);
+.carouselPortfolioImg{
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/* Carousel 1 Portfolio */
+.carouselPortfolio .carouselPortfolio1Img1 {
+    background-image: url(../img/portfolio/portfolio1img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio1Img2 {
+    background-image: url(../img/portfolio/portfolio1img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio1Img3 {
+    background-image: url(../img/portfolio/portfolio1img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio1Img4 {
+    background-image: url(../img/portfolio/portfolio1img4.png);
+}
+
+/* Carousel 2 Portfolio */
+.carouselPortfolio .carouselPortfolio2Img1 {
+    background-image: url(../img/portfolio/portfolio2img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio2Img2 {
+    background-image: url(../img/portfolio/portfolio2img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio2Img3 {
+    background-image: url(../img/portfolio/portfolio2img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio2Img4 {
+    background-image: url(../img/portfolio/portfolio2img4.png);
+}
+
+/* Carousel 3 Portfolio */
+.carouselPortfolio .carouselPortfolio3Img1 {
+    background-image: url(../img/portfolio/portfolio3img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio3Img2 {
+    background-image: url(../img/portfolio/portfolio3img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio3Img3 {
+    background-image: url(../img/portfolio/portfolio3img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio3Img4 {
+    background-image: url(../img/portfolio/portfolio3img4.png);
+}
+
+/* Carousel 4 Portfolio */
+.carouselPortfolio .carouselPortfolio4Img1 {
+    background-image: url(../img/portfolio/portfolio4img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio4Img2 {
+    background-image: url(../img/portfolio/portfolio4img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio4Img3 {
+    background-image: url(../img/portfolio/portfolio4img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio4Img4 {
+    background-image: url(../img/portfolio/portfolio4img4.png);
+}
+
+/* Carousel 5 Portfolio */
+.carouselPortfolio .carouselPortfolio5Img1 {
+    background-image: url(../img/portfolio/portfolio5img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio5Img2 {
+    background-image: url(../img/portfolio/portfolio5img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio5Img3 {
+    background-image: url(../img/portfolio/portfolio5img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio5Img4 {
+    background-image: url(../img/portfolio/portfolio5img4.png);
+}
+
+/* Carousel 6 Portfolio */
+.carouselPortfolio .carouselPortfolio6Img1 {
+    background-image: url(../img/portfolio/portfolio6img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio6Img2 {
+    background-image: url(../img/portfolio/portfolio6img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio6Img3 {
+    background-image: url(../img/portfolio/portfolio6img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio6Img4 {
+    background-image: url(../img/portfolio/portfolio6img4.png);
+}
+
+
 
 /*contact*/
-
-
 .contact-page{
     color: var(--white);
     background-image: url(../img/fondContact.png);
