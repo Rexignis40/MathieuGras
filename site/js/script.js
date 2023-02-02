@@ -263,12 +263,11 @@ async function GetImgStore(cat, offset){
     }, "json");
 }
 
-function GetUserInfo(_id){
+function GetUserInfo(){
     if(IsSend) return;
     IsSend = true;
     $.post("php/getUserInfo.php",
     {
-        id: _id
     },
     function(data, status){
         if(data.length != undefined){
