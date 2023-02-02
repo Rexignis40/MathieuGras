@@ -32,7 +32,7 @@
                         <textarea class="remark" id="remarque" cols="20" rows="20"></textarea>
                     </div>
                     <div class="file">
-                        <input class="button" type="button" value="Joindre un fichier">
+                        <input class="button" id="f" type="file" value="Joindre un fichier">
                     </div> 
                     <div class="sendBtn">
                         <button onclick="mail()" class="button">Envoyer</button>

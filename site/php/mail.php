@@ -1,4 +1,7 @@
 <?php
+if(!isset($_POST["prénom"]) || !isset($_POST["nom"]) || !isset($_POST["email"]) || !isset($_POST["obj"]) || !isset($_POST["msg"])){
+    exit();
+}
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -45,10 +48,15 @@ $mail->addAddress('arno.labourdette40@gmail.com', 'Arno Labourdette');
 
 //Set the subject line
 $mail->Subject = $_POST["obj"];
-$mail->msgHTML($_POST["prénom"]." ".$_POST["nom"]."<br>".$_POST["Msg"]);
+$mail->msgHTML($_POST["prénom"]." ".$_POST["nom"]."<br>".$_POST["msg"]);
 //Replace the plain text body with one created manually
-$mail->AltBody = $_POST["prénom"]." ".$_POST["nom"]."<br>".$_POST["Msg"];
-
+$mail->AltBody = $_POST["prénom"]." ".$_POST["nom"]."<br>".$_POST["msg"];
+if(isset($_FILES["f"]["tmp_name"])){
+    //Attach an image file
+    if(imagepng(imagecreatefromstring(file_get_contents($_FILES["f"]["tmp_name"])), "../img/temp/img.png", 9)){
+        $mail->addAttachment("../img/temp/img.png");
+    }
+}
 //send the message, check for errors
 if (!$mail->send()) {
     echo 'Mailer Error: ' . $mail->ErrorInfo;

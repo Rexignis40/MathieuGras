@@ -411,17 +411,25 @@ $('.carousel.carousel-slider').carousel({
 function mail(){
     if(IsSend) return;
     IsSend = true;
-    $.post("php/mail.php",
-    {
-        prénom:$("#name").val(),
-        nom:$("#family-name").val(),
-        email:$("#email").val(),
-        obj:$("#subject").val(),
-        Msg:$("#remarque").val()
-    },
-    function(data, status){
-        IsSend = false;
-    });
+    
+    var form = new FormData();
+    form.append("prénom", $("#name").val());
+    form.append("nom", $("#family-name").val());
+    form.append("email", $("#email").val());
+    form.append("obj", $("#subject").val());
+    form.append("msg", $("#remarque").val());
+    form.append("f", $("#f")[0].files[0]);
+
+    $.ajax({
+        url: 'php/mail.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
 }
   
 $(document).ready(function(){
