@@ -14,7 +14,7 @@ for($i = 0; $i < $list->rowCount(); $i++){
     $result = $list->fetch();
 
     $html .= '<div class="sendPrest">
-    <h2>'. $result['name'] .'</h2><label>Name: <input type="text" id="name-user-img" required></label><label>Image: <input type="file" id="img-user" required><button class="formSubmit" onclick="SendImgPrest('.$result["id"].')">Envoyer une image</button></label><a href="php/setAdmin.php?u='.$result["id"].'&v='.!$result["admin"].'"> <br>is admin: ' .$result['admin'].'</a>';
+    <h2>'. $result['name'] .'</h2><label>Name: <input type="text" id="name-'.$result["id"].'-img" required></label><label>Image: <input type="file" id="img-'.$result["id"].'" required><button class="formSubmit" onclick="SendImgPrest('.$result["id"].')">Envoyer une image</button></label><a href="php/setAdmin.php?u='.$result["id"].'&v='.!$result["admin"].'"> <br>is admin: ' .$result['admin'].'</a>';
     if(!$result["admin"]){
         $html .= '<a href="../php/deleteUser.php?u='.$result["id"].'">Ban</a>';
     }
