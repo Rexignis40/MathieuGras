@@ -22,7 +22,6 @@ if(isset($_SESSION["user"])){
                     <li><p class="spacing">Suivie de commande</p></li>
                     <li><a class="spacing" href="php/logout.php">Déconnexion</a></li>
                 </div>
-                
                 <div class="separation"></div>
             </div>
             <div id="content-user"></div>
@@ -36,35 +35,35 @@ if(isset($_SESSION["user"])){
         ?>
         <div class="createNewPrest">
             <h3>Nouvelle préstation</h3>
-            <h2>Titre</h2>
+            <h4>Titre</h4>
             <input class="newPrest" name="title" type='text' id="title">
-            <h2>Description</h2>
+            <h4>Description</h4>
             <input class="newPrest" name="desc" type="text" id="description">
-            <h2>Prix de la préstation</h2>
+            <h4>Prix de la préstation</h4>
             <input class="newPrest" name="price" type="text" id="price">
-            <h2>Images</h2>
+            <h4>Images</h4>
             <input name="img1" type="file" id="img1">
             <input name="img2" type="file" id="img2">
-            <button onClick="SetPrestation()">Envoyer</button>
+            <button class="submitNewPrest" onClick="SetPrestation()">Envoyer</button>
         </div>
         <div class="createNewCategory">
-            <h3>Nouvelle catégorie dans portfolio</h3>
+            <h2>Changer les galeries dans portfolio</h2>
             <label>1: <input class="newCategory" type="radio" name="which-carousel" value="0"></label>
             <label>2: <input class="newCategory" type="radio" name="which-carousel" value="1"></label>
             <label>3: <input class="newCategory" type="radio" name="which-carousel" value="2"></label>
             <label>4: <input class="newCategory" type="radio" name="which-carousel" value="3"></label>
             <label>5: <input class="newCategory" type="radio" name="which-carousel" value="4"></label>
             <label>6: <input class="newCategory" type="radio" name="which-carousel" value="5"></label>
-            <h2>Titre</h2>
+            <h4>Titre</h4>
             <input class="newCategory" name="title" type='text' id="title-portfolio">
-            <h2>Explication du projet</h2>
+            <h4>Description du projet</h4>
             <input class="newCategory" name="desc" type="text" id="description-portfolio">
-            <h2>Images</h2>
+            <h4>Images</h4>
             <input name="img1" type="file" id="img1-portfolio">
             <input name="img2" type="file" id="img2-portfolio">
             <input name="img3" type="file" id="img3-portfolio">
             <input name="img4" type="file" id="img4-portfolio">
-            <button onClick="SetPortfolio()">Envoyer</button>
+            <button class="submitNewCategory" onClick="SetPortfolio()">Envoyer</button>
         </div>    
     <?php 
     }

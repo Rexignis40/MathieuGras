@@ -9,10 +9,10 @@
 
 <div class="use row">
         <div class="connection col l4 offset-l4 ">
-            <div class="test">
+            <div class="connect">
                 <h2>S'INSCRIRE</h2>
             </div>
-            <div class="test">
+            <div class="connect">
                 <form method="post" action="php/logup.php">
                     <p>Prénom</p>
                     <input class="white-text" type='text' name='first_name' />
