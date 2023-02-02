@@ -348,7 +348,7 @@ function AddToBasket(_id, _name, _price){
     },
     function(data, status){
         IsSend = false;
-    }, "json");
+    });
 }
 
 function GetUserLike(_id){
