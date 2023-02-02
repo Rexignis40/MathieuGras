@@ -196,20 +196,11 @@ actualCat = -1;
 actualOffset = 0;
 window.addEventListener('resize', function(event) {
     w = event.currentTarget.innerWidth;
-    if(w < 1000 && lastScreenWidth >= 1000 || w > 1000 && lastScreenWidth <= 1000 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImg(actualCat, actualOffset);
+    if(w < 1000 && lastScreenWidth >= 1000 || w > 1000 && lastScreenWidth <= 1000 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImgStore(actualCat, actualOffset);
     lastScreenWidth = w;
 }, true);
 
-function IsIdIn(id, tableau){
-    result = false;
-    tableau.forEach(elm => {
-        if(elm == id){
-            result = true;
-        }
-    });
-    return result;
-}
-async function GetImg(cat, offset){
+async function GetImgStore(cat, offset){
     if(imgCount == 0) await GetImgCount();
     if(IsSend || offset > imgCount + 12) return;
     IsSend = true;

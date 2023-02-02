@@ -25,7 +25,7 @@ h1.titre{
     padding-left: 2%;
 }
 
-/* header */
+/* HEADER */
 
 
 .navWrapper {
@@ -44,100 +44,101 @@ h1.titre{
 @media screen and (max-width: 1000px) {
     .navWrapper {
         justify-content: space-between;
-    }}
-.navWrapper img{
+    }
+}
+
+
+.navWrapper .navBarLogo{
+    margin-left: 20px;
+}
+
+.navWrapper .navBarLogo img{
     width: 125px;
 }
-.navWrapper ul {
+.navWrapper .navBarBtn ul {
     display: flex;
 }
 
-.navWrapper .navBarBtn a{
+.navWrapper .navBarBtn ul li a{
     color: var(--black);
     font-size: 23px;
     font-family: var(--fontbold);
 }
 
-.navWrapper .navBarBtn a:hover{
+.navWrapper .navBarBtn ul li a:hover{
     font-weight: 700;
     background-color: var(--white);
 }
 
+.navWrapper .navBarIcons ul li a:hover{
+    font-weight: 700;
+    background-color: var(--white);
+}    
 
-.navWrapper .navBarIcons i{
+.navWrapper .navBarIcons ul li a i{
     width: 20px;
     color: var(--black);
     display: flex;
     align-items: center;
 }
 
-.navWrapper .navBarIcons a:hover{
-    font-weight: 700;
-    background-color: var(--white);
-}    
-
-@media screen and (max-width: 1000px) {
-    .navWrapper .navBarIcons img {
-        display: flex;
-        align-items: center;
-        
-    }
+.navWrapper .menu{
+    font-size: 300% !important;
+    margin-right: 30px;
 }
+
+/* sidenav */
+
 .sidenav{
     font-family: var(--fontbold);
 }
-.logo img{
-    width: 125px;
-    height: 84px;
-}
 
-.logo{
+
+.sidenav .logo{
     display: flex;
     align-items: center;
     vertical-align: center;
     margin: 20px;
 }
-.logo a{
+
+.sidenav .logo img{
+    width: 125px;
+    height: 84px;
+}
+
+.sidenav .logo a{
     margin-left: 20%;
 }
-.logo i{
-    font-size: 25px;
-}
-.navBarLogo{
-    margin-left: 20px;
-}
-.acceuil{
-    margin-top: 20px;
-}
-.navBar .sidenav a:hover{
+
+.sidenav .logo a:hover{
     background-color: var(--white);
 }
-.menu{
-    font-size: 300% !important;
-    margin-right: 50px;
+
+.sidenav .logo a i{
+    font-size: 25px;
 }
-/* carrousel */
+
+.sidenav .acceuil{
+    margin-top: 20px;
+}
+
+
+/* ---------------- */
+/* CAROUSEL */
 
 .carouselIndex {
     height: 100vh !important;
     margin-top: -120px;
     margin-bottom: 0 !important;
-
-}
-
-.carouselIndex .carousel-item {
-    background-color: var(--black);
 }
 
 .carouselIndex .carousel-item {
     width: 100%;
+    background-color: var(--black);
 }
 
 
-
-
 /* carousel 1 */
-
 
 .carouselIndex .carousel-item .textOne{
     width: 600px;
@@ -149,14 +150,12 @@ h1.titre{
     .carouselIndex .carousel-item .textOne{
         text-align: justify;
         margin-top: 50vh;
-    }
-    .carousel.carousel-slider .carousel-item .textOne {
         margin-left: 50%;
     }
 }
 
 
- @media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
     .carouselIndex .carousel-item .textOne{
         text-align: center;
         margin-top: 50vh;
@@ -171,17 +170,14 @@ h1.titre{
         margin-left: auto;
         margin-right: auto;
         }
-    
     }
- }
+}
 
 .carouselIndex .carouselOne {
     background-image: url("../img/117172683_786097672130366_1705502394645962023_n.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 
 /* carousel 2 */
 
@@ -194,14 +190,12 @@ h1.titre{
     .carouselIndex .carousel-item .textTwo{
         text-align: justify;
         margin-top: 50vh;
-    }
-    .carousel.carousel-slider .carousel-item .textTwo {
         margin-left: 5%;
     }
 }
 
 
- @media screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
     .carouselIndex .carousel-item .textTwo{
         text-align: center;
         margin-top: 50vh;
@@ -216,23 +210,15 @@ h1.titre{
         }
     
     }
- }
-
-
+}
 
 .carouselIndex .carouselTwo {
     background-image: url("../img/13.png");
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
-
-
-
 /* carousel 3 */
-
-
 
 .carouselIndex .carousel-item .textThree{
     width: 600px;
@@ -244,14 +230,11 @@ h1.titre{
     .carouselIndex .carousel-item .textThree{
         text-align: justify;
         margin-top: 50vh;
-        
-    }
-    .carousel.carousel-slider .carousel-item .textThree {
         margin-left: 5%;
-        
     }
 }
- @media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1000px) {
     .carouselIndex .carousel-item .textThree{
         text-align: center;
         margin-top: 50vh;
@@ -266,7 +249,7 @@ h1.titre{
         }
     
     }
- }
+}
 
 .carouselIndex .carouselThree {
     background-image: url("../img/000039000031.JPG");
@@ -285,14 +268,12 @@ h1.titre{
     .carouselIndex .carousel-item .textFour{
         text-align: right;
         margin-top: 50vh;
-    }
-    .carousel.carousel-slider .carousel-item .textFour {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
 }
- @media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .carouselIndex .carousel-item .textFour{
         text-align: center;
         margin-top: 50vh;
@@ -307,9 +288,7 @@ h1.titre{
         }
     
     }
- }
-
-
+}
 
 .carouselIndex .carouselFour {
     background-image: url("../img/IMG_1209\ 2.JPG");
@@ -318,6 +297,8 @@ h1.titre{
 }
 
 
+
+/* carousel indicators  */
 .carouselIndex .indicators .indicator-item {
     height: 18px!important;
     width: 18px !important;
@@ -325,7 +306,9 @@ h1.titre{
   }
 
 
-/*portfolio*/
+  
+/* ---------------- */
+/* PORTFOLIO */
 
 .carouselPortfolio{
     margin-top: 10%;
@@ -349,121 +332,13 @@ h1.titre{
 }
 
 
-/*contact*/
+/* -------------- */
+/* PRESTATION */
 
-
-.contact-page{
-    color: var(--white);
-    background-image: url(../img/fondContact.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-@media screen and (min-width: 993px) {
-    .contact-me, .contactForm{
-        margin-left: 500px;
-        margin-right: 100px;
-    }
-}
-
-@media screen and (min-width: 1800px) {
-    .contact-me, .contactForm{
-        margin-left: 800px;
-        margin-right: 100px;
-    }
-}
-
-
-.contact-page button{
-    color: var(--white);
-}
-.contact-page input, .contact-page textarea{
-    background-color: var(--whiteimportant) !important;
-}
-
-
-.contact-page #name, #family-name, #email, #subject{
-    padding-left: 15px;
-}
-
-
-.contactForm {
-    padding-bottom: 40px;
-}
-
-.contact-page .contact-me p {
-    font-family: var(--fonttitle);
-    text-align: center;
-    height: 60px;
-    font-size: 60px;
-}
-
-.contact-page .sendBtn{
-    display: block;
-    text-align: center;
-}
-
-.contact-page .sendBtn .button{
-    background-color: var(--salmon);
-    height: 36px;
-    font-family: var(--font);
-    font-size: 20px;
-    border-color: var(--salmon);
-    margin-top: 25px;
-
-}
-
-
-.contact-page .file .button{
-    border-color: var(--whiteimportant);
-    margin-left: 2px;
-}
-
-@media screen and (min-width: 993px) {
-    .contact-page .firstNameAndName{
-    display: flex;
-}
-
-.contact-page .firstNameAndName>div{
-    width: 50%;
-    padding-right: 3%;
-}
-.contact-page .firstNameAndName>:last-child{
-    width: 50%;
-    padding-left: 3%;
-    padding-right: 0;
-}
-.contact-page textarea.remark{
-    height: 200px;
-    resize: none;
-    padding: 15px;
-    padding-bottom: 20px;
-}
-}
-
-
-@media screen and (max-width: 993px) {
-    .contactForm{
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-    .contact-page textarea.remark{
-        height: 100px;
-        resize: none;
-    }
-}
-
-/* prestation */
 .annonce .titlePrestation {
     text-align: center;
     font-size: 40px;
     font-family: var(--fonttitle);
-}
-.annonce .prestationDescription {
-    text-align: center;
-    font-size: 16px;
-    font-family: var(--font);
 }
 
 .annonce .img{
@@ -475,11 +350,10 @@ h1.titre{
 
 }
 
-.prestationPrice{
+.annonce .prestationDescription {
     text-align: center;
     font-size: 16px;
-    font-family: var(--fontbold);
-    margin-bottom: 50px;
+    font-family: var(--font);
 }
 
 @media screen and (min-width: 1000px){
@@ -494,6 +368,27 @@ h1.titre{
         margin-left: 40px;
         margin-right: 40px;
         }
+}
+
+.prestationPrice{
+    text-align: center;
+    font-size: 16px;
+    font-family: var(--fontbold);
+    margin-bottom: 50px;
+}
+
+.annonce .prestationBtn{
+    background-color: var(--salmon);
+    color: var(--white);
+    font-size: 30px;
+    border-color: var(--white);
+    border-style: solid;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    margin-left: 40%;
+    width: 20%;
+    font-family: var(--fonttitle);
 }
 
 .trash{
@@ -518,23 +413,8 @@ h1.titre{
     opacity: 50%;
 }
 
-@media screen and (min-width: 1100px) {
-    .agendaBtn{
-        background-color: var(--salmon);
-        color: var(--white);
-        font-size: 30px;
-        border-color: var(--white);
-        border-style: solid;
-        padding: 10px;
-        display: block;
-        text-align: center;
-        margin-left: 40%;
-        width: 20%;
-        font-family: var(--fonttitle);
-        margin-bottom: 200px;
-        margin-top: 150px;
-    }
 
+@media screen and (min-width: 1100px) {
     .annonce .prestationBtn{
         background-color: var(--salmon);
         color: var(--white);
@@ -549,23 +429,38 @@ h1.titre{
         font-family: var(--fonttitle);
         margin-bottom: 50px;
     }
+    .agendaBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 40%;
+        width: 20%;
+        font-family: var(--fonttitle);
+        margin-bottom: 200px;
+        margin-top: 150px;
+    }
 }
 
-.annonce .prestationBtn{
-    background-color: var(--salmon);
-    color: var(--white);
-    font-size: 30px;
-    border-color: var(--white);
-    border-style: solid;
-    padding: 10px;
-    display: block;
-    text-align: center;
-    margin-left: 40%;
-    width: 20%;
-    font-family: var(--fonttitle);
-}
 
 @media screen and (max-width: 1100px){
+    .annonce .prestationBtn{
+        background-color: var(--salmon);
+        color: var(--white);
+        font-size: 30px;
+        border-color: var(--white);
+        border-style: solid;
+        padding: 10px;
+        display: block;
+        text-align: center;
+        margin-left: 25%;
+        width: 50%;
+        font-family: var(--fonttitle);
+    }
     .agendaBtn{
         background-color: var(--salmon);
         color: var(--white);
@@ -582,25 +477,11 @@ h1.titre{
         margin-top: 150px;
     }
 
-    .annonce .prestationBtn{
-        background-color: var(--salmon);
-        color: var(--white);
-        font-size: 30px;
-        border-color: var(--white);
-        border-style: solid;
-        padding: 10px;
-        display: block;
-        text-align: center;
-        margin-left: 25%;
-        width: 50%;
-        font-family: var(--fonttitle);
-    }
-
 }
 
+
+/* -------------- */
 /* store */
-
-
 
 @media screen and (min-width: 750px) {
     .store{
@@ -836,6 +717,148 @@ input[type=number]::-webkit-inner-spin-button {
     width: 50px;
 }
 
+
+/* -------------- */
+/* CONTACT */
+
+.contactPage{
+    color: var(--white);
+    background-image: url(../img/fondContact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contactPage .contactMe p {
+    font-family: var(--fonttitle);
+    text-align: center;
+    height: 60px;
+    font-size: 60px;
+}
+
+
+.contactForm {
+    padding-bottom: 40px;
+}
+
+
+@media screen and (min-width: 993px) {
+    .contactMe, .contactForm{
+        margin-left: 500px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .contactMe, .contactForm{
+        margin-left: 800px;
+        margin-right: 100px;
+    }
+}
+
+
+.contactPage .firstNameAndName>div{
+    width: 50%;
+    padding-right: 3%;
+}
+.contactPage .firstNameAndName>:last-child{
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 0;
+}
+
+.contactPage #name, #family-name, #email, #subject{
+    padding-left: 15px;
+}
+
+.contactPage input, .contactPage textarea{
+    background-color: var(--whiteimportant) !important;
+}
+
+
+
+@media screen and (min-width: 993px) {
+    .contactPage .firstNameAndName{
+        display: flex;
+    }
+
+    .contactPage textarea.remark{
+        height: 200px;
+        resize: none;
+        padding: 15px;
+        padding-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 993px) {
+    .contactForm{
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .contactPage textarea.remark{
+        height: 100px;
+        resize: none;
+    }
+}
+
+.contactPage .file .sendFile{
+    border-color: var(--whiteimportant);
+    margin-left: 2px;
+}
+
+.contactPage .sendBtn{
+    display: block;
+    text-align: center;
+}
+
+.contactPage .sendBtn .button{
+    background-color: var(--salmon);
+    height: 36px;
+    font-family: var(--fonttitle);
+    font-size: 20px;
+    border-color: var(--salmon);
+    margin-top: 25px;
+    color: var(--white);
+}
+
+/*basket*/
+.basket>div{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 40px;
+}
+.basket #basketContent img{
+    width: 200px;
+    height: 250px;
+}
+.basket #basketContent>div{
+    display: flex;
+    margin: 50px 0;
+}
+.basket #basketContent>div>*{
+    margin: 0 10px;
+}
+.basket #basketContent>div .name{
+    font-weight: 700;
+}
+.basket .recipe{
+    margin-top: 80px;
+    width: 25%;
+    text-align: center;
+    border: 3px solid var(--black);
+    height: fit-content;
+}
+.basket #buyButton{
+    background-color: var(--salmon);
+    padding: 10px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-top: none;
+    border-left: none;
+}
 
 /*user*/
 
