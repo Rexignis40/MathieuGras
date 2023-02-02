@@ -13,10 +13,10 @@
     </form>
 </div>
 
+<div id="userList">
 
-<?php
-include("getListUser.php");
-?>
+</div>
+
 <div id="createAnnonce">
     <h3>créer une annonce</h3>
     <form method="post" action="php/actions/addImage.php" enctype="multipart/form-data">
