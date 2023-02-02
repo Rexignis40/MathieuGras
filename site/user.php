@@ -11,45 +11,55 @@ if(isset($_SESSION["user"])){
     ?>
     <input id="uid" type="hidden" value="<?php echo $_SESSION["user"]["id"]; ?>"/>
     <div class="row">
-        <h1 class="titre">Mon compte</h1>
-        <div class="col m3 separation">
-            <p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p>
-            <p class="spacing" onclick="GetUserGalerie()">Galerie</p>
-            <p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p>
-            <p class="spacing" onclick="GetUserBuyImg(<?php echo $_SESSION['user']['id'] ?>)">Mes Achat</p>
-            <p class="spacing">Suivie de commande</p>
-            <a class="spacing" href="php/logout.php">Disconnect</a>
+        <h1 class="userTitle">Mon compte</h1>
+        <div class="navAndContent">
+            <div class="navBarUserAndSeparation">
+                <div class="navBarUser">
+                    <li><p class="spacing" onclick="GetUserInfo(<?php echo $_SESSION['user']['id'] ?>)">Informations Personelles</p></li>
+                    <li><p class="spacing" onclick="GetUserGalerie(<?php echo $_SESSION['user']['id'] ?>)">Galerie</p></li>
+                    <li><p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p></li>
+                    <li><p class="spacing">Mes Achat</p></li>
+                    <li><p class="spacing">Suivie de commande</p></li>
+                    <li><a class="spacing" href="php/logout.php">Disconnect</a></li>
+                </div>
+                
+                <div class="separation"></div>
+            </div>
+            <div id="content"></div>
         </div>
-        <div class="col m9" id="content">
-        </div>
+        
     </div>
 
     <?php
     if($_SESSION["user"]["admin"]){
         include("php/view/admin.php");
         ?>
-        <h3>Nouvelle prestation</h3>
-        <h2>title</h2>
-        <input name="title" type='text' id="title"/>
-        <h2>description</h2>
-        <input name="desc" type="text" id="description">
-        <h2>price</h2>
-        <input name="price" type="text" id="price">
-        <h2>Image</h2>
-        <input name="img1" type="file" id="img1">
-        <input name="img2" type="file" id="img2">
-        <button onClick="SetPrestation()">envoyer</button>
-        <h3>Nouvelle catégorie dans PORTFOLIO</h3>
-        <h2>title</h2>
-        <input name="title" type='text' id="title"/>
-        <h2>description</h2>
-        <input name="desc" type="text" id="description">
-        <h2>Image</h2>
-        <input name="img1" type="file" id="img1">
-        <input name="img2" type="file" id="img2">
-        <input name="img3" type="file" id="img3">
-        <input name="img4" type="file" id="img4">
-        <button onClick="SetPortfolio()">envoyer</button>          
+        <div class="createNewPrest">
+            <h3>Nouvelle prestation</h3>
+            <h2>title</h2>
+            <input class="newPrest" name="title" type='text' id="title"/>
+            <h2>description</h2>
+            <input class="newPrest" name="desc" type="text" id="description">
+            <h2>price</h2>
+            <input class="newPrest" name="price" type="text" id="price">
+            <h2>Image</h2>
+            <input name="img1" type="file" id="img1">
+            <input name="img2" type="file" id="img2">
+            <button onClick="SetPrestation()">envoyer</button>
+        </div>
+        <div class="createNewCategory">
+            <h3>Nouvelle catégorie dans PORTFOLIO</h3>
+            <h2>title</h2>
+            <input class="newCategory" name="title" type='text' id="title"/>
+            <h2>description</h2>
+            <input class="newCategory" name="desc" type="text" id="description">
+            <h2>Image</h2>
+            <input name="img1" type="file" id="img1">
+            <input name="img2" type="file" id="img2">
+            <input name="img3" type="file" id="img3">
+            <input name="img4" type="file" id="img4">
+            <button onClick="SetPortfolio()">envoyer</button>
+        </div>    
     <?php 
     }
     

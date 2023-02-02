@@ -6716,12 +6716,6 @@ textarea.materialize-textarea {
 
 /* Radio Buttons
    ========================================================================== */
-[type="radio"]:not(:checked),
-[type="radio"]:checked {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-}
 
 [type="radio"]:not(:checked) + span,
 [type="radio"]:checked + span {
@@ -6734,10 +6728,10 @@ textarea.materialize-textarea {
   font-size: 1rem;
   -webkit-transition: .28s ease;
   transition: .28s ease;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none;
+          user-select: none; */
 }
 
 [type="radio"] + span:before,
@@ -6770,13 +6764,13 @@ textarea.materialize-textarea {
 }
 
 [type="radio"]:not(:checked) + span:after {
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 /* Checked styles */
 [type="radio"]:checked + span:before {
-  border: 2px solid transparent;
+  border: 2px solid;
 }
 
 [type="radio"]:checked + span:after,
