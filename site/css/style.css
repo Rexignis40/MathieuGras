@@ -703,12 +703,14 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 /*basket*/
+.basket>div{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 40px;
+}
 .basket #basketContent img{
     width: 200px;
     height: 250px;
-}
-.basket #basketcontent{
-    margin: 5px 40px;
 }
 .basket #basketContent>div{
     display: flex;
@@ -719,6 +721,13 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .basket #basketContent>div .name{
     font-weight: 700;
+}
+.basket .recipe{
+    margin-top: 80px;
+    width: 25%;
+    text-align: center;
+    border: 3px solid var(--black);
+    height: fit-content;
 }
 .basket #buyButton{
     background-color: var(--salmon);
@@ -733,6 +742,10 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 750px) {
+    .basket>div{
+        flex-direction: column;
+        align-items: center;
+    }
     .basket #buyButton{
         width: 80%;
     }
