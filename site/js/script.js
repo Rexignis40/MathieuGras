@@ -284,8 +284,6 @@ function SetUserInfo(){
         first_name:$("#FN").val(),
         name:$("#N").val(),
         email:$("#E").val(),
-        Old_password:$("#OP").val(),
-        New_password:$("#NP").val(),
         age:$("#age").val(),
         adresse:$("#A").val(),
         num:$("#Nu").val()
@@ -433,7 +431,7 @@ function mail(){
     form.append("email", $("#email").val());
     form.append("obj", $("#subject").val());
     form.append("msg", $("#remarque").val());
-    form.append("f", $("#f")[0].files[0]);
+    if($("#f")[0] != undefined) form.append("f", $("#f")[0].files[0]);
 
     $.ajax({
         url: 'php/mail.php',
@@ -442,6 +440,12 @@ function mail(){
         contentType: false,
         processData: false,
         success: function(response){
+            $("#name").val("");
+            $("#family-name").val("");
+            $("#email").val("");
+            $("#subject").val("");
+            $("#remarque").val("");
+            $("#f").val("");
            IsSend = false;
         },
      });
