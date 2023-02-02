@@ -90,7 +90,6 @@ h1.titre{
     font-family: var(--fontbold);
 }
 
-
 .sidenav .logo{
     display: flex;
     align-items: center;
@@ -950,15 +949,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
-.contactPage .firstNameAndName>div{
-    width: 50%;
-    padding-right: 3%;
-}
-.contactPage .firstNameAndName>:last-child{
-    width: 50%;
-    padding-left: 3%;
-    padding-right: 0;
-}
 
 .contactPage #name, #family-name, #email, #subject{
     padding-left: 15px;
@@ -981,8 +971,19 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 15px;
         padding-bottom: 20px;
     }
-}
+    .contactPage .firstNameAndName>div{
+        width: 50%;
+        padding-right: 3%;
+    }
+    .contactPage .firstNameAndName>:last-child{
+        width: 50%;
+        padding-left: 3%;
+        padding-right: 0;
+    }
+    
 
+    
+}
 
 @media screen and (max-width: 993px) {
     .contactForm{
@@ -992,6 +993,7 @@ input[type=number]::-webkit-inner-spin-button {
     .contactPage textarea.remark{
         height: 100px;
         resize: none;
+        width: 100%;
     }
 }
 
@@ -1190,18 +1192,21 @@ input[type=number]::-webkit-inner-spin-button {
         margin-left: 10vw;
     }
 }
-.userInfo .nameFirstName{
-    display: flex;
+
+@media screen and (min-width: 1000px) {   
+    .userInfo .nameFirstName{
+        display: flex;
+    }
+    .userInfo .nameFirstName p:first-child {
+        width: 20vw;
+        margin-right: 10vw;
+    }
+
+    .userInfo .nameFirstName p:last-child {
+        width: 20vw;
+    }
 }
 
-.userInfo .nameFirstName p:first-child {
-    width: 20vw;
-    margin-right: 10vw;
-}
-
-.userInfo .nameFirstName p:last-child {
-    width: 20vw;
-}
 .userInfo input{  
     border: none !important;
     margin: 0 !important;
