@@ -835,6 +835,29 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
+/*basket*/
+#basketContent{
+    height: 45vh;
+}
+
+.basket #buyButton{
+    background-color: var(--salmon);
+    padding: 10px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-top: none;
+    border-left: none;
+}
+
+@media screen and (max-width: 750px) {
+    .basket #buyButton{
+        width: 80%;
+    }
+}
+
 /*user*/
 
 .userTitle {

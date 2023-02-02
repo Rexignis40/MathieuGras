@@ -405,7 +405,7 @@ function BuyBasket(_basket, u){
         user: u
     },
     function(data, status){
-        $("#basket").html("");
+        $("#basketContent").html("");
         IsSend = false;
     });
 }
