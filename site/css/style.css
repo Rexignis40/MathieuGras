@@ -303,8 +303,8 @@ h1.titre{
     margin: 60px 22px!important;
   }
 
-
-/*portfolio*/
+/* ---------------- */
+/* PORTFOLIO */
 
 .carouselPortfolio{
     margin-top: 10%;
@@ -429,14 +429,15 @@ h1.titre{
 
 
 
-/*contact*/
+/* ---------------- */
+/* CONTACT */
+
 .contact-page{
     color: var(--white);
     background-image: url(../img/fondContact.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
-
 
 @media screen and (min-width: 993px) {
     .contact-me, .contactForm{
@@ -523,7 +524,7 @@ h1.titre{
 
 @media screen and (max-width: 993px) {
     .contactForm{
-        margin-left: 60px;
+        margin-left: 60=px;
         margin-right: 60px;
     }
     .contact-page textarea.remark{
@@ -532,7 +533,9 @@ h1.titre{
     }
 }
 
-/* prestation */
+/* ---------------- */
+/* PRESTATION */
+
 .annonce .titlePrestation {
     text-align: center;
     font-size: 40px;
@@ -679,7 +682,7 @@ h1.titre{
 
 
 /* -------------- */
-/* store */
+/* STORE */
 
 @media screen and (min-width: 750px) {
     .store{
@@ -716,8 +719,9 @@ h1.titre{
     }
 
     .store hr{
-        background-color: var(--white);
+        color: var(--white);
         position: absolute;
+        margin-left: -10px;
     }
 }
 
@@ -1012,7 +1016,9 @@ input[type=number]::-webkit-inner-spin-button {
     color: var(--white);
 }
 
-/*basket*/
+/* ---------------- */
+/* BASKET */
+
 .basket>div{
     display: flex;
     justify-content: space-between;
@@ -1051,7 +1057,8 @@ input[type=number]::-webkit-inner-spin-button {
     border-left: none;
 }
 
-/*user*/
+/* ---------------- */
+/* USER */
 
 
 @media screen and (min-width: 1000px) {
@@ -1069,8 +1076,8 @@ input[type=number]::-webkit-inner-spin-button {
     }
     
     .navBarUser {
-        margin-left: 60px;
-        margin-right: 60px;
+        margin-left: 80px;
+        margin-right: 80px;
     }
     .navBarUser li {
         list-style: none;
@@ -1143,17 +1150,28 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .userInfo .nameFirstName{
     display: flex;
-    justify-content: space-between;
+}
+
+.userInfo .nameFirstName p:first-child {
+    width: 20vw;
+    margin-right: 10vw;
+}
+
+.userInfo .nameFirstName p:last-child {
+    width: 20vw;
 }
 .userInfo input{  
     border: none !important;
     margin: 0 !important;
 }  
+
 .userInfo p .entourage{
     margin-top: 15px!important;
     outline-style: solid !important;
     border-radius: 2rem !important;
     color: var(--black);
+    opacity: 70%;
+    padding-left: 20px !important;
 }
 
 .userInfo .formSubmit {
@@ -1163,49 +1181,81 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 50px;
 }
 
-.connection{
-    background-color: var(--black);
-    opacity: 80%;
-    color: var(--white);
-    margin: 50px;
-    padding: 50px;
-    border-radius: 2%;
-
-}
 .use{
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    padding-bottom: 25px;
+    padding-top: 25px;
     margin-bottom: 0;
 }
-.count{
+
+.use .connection{
+    background-color: var(--black);
+    opacity: 80%;
+    color: var(--white);
+    border-radius: 2%;
+    text-align: justify;
+    margin: 50px;
+    padding: 50px;
+}
+.use .count{
     margin-top:50px
 }
- form input.butonuser{
+.use form .butonuser{
     background-color: var(--salmon);
     border-color: var(--salmon);
 }
-.connection a{
+.use .connection a{
     color: var(--white);
 }
-.connection a:hover{
+.use .connection a:hover{
     color: var(--salmon);
 }
-.test{
+.use .connect{
     display: flex;
     margin-left: 15%;
 }
-.test p{
+.use .connect p{
     margin-bottom: 0;
+    font-size: 125%;
 }
-.conditions{
+.use .conditions{
     margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    font-size: 80%;
 }
-.test form{
+.use .conditions a{
+    font-size: 135%;
+    margin-bottom: 5%;
+}
+.use .connect form{
     width: 80%;
 }
 
-/* admin */
+
+.use .separation{
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-left: 2% !important;
+}
+.use .spacing{
+    margin-bottom: 10%;
+    -webkit-text-stroke-width: medium;
+    font-size: larger;
+}
+.use .spacing:hover{
+    color:#3b5998;
+    cursor: pointer;
+}
+
+/* ------------ */
+/* ADMIN */
 
 .panelAdminTitle{
     margin-top: 200px;
@@ -1260,7 +1310,8 @@ form .formSubmit, .formSubmit {
     margin-bottom: 150px;
 }
 
-/* footer */
+/* ------------ */
+/* FOOTER */
 
 .pageFooter {
     background-color: var(--brown);
