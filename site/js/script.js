@@ -196,7 +196,7 @@ actualCat = -1;
 actualOffset = 0;
 window.addEventListener('resize', function(event) {
     w = event.currentTarget.innerWidth;
-    if(w < 1100 && lastScreenWidth >= 1100 || w > 1100 && lastScreenWidth <= 1100 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImgStore(actualCat, actualOffset);
+    if(w < 1000 && lastScreenWidth >= 1000 || w > 1000 && lastScreenWidth <= 1000 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImgStore(actualCat, actualOffset);
     lastScreenWidth = w;
 }, true);
 
@@ -223,7 +223,7 @@ async function GetImgStore(cat, offset){
         page += "<input id='numPage' type='number' value='"+(offset/12+1)+"' ondbclick='RemoveInput('num-page')' onchange='GetImgFromInput("+cat+")'/><p>"+(Math.ceil(imgCount/12))+"</p>";
         if(data.length != 0){
             modulo = 4;
-            if(window.innerWidth < 1500){
+            if(window.innerWidth < 1700){
                 if(window.innerWidth < 1300){
                     if(window.innerWidth < 1100){
                         modulo = 1;
@@ -236,17 +236,16 @@ async function GetImgStore(cat, offset){
                     modulo = 3;
                 }
             }
-            html += "<div class='annonce-line'>";
+            html += "<div class='annonceLine'>";
             for(i = 0; i < data.length; i++){
                 if(i == 12) break;
                     if(i != 0 && i % modulo == 0){
                         html += "</div>";
-                        if(i != 12) html += "<div class='annonce-line'>";
+                        if(i != 12) html += "<div class='annonceLine'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +', this)">';
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button class="like" onclick="favorie('+ data[i]["id"] +', this)">';
                     if(data[i]["fav"] != undefined) html += '<i class="fa-solid fa-heart"></i></button></div>';
                     else html += '<i class="fa-regular fa-heart"></i></button></div>';
-                    
             }
             if(data.length == 13){
                 page += "<button class='pageAfter' onclick='GetImgStore("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
@@ -264,16 +263,15 @@ async function GetImgStore(cat, offset){
     }, "json");
 }
 
-function GetUserInfo(_id){
+function GetUserInfo(){
     if(IsSend) return;
     IsSend = true;
     $.post("php/getUserInfo.php",
     {
-        id: _id
     },
     function(data, status){
         if(data.length != undefined){
-            $("#content").html(data);
+            $("#content-user").html(data);
         }
         IsSend = false;
     });
@@ -312,7 +310,7 @@ function GetUserGalerie(){
         else{
             html += "<div><p>Vous n'avez aucune image</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
         IsSend = false;
     }, "json");
 }
@@ -334,7 +332,7 @@ function GetUserBuyImg(_id){
         else{
             html += "<div><p>Vous n'avez aucune image</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
         IsSend = false;
     }, "json");
 }
@@ -368,7 +366,7 @@ function GetUserLike(_id){
         else{
             html += "<div><p>Vous n'avez aucune image like</p></div>";
         }
-        $("#content").html(html);
+        $("#content-user").html(html);
     }, "json");
 }
 
@@ -414,17 +412,25 @@ $('.carousel.carousel-slider').carousel({
 function mail(){
     if(IsSend) return;
     IsSend = true;
-    $.post("php/mail.php",
-    {
-        prénom:$("#name").val(),
-        nom:$("#family-name").val(),
-        email:$("#email").val(),
-        obj:$("#subject").val(),
-        Msg:$("#remarque").val()
-    },
-    function(data, status){
-        IsSend = false;
-    });
+    
+    var form = new FormData();
+    form.append("prénom", $("#name").val());
+    form.append("nom", $("#family-name").val());
+    form.append("email", $("#email").val());
+    form.append("obj", $("#subject").val());
+    form.append("msg", $("#remarque").val());
+    form.append("f", $("#f")[0].files[0]);
+
+    $.ajax({
+        url: 'php/mail.php',
+        type: 'post',
+        data: form,
+        contentType: false,
+        processData: false,
+        success: function(response){
+           IsSend = false;
+        },
+     });
 }
   
 $(document).ready(function(){

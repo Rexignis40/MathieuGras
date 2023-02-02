@@ -6,7 +6,7 @@ include('./components/head.html')?>
     <div>
     <?php
     $total = 0;
-    $html = '<div id="basketContent">';
+    $html = "";
     if(isset($_SESSION["basket"])){
         if(isset($_POST["delete"]) && isset($_POST["id"])){
             $index;
