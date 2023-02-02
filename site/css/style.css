@@ -1,13 +1,14 @@
 :root{
     --black: #000;
+    --blackimportant: #000;
     --white: #fff;
+    --whiteimportant: #fff;
     --salmon: #E89676;
     --brown: #7E503E;
     --grey: #333; 
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
-
     --carousel-img-portfolio: "../img/IMG_1209\ 2.JPG";
 }
 
@@ -377,7 +378,7 @@ h1.titre{
     color: var(--white);
 }
 .contact-page input, .contact-page textarea{
-    background-color: var(--white) !important;
+    background-color: var(--whiteimportant) !important;
 }
 
 
@@ -414,7 +415,7 @@ h1.titre{
 
 
 .contact-page .file .button{
-    border-color: var(--white);
+    border-color: var(--whiteimportant);
     margin-left: 2px;
 }
 
@@ -764,7 +765,7 @@ h1.titre{
 
 
 .store .like {
-    color: var(--white);
+    color: var(--whiteimportant);
     border: none;
     cursor: pointer;
     font-size: 25px;
@@ -772,7 +773,7 @@ h1.titre{
 }
 
 .store #basket {
-    color: var(--white);
+    color: var(--whiteimportant);
     border: none;
     cursor: pointer;
     font-size: 25px;
@@ -1074,7 +1075,7 @@ form .formSubmit, .formSubmit {
 
 .pageFooter {
     background-color: var(--brown);
-    color: var(--white);
+    color: var(--whiteimportant);
     margin-bottom: 0px;
     background: linear-gradient(var(--brown),#694435);
 }
@@ -1109,7 +1110,7 @@ form .formSubmit, .formSubmit {
   margin-right:15px;
 }
 .pageFooter .social .socialIcons a{
-  background-color: var(--white);
+  background-color: var(--whiteimportant);
   color:var(--grey);
   display:inline-block;
   width:50px;
@@ -1135,23 +1136,23 @@ form .formSubmit, .formSubmit {
 .pageFooter .social .socialIcons a.facebook:hover
 {
   background-color:#3b5998;
-  color: var(--white);
+  color: var(--whiteimportant);
 }
 .pageFooter .social .socialIcons a.twitter:hover
 {
   background-color:#00aced;
-  color: var(--white);
+  color: var(--whiteimportant);
 }
 .pageFooter .social .socialIcons a.linkedin:hover
 {
   background-color:#007bb6;
-  color: var(--white);
+  color: var(--whiteimportant);
 }
 .pageFooter .social .socialIcons a.instagram:hover
 {
   background:linear-gradient(45deg,#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D,  #F56040, #F77737, #FCAF45, #FFDC80);
   opacity: 75;
-  color: var(--white);
+  color: var(--whiteimportant);
 }
 
 
@@ -1172,6 +1173,7 @@ form .formSubmit, .formSubmit {
 
 .pageFooter .language img:hover {
     filter: grayscale(0%);
+    transition-duration: .3s;
 }
 
 /* presentation & contact */
@@ -1185,11 +1187,11 @@ form .formSubmit, .formSubmit {
 
 .pageFooter .presentation {
     text-align: justify;
-    border-left: 3px solid var(--white);
+    border-left: 3px solid var(--whiteimportant);
 }
 
 .pageFooter .info {
-    border-left: 3px solid var(--white);
+    border-left: 3px solid var(--whiteimportant);
 }
 
 .pageFooter .info .phone, .adress, .emailFooter{
@@ -1217,6 +1219,6 @@ form .formSubmit, .formSubmit {
 }
 
 .pageFooter .copyright a {
-    color: var(--white);
+    color: var(--whiteimportant);
     padding-left: 5px;
 }
