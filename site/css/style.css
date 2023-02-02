@@ -926,10 +926,46 @@ input[type=number]::-webkit-inner-spin-button {
     .navBarUserAndSeparation .separation {
         background-color: var(--white) ;     
     }
-    
 }
 
-div.connection{
+
+@media screen and (min-width: 1000px) {
+    
+    .userInfo{
+        width: 50vw;
+        margin-left: 12.5vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+    
+    .userInfo{
+        width: 80vw;
+        margin-left: 10vw;
+    }
+}
+.userInfo .nameFirstName{
+    display: flex;
+    justify-content: space-between;
+}
+.userInfo input{  
+    border: none !important;
+    margin: 0 !important;
+}  
+.userInfo p .entourage{
+    margin-top: 15px!important;
+    outline-style: solid !important;
+    border-radius: 2rem !important;
+    color: var(--black);
+}
+
+.userInfo .formSubmit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.connection{
     background-color: var(--black);
     opacity: 80%;
     color: var(--white);
@@ -938,36 +974,36 @@ div.connection{
     border-radius: 2%;
 
 }
-div.use{
+.use{
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 0;
 }
-div.count{
+.count{
     margin-top:50px
 }
-div form input.butonuser{
+ form input.butonuser{
     background-color: var(--salmon);
     border-color: var(--salmon);
 }
-div.connection a{
+.connection a{
     color: var(--white);
 }
-div.connection a:hover{
+.connection a:hover{
     color: var(--salmon);
 }
-div.test{
+.test{
     display: flex;
     margin-left: 15%;
 }
-div.test p{
+.test p{
     margin-bottom: 0;
 }
-div.conditions{
+.conditions{
     margin-left: 15%;
 }
-div.test form{
+.test form{
     width: 80%;
 }
 
@@ -1026,51 +1062,6 @@ form .formSubmit, .formSubmit {
 .createNewCategory {
     margin-bottom: 150px;
 }
-
-@media screen and (min-width: 1000px) {
-    
-    .userInfo{
-        width: 50vw;
-        margin-left: 12.5vw;
-    }
-}
-@media screen and (max-width: 1000px) {
-    
-    .userInfo{
-        width: 80vw;
-        margin-left: 10vw;
-    }
-}
-.userInfo .nameFirstName{
-    display: flex;
-    justify-content: space-around;
-}
-.userInfo input{  
-    border: none !important;
-    margin: 0 !important;
-}  
-.userInfo p .entourage{
-    margin-top: 15px!important;
-    outline-style: solid !important;
-    border-radius: 2rem !important;
-    color: var(--black);
-}
-
-.userInfo .formSubmit {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-}
-
-
-
-
-
-
-
-
-
 
 /* footer */
 
