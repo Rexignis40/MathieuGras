@@ -1,4 +1,7 @@
 <?php
+if(!isset($_POST["i"])){
+    exit();
+}
 $myfile = fopen("json/prestation.json", "r"); 
 $json = json_decode(fread($myfile, filesize("json/prestation.json")), true);
 fclose($myfile);
