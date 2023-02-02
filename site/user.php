@@ -20,7 +20,7 @@ if(isset($_SESSION["user"])){
                     <li><p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p></li>
                     <li><p class="spacing" onclick="GetUserBuyImg(<?php echo $_SESSION['user']['id'] ?>)">Mes Achat</p></li>
                     <li><p class="spacing">Suivie de commande</p></li>
-                    <li><a class="spacing" href="php/logout.php">Disconnect</a></li>
+                    <li><a class="spacing" href="php/logout.php">Déconnexion</a></li>
                 </div>
                 
                 <div class="separation"></div>
@@ -35,30 +35,36 @@ if(isset($_SESSION["user"])){
         include("php/view/admin.php");
         ?>
         <div class="createNewPrest">
-            <h3>Nouvelle prestation</h3>
-            <h2>title</h2>
-            <input class="newPrest" name="title" type='text' id="title"/>
-            <h2>description</h2>
+            <h3>Nouvelle préstation</h3>
+            <h2>Titre</h2>
+            <input class="newPrest" name="title" type='text' id="title">
+            <h2>Description</h2>
             <input class="newPrest" name="desc" type="text" id="description">
-            <h2>price</h2>
+            <h2>Prix de la préstation</h2>
             <input class="newPrest" name="price" type="text" id="price">
-            <h2>Image</h2>
+            <h2>Images</h2>
             <input name="img1" type="file" id="img1">
             <input name="img2" type="file" id="img2">
-            <button onClick="SetPrestation()">envoyer</button>
+            <button onClick="SetPrestation()">Envoyer</button>
         </div>
         <div class="createNewCategory">
-            <h3>Nouvelle catégorie dans PORTFOLIO</h3>
-            <h2>title</h2>
-            <input class="newCategory" name="title" type='text' id="title"/>
-            <h2>description</h2>
-            <input class="newCategory" name="desc" type="text" id="description">
-            <h2>Image</h2>
-            <input name="img1" type="file" id="img1">
-            <input name="img2" type="file" id="img2">
-            <input name="img3" type="file" id="img3">
-            <input name="img4" type="file" id="img4">
-            <button onClick="SetPortfolio()">envoyer</button>
+            <h3>Nouvelle catégorie dans portfolio</h3>
+            <label>1: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="0"></label>
+            <label>2: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="1"></label>
+            <label>3: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="2"></label>
+            <label>4: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="3"></label>
+            <label>5: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="4"></label>
+            <label>6: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="5"></label>
+            <h2>Titre</h2>
+            <input class="newCategory" name="title" type='text' id="title-portfolio">
+            <h2>Explication du projet</h2>
+            <input class="newCategory" name="desc" type="text" id="description-portfolio">
+            <h2>Images</h2>
+            <input name="img1" type="file" id="img1-portfolio">
+            <input name="img2" type="file" id="img2-portfolio">
+            <input name="img3" type="file" id="img3-portfolio">
+            <input name="img4" type="file" id="img4-portfolio">
+            <button onClick="SetPortfolio()">Envoyer</button>
         </div>    
     <?php 
     }
@@ -93,4 +99,7 @@ include('./components/footer.html');
 ?>
 </body>
 <?php include("./components/script.php"); ?>
+<script>
+   document.body.addEventListener("load", GetUserInfo());
+</script>
 </html>

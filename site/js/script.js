@@ -146,21 +146,21 @@ function SetPortfolio(){
     IsSend = true;
 
     var form = new FormData();
-    form.append("title", $("#title").val());
-    form.append("desc", $("#description").val());
-    form.append("img1", $("#img1")[0].files[0]);
-    form.append("img2", $("#img2")[0].files[0]);
-    form.append("img3", $("#img3")[0].files[0]);
-    form.append("img4", $("#img4")[0].files[0]);
+    form.append("title", $("#title-portfolio").val());
+    form.append("desc", $("#description-portfolio").val());
+    form.append("img1", $("#img1-portfolio")[0].files[0]);
+    form.append("img2", $("#img2-portfolio")[0].files[0]);
+    form.append("img3", $("#img3-portfolio")[0].files[0]);
+    form.append("img4", $("#img4-portfolio")[0].files[0]);
 
     $.ajax({
-        url: 'php/setPrestation.php',
+        url: 'php/setPortfolio.php',
         type: 'post',
         data: form,
         contentType: false,
         processData: false,
         success: function(response){
-           IsSend = false;
+            IsSend = false;
         },
      });
 }
