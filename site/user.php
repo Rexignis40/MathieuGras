@@ -47,7 +47,7 @@ if(isset($_SESSION["user"])){
             <button onClick="SetPrestation()">Envoyer</button>
         </div>
         <div class="createNewCategory">
-            <h3>Nouvelle catégorie dans portfolio</h3>
+            <h2>Changer les galeries dans portfolio</h2>
             <label>1: <input class="newCategory" type="radio" name="which-carousel" value="0"></label>
             <label>2: <input class="newCategory" type="radio" name="which-carousel" value="1"></label>
             <label>3: <input class="newCategory" type="radio" name="which-carousel" value="2"></label>
@@ -56,7 +56,7 @@ if(isset($_SESSION["user"])){
             <label>6: <input class="newCategory" type="radio" name="which-carousel" value="5"></label>
             <h4>Titre</h4>
             <input class="newCategory" name="title" type='text' id="title-portfolio">
-            <h4>Explication du projet</h4>
+            <h4>Description du projet</h4>
             <input class="newCategory" name="desc" type="text" id="description-portfolio">
             <h4>Images</h4>
             <input name="img1" type="file" id="img1-portfolio">
