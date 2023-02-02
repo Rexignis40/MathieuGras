@@ -14,7 +14,7 @@
                     fclose($myfile);
                     $html = "";
                     for($i = 0; $i < 1; $i++){
-                        $elm = json_decode($json[$i], true);
+                        $elm = $json[$i];
                         $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["desc"].'</p>';
                     }
                     echo $html;

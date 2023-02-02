@@ -15,7 +15,7 @@ $q->execute();
 
 $destination = "img/store/" . $pdo->lastInsertId() .".png";
 
-if(!imagepng(imagecreatefromstring(file_get_contents($_FILES["img"]["tmp_name"])), "../../".$destination, 9));
+imagepng(imagecreatefromstring(file_get_contents($_FILES["img"]["tmp_name"])), "../../".$destination, 9);
 
 $_SESSION["output"] = "Photo upload";
 header('Location: ../../user.php');
