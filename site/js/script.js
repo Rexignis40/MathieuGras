@@ -185,7 +185,7 @@ function RemoveInput(id){
 }
 
 function GetImgFromInput(cat){
-    GetImg(cat, ($("#num-page").val() - 1) * 12);
+    GetImgStore(cat, ($("#num-page").val() - 1) * 12);
 }
 
 let like;
@@ -206,7 +206,7 @@ actualCat = -1;
 actualOffset = 0;
 window.addEventListener('resize', function(event) {
     w = event.currentTarget.innerWidth;
-    if(w < 1100 && lastScreenWidth >= 1100 || w > 1100 && lastScreenWidth <= 1100 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImg(actualCat, actualOffset);
+    if(w < 1100 && lastScreenWidth >= 1100 || w > 1100 && lastScreenWidth <= 1100 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImgStore(actualCat, actualOffset);
     lastScreenWidth = w;
 }, true);
 
@@ -219,7 +219,7 @@ function IsIdIn(id, tableau){
     });
     return result;
 }
-async function GetImg(cat, offset){
+async function GetImgStore(cat, offset){
     if(imgCount == 0) await GetImgCount();
     if(IsSend || offset > imgCount + 12) return;
     IsSend = true;
@@ -234,7 +234,7 @@ async function GetImg(cat, offset){
         let html = "";
         let page = "";
         if(offset != 0){
-            page += "<button class='pageBefore' onclick='GetImg("+cat+","+(offset-12)+")'><i class='fa-solid fa-arrow-left'></i></button>";
+            page += "<button class='pageBefore' onclick='GetImgStore("+cat+","+(offset-12)+")'><i class='fa-solid fa-arrow-left'></i></button>";
         }
         else{
             page += "<button class='pageBeforeImpossible' ><i class='fa-solid fa-arrow-left'></i></button>";
@@ -262,10 +262,10 @@ async function GetImg(cat, offset){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +')">'+IdImgByUser($_SESSION[user][id])?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>'+'</button></div>';
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +')"><i class="fa-regular fa-heart"></i></button></div>';
             }
             if(data.length == 13){
-                page += "<button class='pageAfter' onclick='GetImg("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
+                page += "<button class='pageAfter' onclick='GetImgStore("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
             }
             else{
                 page += "<button class='pageAfterImpossible'><i class='fa-solid fa-arrow-right'></i></button>";
@@ -299,26 +299,24 @@ function SetUserInfo(){
     IsSend = true;
     $.post("php/actions/uptateUser.php",
     {
-        Prénom:$("#FN").val(),
-        Nom:$("#N").val(),
-        Email:$("#E").val(),
-        Password:$("#P").val(),
-        Age:$("#age").val(),
-        Adresse:$("#A").val(),
-        Num:$("#Nu").val()
+        first_name:$("#FN").val(),
+        name:$("#N").val(),
+        email:$("#E").val(),
+        password:$("#P").val(),
+        age:$("#age").val(),
+        adresse:$("#A").val(),
+        num:$("#Nu").val()
     },
     function(data, status){
-        console.log(data);
         IsSend = false;
     });
 }
 
-function GetUserGalerie(_id){
+function GetUserGalerie(){
     if(IsSend) return;
     IsSend = true;
     $.post("php/getUserGalerie.php",
     {
-        id: _id
     },
     function(data, status){
         let html = "";
@@ -393,15 +391,13 @@ function GetUserLike(_id){
     }, "json");
 }
 
-function BuyBasket(_basket, u){
+function BuyBasket(){
     if(IsSend) return;
     IsSend = true;
     console.log(_basket);
     console.log(u);
     $.post("php/buyBasket.php",
     {
-        basket: _basket,
-        user: u
     },
     function(data, status){
         $("#basket").html("");
@@ -414,7 +410,6 @@ function favorie(id){
     IsSend = true;
     $.post("php/addFavorie.php",
     {
-        uid: $("#uid").val(),
         img: id 
     },
     function(data, status){
