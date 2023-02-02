@@ -10,6 +10,6 @@ $q->execute();
 
 if($q->rowCount() == 1){
     $user = $q->fetch();
-    echo '<div class="you"><div class="nomPrenom"><p><input  type="text" id="FN" value ='.$user["first_name"].'></p><p><input type="text" id="N" value ='.$user["name"].'></p></div><p><input type="password" id="P" value ='.$user["password"].'></p><p><input type="mail" id="E" value ='.$user["email"].'></p><p><input type="number" id="age" value ='.$user["age"].'></p><p><input type="text" id="A" value ='.$user["adresse"].'></p><p><input type="tel" id="Nu" value ='.$user["num"].'></p><button onclick="SetUserInfo()">Appliquer les modification</button></div>';
+    echo '<div class="you"><div class="nomPrenom"><p>Prénom :<input class="entourage" type="text" id="FN" value ='.$user["first_name"].'></p><p>Nom :<input class="entourage" type="text" id="N" value ='.$user["name"].'></p></div><p>Password :<input class="entourage" type="password" id="P" value ='.$user["password"].'></p><p>Email :<input class="entourage" type="email" id="E" value ='.$user["email"].'></p><p>Age :<input class="entourage" class="entourage" type="number" id="age" value ='.$user["age"].'></p><p>Adresse :<input class="entourage" type="text" id="A" value ='.$user["adresse"].'></p><p>Num :<input class="entourage" type="tel" id="Nu" value ='.$user["num"].'><div class="centerpls"></p><button class="butonuse" onclick="SetUserInfo()">Enregistrer</button></div></div>';
 }
 ?>

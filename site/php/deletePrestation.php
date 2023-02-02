@@ -2,11 +2,11 @@
 if(!isset($_POST["i"])){
     exit();
 }
-$myfile = fopen("prestation/prestation.json", "r"); 
-$json = json_decode(fread($myfile, 1024), true);
+$myfile = fopen("json/prestation.json", "r"); 
+$json = json_decode(fread($myfile, filesize("json/prestation.json")), true);
 fclose($myfile);
 
-$myfile = fopen("prestation/prestation.json", "w"); 
+$myfile = fopen("json/prestation.json", "w"); 
 echo var_dump($json["prest"]);
 array_splice($json["prest"], $_POST["i"], 1);
 echo var_dump($json["prest"]);

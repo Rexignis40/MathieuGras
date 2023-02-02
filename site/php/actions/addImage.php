@@ -3,7 +3,7 @@ require "../security.php";
 require_once("../config.php");
 if(!isset($_POST["name"]) || !isset($_POST["price"]) || !isset($_FILES['img']["tmp_name"]) || !isset($_POST["category"])){
     $_SESSION["output"] = "Une erreur s'est produite";
-    header("Location: ../../page/user.php");
+    header("Location: ../../user.php");
     exit;
 }
 

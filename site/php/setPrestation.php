@@ -2,11 +2,11 @@
 if(!isset($_POST["title"]) || !isset($_POST["desc"]) || !isset($_POST["price"])){
     exit();
 }
-$myfile = fopen("prestation/prestation.json", "r"); 
-$json = json_decode(fread($myfile, filesize("prestation/prestation.json")), true);
+$myfile = fopen("json/prestation.json", "r"); 
+$json = json_decode(fread($myfile, filesize("json/prestation.json")), true);
 fclose($myfile);
 
-$myfile = fopen("prestation/prestation.json", "w");
+$myfile = fopen("json/prestation.json", "w");
 $newElm["title"] = $_POST["title"];
 $newElm["description"] = $_POST["desc"];
 $newElm["price"] = $_POST["price"];

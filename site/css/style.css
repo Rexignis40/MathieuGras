@@ -7,6 +7,8 @@
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
+
+    --carousel-img-portfolio: "../img/IMG_1209\ 2.JPG";
 }
 
 
@@ -338,8 +340,8 @@ h1.titre{
 }
 
 
-.carouselPortfolio .carouselFive {
-    background-image: url("../img/IMG_1209\ 2.JPG");
+.carouselPortfolio .carouselImgPortfolio {
+    background-image: var(--carousel-img-portfolio);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -449,15 +451,16 @@ h1.titre{
         resize: none;
     }
 }
+
 /* prestation */
 .annonce .titlePrestation {
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-family: var(--fonttitle);
 }
 .annonce .prestationDescription {
     text-align: center;
-    font-size: 25px;
+    font-size: 16px;
     font-family: var(--font);
 }
 
@@ -470,10 +473,17 @@ h1.titre{
 
 }
 
+.prestationPrice{
+    text-align: center;
+    font-size: 16px;
+    font-family: var(--fonttitle);
+    font-style: italic;
+}
+
 @media screen and (min-width: 1000px){
     .annonce .prestationDescription {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
     }
 }
 
@@ -903,13 +913,37 @@ p.spacing{
     color: var(--white);
     padding-left: 5px;
 }
+
+.you{
+    width: 100%;
+    padding: 0% 15%;
+}
 .you .nomPrenom{
     display: flex;
+    justify-content: space-between;
 }
 .you input{  
-border-bottom: none !important;
+border: none !important;
 margin: 0 !important;
+padding-left: 4% !important;
 }  
-.you p{
-    outline-style: solid;
+.you p .entourage{
+    margin-top: 15px!important;
+    outline-style: solid !important;
+    border-radius: 2rem !important;
+}
+.you .butonuse{
+    padding: 10px;
+    margin-top: 15px;
+    background-color: var(--salmon);
+    border-color: var(--salmon);
+    color: var(--white);
+
+}
+.centerpls{
+    display: flex;
+    flex-direction: column;
+}
+.centerpls .butonuse{
+    align-self: center;
 }

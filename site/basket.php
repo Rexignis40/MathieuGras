@@ -1,5 +1,5 @@
 <html lang="fr">
-<?php require_once("./php/config.php"); 
+<?php require_once("php/config.php"); 
 include('./components/head.html')?>
 <body>
     <?php
