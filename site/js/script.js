@@ -236,12 +236,12 @@ async function GetImgStore(cat, offset){
                     modulo = 3;
                 }
             }
-            html += "<div class='annonce-line'>";
+            html += "<div class='annonceLine'>";
             for(i = 0; i < data.length; i++){
                 if(i == 12) break;
                     if(i != 0 && i % modulo == 0){
                         html += "</div>";
-                        if(i != 12) html += "<div class='annonce-line'>";
+                        if(i != 12) html += "<div class='annonceLine'>";
                     }
                     html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +', this)">';
                     if(data[i]["fav"] != undefined) html += '<i class="fa-solid fa-heart"></i></button></div>';
