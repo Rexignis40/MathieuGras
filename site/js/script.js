@@ -97,6 +97,12 @@ function SetPrestation(){
     form.append("price", $("#price").val());
     form.append("img1", $("#img1")[0].files[0]);
     form.append("img2", $("#img2")[0].files[0]);
+    
+    $("#title").val("");
+    $("#description").val("");
+    $("#price").val("");
+    $("#img1").val("");
+    $("#img2").val("");
 
     $.ajax({
         url: 'php/setPrestation.php',
@@ -133,7 +139,6 @@ function deletePrestation(_id){
         i: _id
     },
     function(data, status){
-        console.log(data);
         $("#prest"+_id).css("display", "none");
         IsSend = false;
     });
@@ -146,31 +151,32 @@ function SetPortfolio(){
     IsSend = true;
 
     var form = new FormData();
-    form.append("title", $("#title").val());
-    form.append("desc", $("#description").val());
-    form.append("img1", $("#img1")[0].files[0]);
-    form.append("img2", $("#img2")[0].files[0]);
-    form.append("img3", $("#img3")[0].files[0]);
-    form.append("img4", $("#img4")[0].files[0]);
+    form.append("title", $("#title-portfolio").val());
+    form.append("desc", $("#description-portfolio").val());
+    form.append("which", $('input[name="which-carousel"]:checked').val());
+    form.append("img1", $("#img1-portfolio")[0].files[0]);
+    form.append("img2", $("#img2-portfolio")[0].files[0]);
+    form.append("img3", $("#img3-portfolio")[0].files[0]);
+    form.append("img4", $("#img4-portfolio")[0].files[0]);
 
+    $("#title-portfolio").val("");
+    $("#description-portfolio").val("");
+    $('input[name="which-carousel"]:checked').val("");
+    $("#img1-portfolio").val("");
+    $("#img2-portfolio").val("");
+    $("#img3-portfolio").val("");
+    $("#img4-portfolio").val("");
     $.ajax({
-        url: 'php/setPrestation.php',
+        url: 'php/setPortfolio.php',
         type: 'post',
         data: form,
         contentType: false,
         processData: false,
         success: function(response){
-           IsSend = false;
+            IsSend = false;
         },
      });
 }
-
-// function GetPortfolio(){
-//     for(i = 0; i < 4; i++){
-//         document.documentElement.style.setProperty('--carousel-img-portfolio', 'url(img/portfolio/portfolio1img'+i+'.png)');
-//     }
-// }
-
 
 //Store Page
 let imgCount = 0;
@@ -284,8 +290,6 @@ function SetUserInfo(){
         first_name:$("#FN").val(),
         name:$("#N").val(),
         email:$("#E").val(),
-        Old_password:$("#OP").val(),
-        New_password:$("#NP").val(),
         age:$("#age").val(),
         adresse:$("#A").val(),
         num:$("#Nu").val()
@@ -303,7 +307,6 @@ function SetUserPassword(){
         New_password:$("#NP").val(),
     },
     function(data, status){
-        console.log(data);
         IsSend = false;
     });
 }
@@ -433,7 +436,14 @@ function mail(){
     form.append("email", $("#email").val());
     form.append("obj", $("#subject").val());
     form.append("msg", $("#remarque").val());
-    form.append("f", $("#f")[0].files[0]);
+    if($("#f")[0] != undefined) form.append("f", $("#f")[0].files[0]);
+
+    $("#name").val("");
+    $("#family-name").val("");
+    $("#email").val("");
+    $("#subject").val("");
+    $("#remarque").val("");
+    $("#f").val("");
 
     $.ajax({
         url: 'php/mail.php',
