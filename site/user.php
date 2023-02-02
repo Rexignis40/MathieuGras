@@ -49,12 +49,12 @@ if(isset($_SESSION["user"])){
         </div>
         <div class="createNewCategory">
             <h3>Nouvelle catégorie dans portfolio</h3>
-            <label>1: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="0"></label>
-            <label>2: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="1"></label>
-            <label>3: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="2"></label>
-            <label>4: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="3"></label>
-            <label>5: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="4"></label>
-            <label>6: <input class="newCategory" type="radio" name="which-carousel" id="which-carousel" value="5"></label>
+            <label>1: <input class="newCategory" type="radio" name="which-carousel" value="0"></label>
+            <label>2: <input class="newCategory" type="radio" name="which-carousel" value="1"></label>
+            <label>3: <input class="newCategory" type="radio" name="which-carousel" value="2"></label>
+            <label>4: <input class="newCategory" type="radio" name="which-carousel" value="3"></label>
+            <label>5: <input class="newCategory" type="radio" name="which-carousel" value="4"></label>
+            <label>6: <input class="newCategory" type="radio" name="which-carousel" value="5"></label>
             <h2>Titre</h2>
             <input class="newCategory" name="title" type='text' id="title-portfolio">
             <h2>Explication du projet</h2>

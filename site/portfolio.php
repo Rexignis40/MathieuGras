@@ -16,9 +16,10 @@
                 <div class="carousel-item white-text carouselPortfolioImg carouselPortfolio1Img1">
                     <?php
                     if(isset($json[0])){
-                    $html = "";
-                    $html .= '<h2>'. $json[0]["title"] .'</h2><p class="white-text">'.$json[0]["desc"].'</p>';
-                    echo $html;
+                        $elm = json_decode($json[0], true);
+                        $html = "";
+                        $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["description"].'</p>';
+                        echo $html;
                     ?>
                 </div>
                 <div class="carousel-item white-text carouselPortfolioImg carouselPortfolio1Img2"></div>
@@ -33,9 +34,10 @@
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio2Img1">
                     <?php
                     if(isset($json[1])){
-                    $html = "";
-                    $html .= '<h2>'. $json[1]["title"] .'</h2><p class="white-text">'.$json[1]["desc"].'</p>';
-                    echo $html;
+                        $elm = json_decode($json[1], true);
+                        $html = "";
+                        $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["description"].'</p>';
+                        echo $html;
                     ?>
                 </div>
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio2Img2"></div>
@@ -50,9 +52,10 @@
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio3Img1">
                     <?php
                     if(isset($json[2])){
-                    $html = "";
-                    $html .= '<h2>'. $json[2]["title"] .'</h2><p class="white-text">'.$json[2]["desc"].'</p>';
-                    echo $html;
+                        $elm = json_decode($json[2], true);
+                        $html = "";
+                        $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["description"].'</p>';
+                        echo $html;
                     ?>
                 </div>
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio3Img2"></div>
@@ -67,9 +70,10 @@
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio4Img1">
                     <?php
                     if(isset($json[3])){
-                    $html = "";
-                    $html .= '<h2>'. $json[3]["title"] .'</h2><p class="white-text">'.$json[3]["desc"].'</p>';
-                    echo $html;
+                        $elm = json_decode($json[3], true);
+                        $html = "";
+                        $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["description"].'</p>';
+                        echo $html;
                     ?>
                 </div>
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio4Img2"></div>
@@ -84,9 +88,10 @@
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio5Img1">
                     <?php
                     if(isset($json[4])){
-                    $html = "";
-                    $html .= '<h2>'. $json[4]["title"] .'</h2><p class="white-text">'.$json[4]["desc"].'</p>';
-                    echo $html;
+                        $elm = json_decode($json[4], true);
+                        $html = "";
+                        $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["description"].'</p>';
+                        echo $html;
                     ?>
                 </div>
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio5Img2"></div>
@@ -101,9 +106,10 @@
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio6Img1">
                     <?php
                     if(isset($json[5])){
-                    $html = "";
-                    $html .= '<h2>'. $json[5]["title"] .'</h2><p class="white-text">'.$json[5]["desc"].'</p>';
-                    echo $html;
+                        $elm = json_decode($json[5], true);
+                        $html = "";
+                        $html .= '<h2>'. $elm["title"] .'</h2><p class="white-text">'.$elm["description"].'</p>';
+                        echo $html;
                     ?>
                 </div>
                 <div class="carousel-item white-text carouselImgPortfolio carouselPortfolio6Img2"></div>

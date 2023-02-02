@@ -148,6 +148,7 @@ function SetPortfolio(){
     var form = new FormData();
     form.append("title", $("#title-portfolio").val());
     form.append("desc", $("#description-portfolio").val());
+    form.append("which", $('input[name="which-carousel"]:checked').val());
     form.append("img1", $("#img1-portfolio")[0].files[0]);
     form.append("img2", $("#img2-portfolio")[0].files[0]);
     form.append("img3", $("#img3-portfolio")[0].files[0]);
@@ -160,17 +161,17 @@ function SetPortfolio(){
         contentType: false,
         processData: false,
         success: function(response){
+            $("#title-portfolio").val("");
+            $("#description-portfolio").val("");
+            $('input[name="which-carousel"]:checked').val("");
+            $("#img1-portfolio").val("");
+            $("#img2-portfolio").val("");
+            $("#img3-portfolio").val("");
+            $("#img4-portfolio").val("");
             IsSend = false;
         },
      });
 }
-
-// function GetPortfolio(){
-//     for(i = 0; i < 4; i++){
-//         document.documentElement.style.setProperty('--carousel-img-portfolio', 'url(img/portfolio/portfolio1img'+i+'.png)');
-//     }
-// }
-
 
 //Store Page
 let imgCount = 0;
