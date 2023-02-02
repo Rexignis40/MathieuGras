@@ -35,31 +35,31 @@ if(isset($_SESSION["user"])){
         include("php/view/admin.php");
         ?>
         <div class="createNewPrest">
-            <h3>Nouvelle préstation</h3>
-            <h2>Titre</h2>
+            <h2>Nouvelle préstation</h2>
+            <h3>Titre</h3>
             <input class="newPrest" name="title" type='text' id="title">
-            <h2>Description</h2>
+            <h3>Description</h3>
             <input class="newPrest" name="desc" type="text" id="description">
-            <h2>Prix de la préstation</h2>
+            <h3>Prix de la préstation</h3>
             <input class="newPrest" name="price" type="text" id="price">
-            <h2>Images</h2>
+            <h3>Images</h3>
             <input name="img1" type="file" id="img1">
             <input name="img2" type="file" id="img2">
             <button onClick="SetPrestation()">Envoyer</button>
         </div>
         <div class="createNewCategory">
-            <h3>Nouvelle catégorie dans portfolio</h3>
+            <h2>Changer les galeries dans portfolio</h2>
             <label>1: <input class="newCategory" type="radio" name="which-carousel" value="0"></label>
             <label>2: <input class="newCategory" type="radio" name="which-carousel" value="1"></label>
             <label>3: <input class="newCategory" type="radio" name="which-carousel" value="2"></label>
             <label>4: <input class="newCategory" type="radio" name="which-carousel" value="3"></label>
             <label>5: <input class="newCategory" type="radio" name="which-carousel" value="4"></label>
             <label>6: <input class="newCategory" type="radio" name="which-carousel" value="5"></label>
-            <h2>Titre</h2>
+            <h3>Titre</h3>
             <input class="newCategory" name="title" type='text' id="title-portfolio">
-            <h2>Explication du projet</h2>
+            <h3>Description du projet</h3>
             <input class="newCategory" name="desc" type="text" id="description-portfolio">
-            <h2>Images</h2>
+            <h3>Images</h3>
             <input name="img1" type="file" id="img1-portfolio">
             <input name="img2" type="file" id="img2-portfolio">
             <input name="img3" type="file" id="img3-portfolio">

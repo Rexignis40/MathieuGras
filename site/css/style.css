@@ -320,9 +320,9 @@ h1.titre{
     margin-top: 25%;
 }
 
-.carouselPortfolioImg{
+.carouselImgPortfolio{
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 }
 
 /* Carousel 1 Portfolio */
