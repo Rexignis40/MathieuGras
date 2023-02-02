@@ -133,6 +133,7 @@ function deletePrestation(_id){
         i: _id
     },
     function(data, status){
+        console.log(data);
         $("#prest"+_id).css("display", "none");
         IsSend = false;
     });
