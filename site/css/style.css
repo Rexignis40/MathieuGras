@@ -605,6 +605,7 @@ h1.titre{
         display: flex;
         margin-top: 50px;
         position: relative;
+        min-height: 100vh;
     }
     .vl{
         height: 75vh;
@@ -641,9 +642,14 @@ h1.titre{
 }
 
 @media screen and (max-width: 750px) {
+    .store {
+        min-height: 100vh;
+
+    }
     .store .category {
         display: flex;
         justify-content: space-evenly;
+
     }
     .store .category li {
         list-style: none;
@@ -830,6 +836,74 @@ input[type=number]::-webkit-inner-spin-button {
 
 
 /*user*/
+
+.userTitle {
+    text-align: center;
+    font-family: var(--fonttitle);
+}
+
+@media screen and (min-width: 1000px) {
+    .navAndContent {
+        display: flex;
+    }
+    .navBarUserAndSeparation{
+        display: flex;
+    }
+    
+    .navBarUser {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .navBarUser li {
+        list-style: none;
+        font-size: 16px;
+    }
+    .navBarUser li .spacing {
+        background-color: var(--white);     
+        border: none;
+        color: var(--black);
+        cursor: pointer;
+    }
+    
+    .navBarUser li .spacing:hover{
+        transform: scale(1.1);
+    }
+    .navBarUserAndSeparation .separation {
+        height: 75vh;
+        width: 1px;
+        background-color: var(--black);        
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .navBarUser {
+        margin-left: 60px;
+        text-align: center;
+        margin-right: 60px;
+        margin-top: 100px;
+        height: 50vh;
+    }
+    .navBarUser li {
+        list-style: none;
+        font-size: 16px;
+    }
+    .navBarUser li .spacing {
+        background-color: var(--white);     
+        border: none;
+        color: var(--black);
+        cursor: pointer;
+    }
+    
+    .navBarUser li .spacing:hover{
+        transform: scale(1.1);
+    }
+    .navBarUserAndSeparation .separation {
+        background-color: var(--white) ;     
+    }
+    
+}
+
 div.connection{
     background-color: var(--black);
     opacity: 80%;
@@ -872,87 +946,106 @@ div.test form{
     width: 80%;
 }
 
-.userTitle {
+/* admin */
+
+.panelAdminTitle{
+    margin-top: 200px;
+    font-family: var(--fonttitle);
     text-align: center;
+}
+
+.listUserTitle {
     font-family: var(--fonttitle);
 }
 
-@media screen and (min-width: 750px) {
-    .navBarUserAndSeparation{
-        display: flex;
-    }
-    
-    .navBarUser {
-        margin-left: 60px;
-        margin-right: 60px;
-    }
-    .navBarUser li {
-        list-style: none;
-        font-size: 16px;
-    }
-    .navBarUser li .spacing {
-        background-color: var(--white);     
-        border: none;
-        color: var(--black);
-        cursor: pointer;
-    }
-    
-    .navBarUser li .spacing:hover{
-        transform: scale(1.1);
-    }
-    .navBarUserAndSeparation .separation {
-        height: 75vh;
-        width: 1px;
-        background-color: var(--black);        
-    }
+form #search-bar, label #name-user-img, form label .newAnnonce, form .newCat, form .updateCat, .newPrest, .newCategory {
+    border-bottom: none;
+    margin-top: 15px!important;
+    outline-style: solid !important;
+    outline-width: 2px !important;
+    border-radius: 2rem !important;
+    padding-left: 20px !important;
+    opacity: 80%!important;
+    outline-color: var(--black)!important;
+    color: var(--black);
+}
+
+form #search-bar:focus{
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+form .formSubmit, .formSubmit {
+    background-color: var(--salmon);
+    height: 36px;
+    font-family: var(--font);
+    font-size: 20px;
+    border-color: var(--salmon);
+    margin-top: 25px;
+}
+
+.listUser, .sendPrest, #createAnnonce, #createCat, #updateCat, .createNewPrest, .createNewCategory{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.sendPrest {
+    margin-top: 100px;
     
 }
 
-@media screen and (max-width: 750px) {
-    .navBarUser {
-        margin-left: 60px;
-        text-align: center;
-        margin-right: 60px;
-        margin-top: 100px;
-        height: 50vh;
-    }
-    .navBarUser li {
-        list-style: none;
-        font-size: 16px;
-    }
-    .navBarUser li .spacing {
-        background-color: var(--white);     
-        border: none;
-        color: var(--black);
-        cursor: pointer;
-    }
-    
-    .navBarUser li .spacing:hover{
-        transform: scale(1.1);
-    }
-    .navBarUserAndSeparation .separation {
-        background-color: var(--white) ;     
-    }
-    
+#createAnnonce, #createCat, .createNewCategory, .createNewPrest {
+    margin-top: 150px;
 }
 
-/*     
-div.separation{
-    border-right: 2px solid black;
-    height: 100%;
+.createNewCategory {
+    margin-bottom: 150px;
+}
+
+@media screen and (min-width: 1000px) {
+    
+    .userInfo{
+        width: 50vw;
+        margin-left: 12.5vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+    
+    .userInfo{
+        width: 80vw;
+        margin-left: 10vw;
+    }
+}
+.userInfo .nameFirstName{
     display: flex;
-    vertical-align: middle;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding-left: 2% !important;
-	}
-p.spacing{
-    margin-bottom: 35%;
-    -webkit-text-stroke-width: medium;
-    font-size: larger;
+    justify-content: space-around;
+}
+.userInfo input{  
+    border: none !important;
+    margin: 0 !important;
+}  
+.userInfo p .entourage{
+    margin-top: 15px!important;
+    outline-style: solid !important;
+    border-radius: 2rem !important;
+    color: var(--black);
 }
 
- */
+.userInfo .formSubmit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
 
 /* footer */
 
@@ -1103,38 +1196,4 @@ p.spacing{
 .pageFooter .copyright a {
     color: var(--white);
     padding-left: 5px;
-}
-
-.you{
-    width: 100%;
-    padding: 0% 15%;
-}
-.you .nomPrenom{
-    display: flex;
-    justify-content: space-between;
-}
-.you input{  
-border: none !important;
-margin: 0 !important;
-padding-left: 4% !important;
-}  
-.you p .entourage{
-    margin-top: 15px!important;
-    outline-style: solid !important;
-    border-radius: 2rem !important;
-}
-.you .butonuse{
-    padding: 10px;
-    margin-top: 15px;
-    background-color: var(--salmon);
-    border-color: var(--salmon);
-    color: var(--white);
-
-}
-.centerpls{
-    display: flex;
-    flex-direction: column;
-}
-.centerpls .butonuse{
-    align-self: center;
 }
