@@ -9,8 +9,6 @@
     --fonttitle: 'Dancing Script', cursive;
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
-
-    --carousel-img-portfolio: url("../img/IMG_1209\ 2.JPG");
 }
 
 
@@ -306,9 +304,7 @@ h1.titre{
   }
 
 
-  
-/* ---------------- */
-/* PORTFOLIO */
+/*portfolio*/
 
 .carouselPortfolio{
     margin-top: 10%;
@@ -324,17 +320,219 @@ h1.titre{
     margin-top: 25%;
 }
 
-
-.carouselPortfolio .carouselImgPortfolio {
-    background-image: var(--carousel-img-portfolio);
+.carouselPortfolioImg{
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/* Carousel 1 Portfolio */
+.carouselPortfolio .carouselPortfolio1Img1 {
+    background-image: url(../img/portfolio/portfolio1img1.png);
+}
 
-/* -------------- */
-/* PRESTATION */
+.carouselPortfolio .carouselPortfolio1Img2 {
+    background-image: url(../img/portfolio/portfolio1img2.png);
+}
 
+.carouselPortfolio .carouselPortfolio1Img3 {
+    background-image: url(../img/portfolio/portfolio1img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio1Img4 {
+    background-image: url(../img/portfolio/portfolio1img4.png);
+}
+
+/* Carousel 2 Portfolio */
+.carouselPortfolio .carouselPortfolio2Img1 {
+    background-image: url(../img/portfolio/portfolio2img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio2Img2 {
+    background-image: url(../img/portfolio/portfolio2img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio2Img3 {
+    background-image: url(../img/portfolio/portfolio2img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio2Img4 {
+    background-image: url(../img/portfolio/portfolio2img4.png);
+}
+
+/* Carousel 3 Portfolio */
+.carouselPortfolio .carouselPortfolio3Img1 {
+    background-image: url(../img/portfolio/portfolio3img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio3Img2 {
+    background-image: url(../img/portfolio/portfolio3img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio3Img3 {
+    background-image: url(../img/portfolio/portfolio3img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio3Img4 {
+    background-image: url(../img/portfolio/portfolio3img4.png);
+}
+
+/* Carousel 4 Portfolio */
+.carouselPortfolio .carouselPortfolio4Img1 {
+    background-image: url(../img/portfolio/portfolio4img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio4Img2 {
+    background-image: url(../img/portfolio/portfolio4img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio4Img3 {
+    background-image: url(../img/portfolio/portfolio4img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio4Img4 {
+    background-image: url(../img/portfolio/portfolio4img4.png);
+}
+
+/* Carousel 5 Portfolio */
+.carouselPortfolio .carouselPortfolio5Img1 {
+    background-image: url(../img/portfolio/portfolio5img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio5Img2 {
+    background-image: url(../img/portfolio/portfolio5img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio5Img3 {
+    background-image: url(../img/portfolio/portfolio5img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio5Img4 {
+    background-image: url(../img/portfolio/portfolio5img4.png);
+}
+
+/* Carousel 6 Portfolio */
+.carouselPortfolio .carouselPortfolio6Img1 {
+    background-image: url(../img/portfolio/portfolio6img1.png);
+}
+
+.carouselPortfolio .carouselPortfolio6Img2 {
+    background-image: url(../img/portfolio/portfolio6img2.png);
+}
+
+.carouselPortfolio .carouselPortfolio6Img3 {
+    background-image: url(../img/portfolio/portfolio6img3.png);
+}
+
+.carouselPortfolio .carouselPortfolio6Img4 {
+    background-image: url(../img/portfolio/portfolio6img4.png);
+}
+
+
+
+/*contact*/
+.contact-page{
+    color: var(--white);
+    background-image: url(../img/fondContact.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+@media screen and (min-width: 993px) {
+    .contact-me, .contactForm{
+        margin-left: 500px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .contact-me, .contactForm{
+        margin-left: 800px;
+        margin-right: 100px;
+    }
+}
+
+
+.contact-page button{
+    color: var(--white);
+}
+.contact-page input, .contact-page textarea{
+    background-color: var(--white) !important;
+}
+
+
+.contact-page #name, #family-name, #email, #subject{
+    padding-left: 15px;
+}
+
+
+.contactForm {
+    padding-bottom: 40px;
+}
+
+.contact-page .contact-me p {
+    font-family: var(--fonttitle);
+    text-align: center;
+    height: 60px;
+    font-size: 60px;
+}
+
+.contact-page .sendBtn{
+    display: block;
+    text-align: center;
+}
+
+.contact-page .sendBtn .button{
+    background-color: var(--salmon);
+    height: 36px;
+    font-family: var(--font);
+    font-size: 20px;
+    border-color: var(--salmon);
+    margin-top: 25px;
+
+}
+
+
+.contact-page .file .button{
+    border-color: var(--white);
+    margin-left: 2px;
+}
+
+@media screen and (min-width: 993px) {
+    .contact-page .firstNameAndName{
+    display: flex;
+}
+
+.contact-page .firstNameAndName>div{
+    width: 50%;
+    padding-right: 3%;
+}
+.contact-page .firstNameAndName>:last-child{
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 0;
+}
+.contact-page textarea.remark{
+    height: 200px;
+    resize: none;
+    padding: 15px;
+    padding-bottom: 20px;
+}
+}
+
+
+@media screen and (max-width: 993px) {
+    .contactForm{
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+    .contact-page textarea.remark{
+        height: 100px;
+        resize: none;
+    }
+}
+
+/* prestation */
 .annonce .titlePrestation {
     text-align: center;
     font-size: 40px;
@@ -926,10 +1124,46 @@ input[type=number]::-webkit-inner-spin-button {
     .navBarUserAndSeparation .separation {
         background-color: var(--white) ;     
     }
-    
 }
 
-div.connection{
+
+@media screen and (min-width: 1000px) {
+    
+    .userInfo{
+        width: 50vw;
+        margin-left: 12.5vw;
+    }
+}
+@media screen and (max-width: 1000px) {
+    
+    .userInfo{
+        width: 80vw;
+        margin-left: 10vw;
+    }
+}
+.userInfo .nameFirstName{
+    display: flex;
+    justify-content: space-between;
+}
+.userInfo input{  
+    border: none !important;
+    margin: 0 !important;
+}  
+.userInfo p .entourage{
+    margin-top: 15px!important;
+    outline-style: solid !important;
+    border-radius: 2rem !important;
+    color: var(--black);
+}
+
+.userInfo .formSubmit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.connection{
     background-color: var(--black);
     opacity: 80%;
     color: var(--white);
@@ -938,36 +1172,36 @@ div.connection{
     border-radius: 2%;
 
 }
-div.use{
+.use{
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     margin-bottom: 0;
 }
-div.count{
+.count{
     margin-top:50px
 }
-div form input.butonuser{
+ form input.butonuser{
     background-color: var(--salmon);
     border-color: var(--salmon);
 }
-div.connection a{
+.connection a{
     color: var(--white);
 }
-div.connection a:hover{
+.connection a:hover{
     color: var(--salmon);
 }
-div.test{
+.test{
     display: flex;
     margin-left: 15%;
 }
-div.test p{
+.test p{
     margin-bottom: 0;
 }
-div.conditions{
+.conditions{
     margin-left: 15%;
 }
-div.test form{
+.test form{
     width: 80%;
 }
 
@@ -1016,7 +1250,6 @@ form .formSubmit, .formSubmit {
 
 .sendPrest {
     margin-top: 100px;
-    
 }
 
 #createAnnonce, #createCat, .createNewCategory, .createNewPrest {
@@ -1026,51 +1259,6 @@ form .formSubmit, .formSubmit {
 .createNewCategory {
     margin-bottom: 150px;
 }
-
-@media screen and (min-width: 1000px) {
-    
-    .userInfo{
-        width: 50vw;
-        margin-left: 12.5vw;
-    }
-}
-@media screen and (max-width: 1000px) {
-    
-    .userInfo{
-        width: 80vw;
-        margin-left: 10vw;
-    }
-}
-.userInfo .nameFirstName{
-    display: flex;
-    justify-content: space-around;
-}
-.userInfo input{  
-    border: none !important;
-    margin: 0 !important;
-}  
-.userInfo p .entourage{
-    margin-top: 15px!important;
-    outline-style: solid !important;
-    border-radius: 2rem !important;
-    color: var(--black);
-}
-
-.userInfo .formSubmit {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-}
-
-
-
-
-
-
-
-
-
 
 /* footer */
 

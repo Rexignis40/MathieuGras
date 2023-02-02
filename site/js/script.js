@@ -165,11 +165,11 @@ function SetPortfolio(){
      });
 }
 
-function GetPortfolio(){
-    for(i = 0; i < 4; i++){
-        document.documentElement.style.setProperty('--carousel-img-portfolio', 'url(img/portfolio/portfolio1img'+i+'.png)');
-    }
-}
+// function GetPortfolio(){
+//     for(i = 0; i < 4; i++){
+//         document.documentElement.style.setProperty('--carousel-img-portfolio', 'url(img/portfolio/portfolio1img'+i+'.png)');
+//     }
+// }
 
 
 //Store Page
@@ -284,12 +284,26 @@ function SetUserInfo(){
         first_name:$("#FN").val(),
         name:$("#N").val(),
         email:$("#E").val(),
-        password:$("#P").val(),
+        Old_password:$("#OP").val(),
+        New_password:$("#NP").val(),
         age:$("#age").val(),
         adresse:$("#A").val(),
         num:$("#Nu").val()
     },
     function(data, status){
+        IsSend = false;
+    });
+}
+function SetUserPassword(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/actions/uptateUserPassword.php",
+    {
+        Old_password:$("#OP").val(),
+        New_password:$("#NP").val(),
+    },
+    function(data, status){
+        console.log(data);
         IsSend = false;
     });
 }
@@ -406,7 +420,7 @@ $('.carousel.carousel-slider').carousel({
   });
 
   setInterval(function(){
-    $('.carousel.carousel-slider').carousel("next");
+    $('.carousel.carousel-slider.carouselIndex').carousel("next");
   }, 5000);
 
 function mail(){
