@@ -644,18 +644,15 @@ h1.titre{
     }
     }
 
-.store #basket {
+.store .basket {
     color: var(--whiteimportant);
     border: none;
     cursor: pointer;
     font-size: 25px;
     background-color: transparent;
-}
-
-.store #content form>#basket {
-    margin-top: -330px ;
-    margin-left: 110px;
-    z-index: 2;
+    margin-top:  -325px;
+    margin-left: 116px;
+    position: absolute;
 }
 
 .store .like {
@@ -664,11 +661,9 @@ h1.titre{
     cursor: pointer;
     font-size: 25px;
     background-color: transparent;
-}
-
-.store #content .annonce>.like {
-    margin-top: -340px ;
+    margin-top: -325px ;
     margin-left: 158px;
+    position: absolute; 
 }
 
 /* offset */
@@ -860,12 +855,14 @@ input[type=number]::-webkit-inner-spin-button {
 
 /*user*/
 
-.userTitle {
-    text-align: center;
-    font-family: var(--fonttitle);
-}
 
 @media screen and (min-width: 1000px) {
+    .userTitle {
+        text-align: left;
+        font-family: var(--fonttitle);
+        margin-left: 60px;
+    }
+    
     .navAndContent {
         display: flex;
     }
@@ -900,6 +897,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 1000px) {
+    .userTitle {
+        text-align: center;
+        font-family: var(--fonttitle);
+    }
+    
     .navBarUser {
         margin-left: 60px;
         text-align: center;
