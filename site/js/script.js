@@ -196,20 +196,11 @@ actualCat = -1;
 actualOffset = 0;
 window.addEventListener('resize', function(event) {
     w = event.currentTarget.innerWidth;
-    if(w < 1000 && lastScreenWidth >= 1000 || w > 1000 && lastScreenWidth <= 1000 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImg(actualCat, actualOffset);
+    if(w < 1000 && lastScreenWidth >= 1000 || w > 1000 && lastScreenWidth <= 1000 || w < 1300 && lastScreenWidth >= 1300 || w > 1300 && lastScreenWidth <= 1300 || w > 1500 && lastScreenWidth <= 1500 || w < 1500 && lastScreenWidth >= 1500) GetImgStore(actualCat, actualOffset);
     lastScreenWidth = w;
 }, true);
 
-function IsIdIn(id, tableau){
-    result = false;
-    tableau.forEach(elm => {
-        if(elm == id){
-            result = true;
-        }
-    });
-    return result;
-}
-async function GetImg(cat, offset){
+async function GetImgStore(cat, offset){
     if(imgCount == 0) await GetImgCount();
     if(IsSend || offset > imgCount + 12) return;
     IsSend = true;
@@ -252,7 +243,7 @@ async function GetImg(cat, offset){
                         html += "</div>";
                         if(i != 12) html += "<div class='annonce-line'>";
                     }
-                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="cat">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><button class="basket" onclick="AddToBasket('+ data[i]["id"] +',\''+ data[i]["name"] +'\','+ data[i]["price"] +')"><i class="fa-solid fa-cart-shopping"></i></button><button onclick="favorie('+ data[i]["id"] +')">'+IdImgByUser($_SESSION[user][id])?'<i class="fa-solid fa-heart"></i>':'<i class="fa-regular fa-heart"></i>'+'</button></div>';
+                    html += '<div class="annonce"><img src="./img/store/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><p class="name">'+ data[i]["category"] +'</p><p class="price">'+ data[i]["price"] +'</p><form method="post"><input name="id" type="hidden" value="'+ data[i]["id"] +'" /><input name="name" type="hidden" value="'+ data[i]["name"] +'" /><input name="price" type="hidden" value="'+ data[i]["price"] +'" /><input id="basket" name="product" type="submit" value="Buy"></form>'+'<button class="like" onclick="favorie('+ data[i]["id"] +')"><i class="fa-solid fa-heart"></i></button></div>';
             }
             if(data.length == 13){
                 page += "<button class='pageAfter' onclick='GetImgStore("+cat+","+(offset+12)+")'><i class='fa-solid fa-arrow-right'></i></button>";
