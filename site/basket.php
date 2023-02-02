@@ -1,9 +1,10 @@
 <html lang="fr">
 <?php require_once("php/config.php"); 
 include('./components/head.html')?>
-<body class="basket">
+<body>
     <?php include('./components/header.html'); ?>
-    <div>
+    <div class="basket">
+    <div id="basketContent">
     <?php
     $total = 0;
     $html = "";
@@ -24,9 +25,9 @@ include('./components/head.html')?>
             $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><div><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'€</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div></div>';
         }
     }
-    $html .= "</div>";
     echo $html;
     ?>
+    </div>
     <div class='recipe'>
         <p><?php echo $total ?>€</p>
         <button id="buyButton" onclick='BuyBasket()'>BUY</button>
