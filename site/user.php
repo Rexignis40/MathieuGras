@@ -35,14 +35,14 @@ if(isset($_SESSION["user"])){
         include("php/view/admin.php");
         ?>
         <div class="createNewPrest">
-            <h2>Nouvelle préstation</h2>
-            <h3>Titre</h3>
+            <h3>Nouvelle préstation</h3>
+            <h4>Titre</h4>
             <input class="newPrest" name="title" type='text' id="title">
-            <h3>Description</h3>
+            <h4>Description</h4>
             <input class="newPrest" name="desc" type="text" id="description">
-            <h3>Prix de la préstation</h3>
+            <h4>Prix de la préstation</h4>
             <input class="newPrest" name="price" type="text" id="price">
-            <h3>Images</h3>
+            <h4>Images</h4>
             <input name="img1" type="file" id="img1">
             <input name="img2" type="file" id="img2">
             <button onClick="SetPrestation()">Envoyer</button>
@@ -55,11 +55,11 @@ if(isset($_SESSION["user"])){
             <label>4: <input class="newCategory" type="radio" name="which-carousel" value="3"></label>
             <label>5: <input class="newCategory" type="radio" name="which-carousel" value="4"></label>
             <label>6: <input class="newCategory" type="radio" name="which-carousel" value="5"></label>
-            <h3>Titre</h3>
+            <h4>Titre</h4>
             <input class="newCategory" name="title" type='text' id="title-portfolio">
-            <h3>Description du projet</h3>
+            <h4>Description du projet</h4>
             <input class="newCategory" name="desc" type="text" id="description-portfolio">
-            <h3>Images</h3>
+            <h4>Images</h4>
             <input name="img1" type="file" id="img1-portfolio">
             <input name="img2" type="file" id="img2-portfolio">
             <input name="img3" type="file" id="img3-portfolio">

@@ -1,8 +1,9 @@
 <html lang="fr">
 <?php require_once("php/config.php");
   include('./components/head.html')?>
-<body class="contactPage">
+<body >
     <?php include('./components/header.html')?>
+        <div class="contactPage">
             <div class="contactMe">
                 <p>Contactez-moi</p>
             </div>
@@ -36,7 +37,7 @@
                     <button onclick="mail()" class="button">Envoyer</button>
                 </div> 
             </div>                 
-    
+        </div>
     <?php include('./components/footer.html')?>
 
     

@@ -11,13 +11,12 @@
     --font: 'Open Sans', sans-serif;
 }
 
-
-
 body {
     font-family: var(--font);
     background-color: var(--white);
     color: var(--black);
 }
+
 h1.titre{
     font-family: var(--font-title);
     padding-left: 2%;
@@ -90,7 +89,6 @@ h1.titre{
 .sidenav{
     font-family: var(--fontbold);
 }
-
 
 .sidenav .logo{
     display: flex;
@@ -951,15 +949,6 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 
-.contactPage .firstNameAndName>div{
-    width: 50%;
-    padding-right: 3%;
-}
-.contactPage .firstNameAndName>:last-child{
-    width: 50%;
-    padding-left: 3%;
-    padding-right: 0;
-}
 
 .contactPage #name, #family-name, #email, #subject{
     padding-left: 15px;
@@ -982,8 +971,19 @@ input[type=number]::-webkit-inner-spin-button {
         padding: 15px;
         padding-bottom: 20px;
     }
-}
+    .contactPage .firstNameAndName>div{
+        width: 50%;
+        padding-right: 3%;
+    }
+    .contactPage .firstNameAndName>:last-child{
+        width: 50%;
+        padding-left: 3%;
+        padding-right: 0;
+    }
+    
 
+    
+}
 
 @media screen and (max-width: 993px) {
     .contactForm{
@@ -993,6 +993,7 @@ input[type=number]::-webkit-inner-spin-button {
     .contactPage textarea.remark{
         height: 100px;
         resize: none;
+        width: 100%;
     }
 }
 
@@ -1055,6 +1056,49 @@ input[type=number]::-webkit-inner-spin-button {
     width: 20%;
     border-top: none;
     border-left: none;
+}
+
+
+.connection{
+    background-color: var(--black);
+    opacity: 80%;
+    color: var(--white);
+    margin: 50px;
+    padding: 50px;
+    border-radius: 2%;
+
+}
+.use{
+    background-image: url(../img/rail.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 0;
+}
+.count{
+    margin-top:50px
+}
+ form input.butonuser{
+    background-color: var(--salmon);
+    border-color: var(--salmon);
+}
+.connection a{
+    color: var(--white);
+}
+.connection a:hover{
+    color: var(--salmon);
+}
+.test{
+    display: flex;
+    margin-left: 15%;
+}
+.test p{
+    margin-bottom: 0;
+}
+.conditions{
+    margin-left: 15%;
+}
+.test form{
+    width: 80%;
 }
 
 /* ---------------- */
@@ -1148,18 +1192,21 @@ input[type=number]::-webkit-inner-spin-button {
         margin-left: 10vw;
     }
 }
-.userInfo .nameFirstName{
-    display: flex;
+
+@media screen and (min-width: 1000px) {   
+    .userInfo .nameFirstName{
+        display: flex;
+    }
+    .userInfo .nameFirstName p:first-child {
+        width: 20vw;
+        margin-right: 10vw;
+    }
+
+    .userInfo .nameFirstName p:last-child {
+        width: 20vw;
+    }
 }
 
-.userInfo .nameFirstName p:first-child {
-    width: 20vw;
-    margin-right: 10vw;
-}
-
-.userInfo .nameFirstName p:last-child {
-    width: 20vw;
-}
 .userInfo input{  
     border: none !important;
     margin: 0 !important;
@@ -1293,6 +1340,10 @@ form .formSubmit, .formSubmit {
     margin-top: 25px;
 }
 
+#createAnnonce h3, #createCat h3{
+    font-family: var(--fonttitle);
+}
+
 .listUser, .sendPrest, #createAnnonce, #createCat, #updateCat, .createNewPrest, .createNewCategory{
     margin-left: 15%;
     margin-right: 15%;
@@ -1309,6 +1360,14 @@ form .formSubmit, .formSubmit {
 .createNewCategory {
     margin-bottom: 150px;
 }
+
+.createNewPrest h3, .createNewPrest h4, .createNewCategory h3, .createNewCategory h4 {
+    font-family: var(--fonttitle);
+} 
+
+.createNewPrest h3, .createNewPrest h4, .createNewCategory h3, .createNewCategory h4 {
+    font-family: var(--fonttitle);
+} 
 
 /* ------------ */
 /* FOOTER */
