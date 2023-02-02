@@ -54,12 +54,12 @@ $(document).ready(function(){
 function GetListUser(){
     if(IsSend) return;
     IsSend = true;
-    $.post("php/getUserList.php",
+    $.post("php/getListUser.php",
     {
         search: $("#search-bar").val()
     },
     function(data, status){
-        $("#user-list").html(data);
+        $("#userList").html(data);
         IsSend = false;
     });
 }
@@ -70,8 +70,8 @@ function SendImgPrest(id){
 
     var form = new FormData();
     form.append("uid", id);
-    form.append("name", $("#name-user-img").val());
-    form.append("img", $("#img-user")[0].files[0]);
+    form.append("name", $("#name-"+id+"-img").val());
+    form.append("img", $("#img-"+id+"")[0].files[0]);
 
     $.ajax({
         url: 'php/SendImgPrest.php',
@@ -80,6 +80,8 @@ function SendImgPrest(id){
         contentType: false,
         processData: false,
         success: function(response){
+            $("#name-"+id+"-img").val("");
+            $("#img-"+id).val("");
            IsSend = false;
         },
      });
@@ -131,7 +133,7 @@ function deletePrestation(_id){
         i: _id
     },
     function(data, status){
-        console.log(data);
+        $("#prest"+_id).css("display", "none");
         IsSend = false;
     });
 }
@@ -372,8 +374,6 @@ function GetUserLike(_id){
 function BuyBasket(){
     if(IsSend) return;
     IsSend = true;
-    console.log(_basket);
-    console.log(u);
     $.post("php/buyBasket.php",
     {
     },
@@ -391,7 +391,6 @@ function favorie(id, elm){
         img: id 
     },
     function(data, status){
-        console.log(data);
         if(data){
             $(elm).html('<i class="fa-solid fa-heart"></i>');
         }

@@ -1,6 +1,6 @@
 <?php
-require_once("php/config.php");
-include('php/security.php');
+require_once("config.php");
+include('security.php');
 $html = '';
 $search = '';
 if(isset($_POST["search"])){
@@ -15,7 +15,7 @@ for($i = 0; $i < $list->rowCount(); $i++){
 
     $html .= '<div class="row">
     <div class="col l8 m12 s12 offset-l2">
-    <h2>'. $result['name'] .'</h2><label>Name: <input type="text" id="name-user-img" required></label><label>Image: <input type="file" id="img-user" required><button onclick="SendImgPrest('.$result["id"].')">Envoyer une image</button></label><a href="php/setAdmin.php?u='.$result["id"].'&v='.!$result["admin"].'">is admin: ' .$result['admin'].'</a>';
+    <h2>'. $result['name'] .'</h2><label>Name: <input type="text" id="name-'.$result["id"].'-img" required></label><label>Image: <input type="file" id="img-'.$result["id"].'" required><button onclick="SendImgPrest('.$result["id"].')">Envoyer une image</button></label><a href="php/setAdmin.php?u='.$result["id"].'&v='.!$result["admin"].'">is admin: ' .$result['admin'].'</a>';
     if(!$result["admin"]){
         $html .= '<a href="../php/deleteUser.php?u='.$result["id"].'">Ban</a>';
     }

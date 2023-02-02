@@ -23,10 +23,9 @@
     <input type="text" id="search-bar">
     <button onclick="GetListUser()">Chercher</button>
 </form>
+<div id="userList">
 
-<?php
-include("getListUser.php");
-?>
+</div>
 <form method="post" action="php/actions/createCategory.php" enctype="multipart/form-data">
     <input type='text' name='name' placeholder="Nouvelle catégorie ?" />
     <input type='hidden' name='id'/>

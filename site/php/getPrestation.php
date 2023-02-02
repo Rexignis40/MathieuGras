@@ -7,7 +7,7 @@ $html = "";
 for($i = 0; $i < sizeof($json); $i++){
     $elm = json_decode($json[$i], true);
 
-    $html .= '<div class="annonce"><h2 class="titlePrestation">'. $elm["title"] .'</h2>';
+    $html .= '<div id="prest'.$i.'" class="annonce"><h2 class="titlePrestation">'. $elm["title"] .'</h2>';
     if (file_exists("../img/prestation/". $elm["title"] ."img1.png")) {
         $html .= "<img class='img' src='img/prestation/". $elm["title"] ."img1.png' />";
       }
