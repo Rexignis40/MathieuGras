@@ -1,6 +1,5 @@
 <?php
 require_once "config.php";
-
 $sql = "SELECT price, image.id AS id, image.name AS name, category.name AS category FROM image INNER JOIN category ON category.id=image.id_category";
 if(isset($_POST["c"]) && $_POST["c"] != -1){
     $sql .= " WHERE id_category=:category";
