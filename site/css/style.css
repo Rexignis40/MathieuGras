@@ -8,7 +8,7 @@
     --fontbold: 'Maven Pro', sans-serif;
     --font: 'Open Sans', sans-serif;
 
-    --carousel-img-portfolio: "../img/IMG_1209\ 2.JPG";
+    --carousel-img-portfolio: url("../img/IMG_1209\ 2.JPG");
 }
 
 

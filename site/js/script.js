@@ -164,7 +164,7 @@ function SetPortfolio(){
 
 function GetPortfolio(){
     for(i = 0; i < 4; i++){
-        document.documentElement.style.setProperty('--carousel-img-portfolio', 'img/portfolio/portfolio1img'+i+'.png');
+        document.documentElement.style.setProperty('--carousel-img-portfolio', 'url(img/portfolio/portfolio1img'+i+'.png)');
     }
 }
 
