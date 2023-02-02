@@ -205,7 +205,6 @@ function IsIdIn(id, tableau){
     tableau.forEach(elm => {
         if(elm == id){
             result = true;
-            break;
         }
     });
     return result;
