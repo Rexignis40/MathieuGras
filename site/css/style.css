@@ -702,6 +702,41 @@ input[type=number]::-webkit-inner-spin-button {
     width: 50px;
 }
 
+/*basket*/
+.basket #basketContent img{
+    width: 200px;
+    height: 250px;
+}
+.basket #basketcontent{
+    margin: 5px 40px;
+}
+.basket #basketContent>div{
+    display: flex;
+    margin: 50px 0;
+}
+.basket #basketContent>div>*{
+    margin: 0 10px;
+}
+.basket #basketContent>div .name{
+    font-weight: 700;
+}
+.basket #buyButton{
+    background-color: var(--salmon);
+    padding: 10px;
+    margin: 20px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-top: none;
+    border-left: none;
+}
+
+@media screen and (max-width: 750px) {
+    .basket #buyButton{
+        width: 80%;
+    }
+}
 
 /*user*/
 div.connection{

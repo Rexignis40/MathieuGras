@@ -378,7 +378,7 @@ function BuyBasket(){
     {
     },
     function(data, status){
-        $("#basket").html("");
+        $("#basketContent").html("");
         IsSend = false;
     });
 }
