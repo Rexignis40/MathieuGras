@@ -12,7 +12,7 @@ if(isset($_POST["o"])){
     $offset = $_POST["o"];
 }
 
-$q = $pdo->prepare($sql . " LIMIT 13 OFFSET :offset");
+$q = $pdo->prepare($sql . " LIMIT 9 OFFSET :offset");
 $q->bindParam(":offset", $offset, PDO::PARAM_INT);
 $q->bindParam(":id", $_SESSION["user"]["id"], PDO::PARAM_INT);
 if(isset($_POST["c"]) && $_POST["c"] != -1){

@@ -14,8 +14,8 @@ if($pre->rowCount() != 1){
     $_SESSION['output'] =  "Email ou mot de passe incorrect !";
     header('Location:../user.php');
 }else{
-    $_SESSION['output'] = "Connecter";
+    $_SESSION['output'] = "Vous êtes bien connecté";
     $_SESSION['user'] = $pre->fetch(PDO::FETCH_ASSOC);
-    header('Location: ../user.php');
+    header('Location: ../index.php');
 }     
 ?>
