@@ -870,6 +870,8 @@ h1.titre{
     position: absolute; 
 }
 
+
+
 /* offset */
 
 input[type=number]::-webkit-inner-spin-button {
@@ -1064,49 +1066,6 @@ input[type=number]::-webkit-inner-spin-button {
     border-left: none;
 }
 
-
-.connection{
-    background-color: var(--black);
-    opacity: 80%;
-    color: var(--white);
-    margin: 50px;
-    padding: 50px;
-    border-radius: 2%;
-
-}
-.use{
-    background-image: url(../img/rail.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-bottom: 0;
-}
-.count{
-    margin-top:50px
-}
- form input.butonuser{
-    background-color: var(--salmon);
-    border-color: var(--salmon);
-}
-.connection a{
-    color: var(--white);
-}
-.connection a:hover{
-    color: var(--salmon);
-}
-.test{
-    display: flex;
-    margin-left: 15%;
-}
-.test p{
-    margin-bottom: 0;
-}
-.conditions{
-    margin-left: 15%;
-}
-.test form{
-    width: 80%;
-}
-
 /* ---------------- */
 /* USER */
 
@@ -1238,9 +1197,7 @@ input[type=number]::-webkit-inner-spin-button {
     background-image: url(../img/rail.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 25px;
-    padding-top: 25px;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
 .use .connection{
@@ -1249,8 +1206,8 @@ input[type=number]::-webkit-inner-spin-button {
     color: var(--white);
     border-radius: 2%;
     text-align: justify;
-    margin: 50px;
-    padding: 50px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 }
 .use .count{
     margin-top:50px
@@ -1307,6 +1264,35 @@ input[type=number]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
+/* galerie */
+.galerie {
+    font-family: var(--fontbold);
+    text-align: left;
+    font-weight: bolder;
+    margin-left: 15px;
+    margin-top: 7px!important;
+    margin-bottom: 0 !important;
+}
+
+
+.galerie img{
+    width: 200px;
+    height: 250px;
+}
+
+
+
+.galerie .like {
+    color: var(--whiteimportant);
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: transparent;
+    margin-top: -300px ;
+    margin-left: 158px;
+    position: absolute; 
+}
+
 /* ------------ */
 /* ADMIN */
 
@@ -1317,7 +1303,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .listUserTitle {
-    font-family: var(--fonttitle);
+    font-family: var(--font);
 }
 
 form #search-bar, label #name-user-img, form label .newAnnonce, form .newCat, form .updateCat, .newPrest, .newCategory{
@@ -1349,7 +1335,7 @@ form .formSubmit, .formSubmit, .submitNewPrest, .submitNewCategory {
 }
 
 #createAnnonce h3, #createCat h3{
-    font-family: var(--fonttitle);
+    font-family: var(--font);
 }
 
 .listUser, .sendPrest, #createAnnonce, #createCat, #updateCat, .createNewPrest, .createNewCategory{
@@ -1369,13 +1355,14 @@ form .formSubmit, .formSubmit, .submitNewPrest, .submitNewCategory {
     margin-bottom: 150px;
 }
 
-.createNewPrest h3, .createNewPrest h4, .createNewCategory h3, .createNewCategory h4 {
-    font-family: var(--fonttitle);
+.createNewPrest h3, .createNewCategory h3 {
+    font-family: var(--font);
 } 
 
-.createNewPrest h3, .createNewPrest h4, .createNewCategory h3, .createNewCategory h4 {
+.createNewPrest h4, .createNewCategory h4{
     font-family: var(--fonttitle);
-} 
+}
+
 
 /* ------------ */
 /* FOOTER */

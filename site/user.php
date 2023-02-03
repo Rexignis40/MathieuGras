@@ -18,8 +18,8 @@ if(isset($_SESSION["user"])){
                     <li><p class="spacing" onclick="GetUserInfo()">Informations Personelles</p></li>
                     <li><p class="spacing" onclick="GetUserGalerie()">Galerie</p></li>
                     <li><p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favoris</p></li>
-                    <li><p class="spacing" onclick="GetUserBuyImg(<?php echo $_SESSION['user']['id'] ?>)">Mes Achats</p></li>
-                    <li><p class="spacing">Suivie de commande</p></li>
+                    <li><p class="spacing" onclick="GetUserBuyImg()">Mes Achats</p></li>
+                    <li><p class="spacing" onclick="GetUserBuyFollow()">Suivie de commande</p></li>
                     <li><a class="spacing" href="php/logout.php">Déconnexion</a></li>
                 </div>
                 <div class="separation"></div>

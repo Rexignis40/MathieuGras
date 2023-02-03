@@ -7,7 +7,7 @@ include('./components/head.html')?>
     <?php include('./components/header.html')?>
     <div class="store">
         <div class="category">
-        <li><button class="btnCategory" onclick="GetImgStore(-1, 0)">tout</button></li>
+        <li><button class="btnCategory" onclick="GetImgStore(-1, 0)">Tous</button></li>
         <?php
                 $q = $pdo->prepare("SELECT * FROM category");
                 $q->execute();

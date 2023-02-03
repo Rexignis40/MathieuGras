@@ -29,7 +29,7 @@ include('./components/head.html')?>
     ?>
     </div>
     <div class='recipe'>
-        <p><?php echo $total ?>€</p>
+        <p id='price'><?php echo $total ?>€</p>
         <button id="buyButton" onclick='BuyBasket()'>BUY</button>
     </div>
     </div>
