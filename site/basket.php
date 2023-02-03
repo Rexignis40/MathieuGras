@@ -22,7 +22,7 @@ include('./components/head.html')?>
         }
         foreach($_SESSION["basket"] as $elm){
             $total += $elm["price"];
-            $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><div><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'€</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div></div>';
+            $html .= '<div class="annonceBasket"><img src="./img/store/'. $elm["id"] .'.png" /><div><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'€</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div></div>';
         }
     }
     echo $html;
