@@ -1,9 +1,6 @@
 <?php require_once "php/config.php" ?>
-<!DOCTYPE html>
-<html>
-<head>
+<html lang="fr">
 <?php include('./components/head.html')?>
-</head>
 <body>
 <?php include('./components/header.html')?>
 
