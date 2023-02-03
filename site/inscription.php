@@ -23,7 +23,7 @@
                     <input class="white-text" type='password' name='password' />
                     <p>Numéro de téléphone</p>
                     <input class="white-text" type='tel' name='num' />
-                    <p>Adresse</p>
+                    <p>Adresse postale</p>
                     <input class="white-text" type='text' name='adresse' />
                     <div class="count"><input class="butonuser" type='submit' value='Créer un compte' /></div>
                 </form>
