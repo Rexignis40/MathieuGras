@@ -352,7 +352,19 @@ function GetUserBuyImg(){
         IsSend = false;
     }, "json");
 }
-
+function GetUserBuyFollow(){
+    if(IsSend) return;
+    IsSend = true;
+    $.post("php/getUserBuyFollow.php",
+    {
+    },
+    function(data, status){
+        if(data.length != undefined){
+            $("#content-user").html(data);
+        }
+        IsSend = false;
+    });
+}
 function AddToBasket(_id, _name, _price){
     if(IsSend) return;
     IsSend = true;

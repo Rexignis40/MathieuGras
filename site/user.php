@@ -19,7 +19,7 @@ if(isset($_SESSION["user"])){
                     <li><p class="spacing" onclick="GetUserGalerie()">Galerie</p></li>
                     <li><p class="spacing" onclick="GetUserLike(<?php echo $_SESSION['user']['id'] ?>)">Favories</p></li>
                     <li><p class="spacing" onclick="GetUserBuyImg()">Mes Achat</p></li>
-                    <li><p class="spacing">Suivie de commande</p></li>
+                    <li><p class="spacing" onclick="GetUserBuyFollow()">Suivie de commande</p></li>
                     <li><a class="spacing" href="php/logout.php">Déconnexion</a></li>
                 </div>
                 <div class="separation"></div>
