@@ -307,9 +307,6 @@ h1.titre{
 
 /* ---------------- */
 /* PORTFOLIO */
-.portfolio {
-    height: calc(100vh - 120px);
-}
 
 .carouselPortfolio{
     margin-top: 10%;
@@ -873,6 +870,8 @@ h1.titre{
     position: absolute; 
 }
 
+
+
 /* offset */
 
 input[type=number]::-webkit-inner-spin-button {
@@ -926,7 +925,6 @@ input[type=number]::-webkit-inner-spin-button {
     background-image: url(../img/fondContact.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: calc(100vh - 120px);
 }
 
 .contactPage .contactMe p {
@@ -1264,6 +1262,35 @@ input[type=number]::-webkit-inner-spin-button {
 .use .spacing:hover{
     color:#3b5998;
     cursor: pointer;
+}
+
+/* galerie */
+.galerie {
+    font-family: var(--fontbold);
+    text-align: left;
+    font-weight: bolder;
+    margin-left: 15px;
+    margin-top: 7px!important;
+    margin-bottom: 0 !important;
+}
+
+
+.galerie img{
+    width: 200px;
+    height: 250px;
+}
+
+
+
+.galerie .like {
+    color: var(--whiteimportant);
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    background-color: transparent;
+    margin-top: -300px ;
+    margin-left: 158px;
+    position: absolute; 
 }
 
 /* ------------ */

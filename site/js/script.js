@@ -321,7 +321,7 @@ function GetUserGalerie(){
         let html = "";
         if(data.length != 0){
             for(i = 0; i < data.length; i++){
-                html += '<div class="image"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button onclick="favorie('+ data[i]["id"] +', this)"><i class="fa-solid fa-heart"></i></button></div>';
+                html += '<div class="galerie"><img src="./img/user/'+ data[i]["id"] +'.png"><p class="name">'+ data[i]["name"] +'</p><button class="like" onclick="favorie('+ data[i]["id"] +', this)"><i class="fa-solid fa-heart"></i></button></div>';
             }
         }
         else{
