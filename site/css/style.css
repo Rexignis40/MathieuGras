@@ -942,7 +942,7 @@ input[type=number]::-webkit-inner-spin-button {
 /* ---------------- */
 /* BASKET */
 
-.basket>div{
+.basket{
     display: flex;
     justify-content: space-between;
     margin: 5px 40px;

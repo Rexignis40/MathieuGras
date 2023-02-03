@@ -20,10 +20,17 @@ include('./components/head.html')?>
                 array_splice($_SESSION["basket"], $index, 1);
             }
         }
-        foreach($_SESSION["basket"] as $elm){
-            $total += $elm["price"];
-            $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><div><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'€</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div></div>';
+        if(sizeof($_SESSION["basket"]) == 0){
+            $html = "<div><p>Votre panier est vide</p></div>";
+        }else{
+            foreach($_SESSION["basket"] as $elm){
+                $total += $elm["price"];
+                $html .= '<div><img src="./img/store/'. $elm["id"] .'.png" /><div><p class="name">'. $elm["name"] .'</p><p class="price">'. $elm["price"] .'€</p><form method="post"><input type="hidden" name="id" value="'.$elm["id"].'" /><input type="submit" name="delete" value="Remove" /></form></div></div>';
+            }
         }
+    }
+    else{
+        $html = "<div><p>Votre panier est vide</p></div>";
     }
     echo $html;
     ?>
