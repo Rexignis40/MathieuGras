@@ -4,7 +4,7 @@
 <body>
     <?php include('./components/header.html')?>
     
-    <div class="row">
+    <div class="row portfolio">
         <?php
         $myfile = fopen("php/json/portfolio.json", "r"); 
         $json = json_decode(fread($myfile, filesize("php/json/portfolio.json")), true)["portfolio"];
